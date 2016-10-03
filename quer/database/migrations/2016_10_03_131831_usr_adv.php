@@ -13,7 +13,12 @@ class UsrAdv extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('usr_adv', function (Blueprint $table) {
+            $table->increments('id');
+            $table->int('advertisement_id')->index();
+            $table->int('user_id')->index();
+            $table->timestamps();
+        });
     }
 
     /**

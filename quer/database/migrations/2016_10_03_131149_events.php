@@ -13,7 +13,21 @@ class Events extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('events', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->longText('description')->nullable();
+            $table->string('location')->nullable();
+            $table->string('city')->nullable();
+            $table->string('url')->nullable();
+            $table->dateTime('date_start_sell')->nullable();
+            $table->dateTime('date_event')->nullable();
+            $table->string('image')->nullable();
+            $table->string('tags')->nullable();
+            $table->int('categorie_id')->index();
+            $table->int('code');
+            $table->timestamps();
+        });
     }
 
     /**

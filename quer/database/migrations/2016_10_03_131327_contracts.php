@@ -13,7 +13,16 @@ class Contracts extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('contracts', function (Blueprint $table) {
+        $table->increments('id');
+        $table->int('quer_id')->index();
+        $table->int('applicant_id')->index()->nullable();
+        $table->string('attachment')->nullable();
+        $table->decimal('price', 18, 4);
+        $table->int('phase_id')->index();
+        $table->int('advertisement_id')->index();
+        $table->timestamps();
+    });
     }
 
     /**

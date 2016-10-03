@@ -13,7 +13,12 @@ class Phases extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('phases', function (Blueprint $table) {
+            $table->increments('id');
+            $table->int('phase_number');
+            $table->int('phase_description');
+            $table->timestamps();
+        });
     }
 
     /**
