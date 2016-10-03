@@ -8,6 +8,8 @@ class Events extends Model
 {
     protected $table = 'events';
 
+    protected $guarded = ['id']; // all fillable except id
+
     public function categories()
     {
         return $this->belongsTo('Categories');

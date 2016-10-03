@@ -8,6 +8,8 @@ class Reviews extends Model
 {
     protected $table = 'reviews';
 
+    protected $guarded = ['id']; // all fillable except id
+
     public function advertisements()
     {
         return $this->belongsTo('Advertisements');

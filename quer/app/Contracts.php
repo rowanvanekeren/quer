@@ -8,6 +8,8 @@ class Contracts extends Model
 {
     protected $table = 'contracts';
 
+    protected $guarded = ['id']; // all fillable except id
+
     public function advertisements()
     {
         return $this->belongsTo('Advertisements');
