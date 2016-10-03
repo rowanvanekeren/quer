@@ -15,8 +15,8 @@ class Phases extends Migration
     {
         Schema::create('phases', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('phase_number');
-            $table->int('phase_description');
+            $table->tinyInteger('phase_number');
+            $table->string('phase_description');
             $table->timestamps();
         });
     }

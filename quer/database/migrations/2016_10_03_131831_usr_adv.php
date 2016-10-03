@@ -15,8 +15,8 @@ class UsrAdv extends Migration
     {
         Schema::create('usr_adv', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('advertisement_id')->index();
-            $table->int('user_id')->index();
+            $table->integer('advertisement_id')->index();
+            $table->integer('user_id')->index();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class Advertisements extends Migration
     {
         Schema::create('advertisements', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('user_id')->index();;
-            $table->int('event_id')->index();;
+            $table->integer('user_id')->index();
+            $table->integer('event_id')->index();
             $table->longText('private_description')->nullable();
             $table->decimal('price', 18, 4);
             $table->timestamps();

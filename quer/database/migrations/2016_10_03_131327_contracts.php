@@ -15,12 +15,12 @@ class Contracts extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
         $table->increments('id');
-        $table->int('quer_id')->index();
-        $table->int('applicant_id')->index()->nullable();
+            $table->integer('quer_id')->index();
+            $table->integer('applicant_id')->index()->nullable();
         $table->string('attachment')->nullable();
         $table->decimal('price', 18, 4);
-        $table->int('phase_id')->index();
-        $table->int('advertisement_id')->index();
+        $table->tinyInteger('phase_id')->index();
+            $table->integer('advertisement_id')->index();
         $table->timestamps();
     });
     }

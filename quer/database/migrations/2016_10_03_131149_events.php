@@ -24,8 +24,8 @@ class Events extends Migration
             $table->dateTime('date_event')->nullable();
             $table->string('image')->nullable();
             $table->string('tags')->nullable();
-            $table->int('categorie_id')->index();
-            $table->int('code');
+            $table->tinyInteger('categorie_id')->index();
+            $table->tinyInteger('code');
             $table->timestamps();
         });
     }

@@ -15,12 +15,12 @@ class Reviews extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('quer_id')->index();
-            $table->int('applicant_id')->index();
+            $table->integer('quer_id')->index();
+            $table->integer('applicant_id')->index();
             $table->longText('content')->nullable();
-            $table->int('rate');
-            $table->int('succeeded');
-            $table->int('advertisement_id')->index();
+            $table->tinyInteger('rate');
+            $table->tinyInteger('succeeded');
+            $table->unsignedInteger('advertisement_id')->index();
             $table->timestamps();
         });
     }
