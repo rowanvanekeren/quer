@@ -18,3 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+
+
+
+//testing routes
+
+Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+
+Route::get('/my_advertisements', function () {
+        return view('my_advertisements');
+    });
+
+Route::get('/add_advertisement', function () {
+        return view('add_advertisement');
+    });
