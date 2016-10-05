@@ -24,6 +24,11 @@ Route::get('/home', 'HomeController@index');
 
 
 //testing routes
+/*
+if (Auth::check()) {
+    // The user is logged in...
+}
+*/
 
 Route::get('/dashboard', function () {
         return view('dashboard');
