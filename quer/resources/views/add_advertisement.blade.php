@@ -1,16 +1,18 @@
 <?php
 
-
+$id             = "";
 $name           = "";
 $description    = "";
 $location       = "";
 $city           = "";
 $url            = "";
 $date_start_sell= "";
+$time_start_sell= "";
 $date_event     = "";
 
 //check whether the event param is set , if yes -> load info
 if(isset($event)) {
+    $id             = $event->id;
     $name           = $event->name;
     $description    = $event->description;
     $location       = $event->location;
@@ -19,6 +21,7 @@ if(isset($event)) {
     
     $date_start_sell1 = new DateTime($event->date_start_sell);
     $date_start_sell = $date_start_sell1->format('Y-m-d');
+    $time_start_sell = $date_start_sell1->format('H:i');
     
     $date_event1     = new DateTime($event->date_event);
     $date_event     = $date_event1->format('Y-m-d');
@@ -79,7 +82,7 @@ if(isset($event)) {
                <div>
                    <label for="startdate">Startdatum verkoop:</label>
                    <input id="startdate" name="startdate" type="date" value="{{ $date_start_sell }}">
-                   <input id="starttime" name="starttime" type="time">
+                   <input id="starttime" name="starttime" type="time" value="{{ $time_start_sell }}">
                </div>
                
                <div>
@@ -90,29 +93,22 @@ if(isset($event)) {
 
                <div>
                    <label for="image">Afbeelding:</label>
-                   <input type="file" id="image" name="image" required>
+                   <input type="file" id="image" name="image">
                </div>
-
-              <!--
-               <div>
-                   <label for="user">Aangemaakt door:</label>
-                   {{--<input type="text" id="user" name="username" value="{{Auth::user()->name}}" readonly>--}}
-                   {{--<input type="number" id="user_id" name="user" value="{{Auth::user()->id}}" hidden>--}}
-               </div>
-                -->
+               
 
                <h3 class="title fase1">Extra persoonlijke info</h3>
 
 
                <div>
                    <label for="event_id">Event ID:</label>
-                   <input id="event_id" name="event_id" type="number">
+                   <input id="event_id" name="event_id" type="number" value="{{ $id }}">
                    <span>Dit zal uiteindelijk niet zichtbaar zijn (testfase alleen).  Als dit als leeg wordt doorgegeven weet je dat er een volledig nieuwe advertebtie is aangemaakt</span>
                </div>
                
                <div>
                    <label for="user_id">User ID:</label>
-                   <input id="user_id" name="user_id" type="number">
+                   <input id="user_id" name="user_id" type="number" value="{{Auth::user()->id}}">
                    <span>Wordt automatisch ingeladen en is niet zichtbaar op het uiteindelijke form</span>
                </div>
 

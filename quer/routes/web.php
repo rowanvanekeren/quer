@@ -38,3 +38,11 @@ Route::get('/add_advertisement', function () {
     });
 
 Route::get('add_advertisement/{id?}', 'BaseController@add_advertisement');
+
+
+
+//posts (new events, new advertisements, new contracts, ...)
+
+Route::post('/new_advertisement', 'BaseController@store_new_advertisement');
+
+
