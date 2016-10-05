@@ -36,3 +36,5 @@ Route::get('/my_advertisements', function () {
 Route::get('/add_advertisement', function () {
         return view('add_advertisement');
     });
+
+Route::get('add_advertisement/{id?}', 'BaseController@add_advertisement');

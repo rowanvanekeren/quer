@@ -1,3 +1,33 @@
+<?php
+
+
+$name           = "";
+$description    = "";
+$location       = "";
+$city           = "";
+$url            = "";
+$date_start_sell= "";
+$date_event     = "";
+
+//check whether the event param is set , if yes -> load info
+if(isset($event)) {
+    $name           = $event->name;
+    $description    = $event->description;
+    $location       = $event->location;
+    $city           = $event->city;
+    $url            = $event->url;
+    
+    $date_start_sell1 = new DateTime($event->date_start_sell);
+    $date_start_sell = $date_start_sell1->format('Y-m-d');
+    
+    $date_event1     = new DateTime($event->date_event);
+    $date_event     = $date_event1->format('Y-m-d');
+    
+}
+
+?>
+
+
 @extends('layouts.app')
 
 @section('title', 'Dashboard')
@@ -23,38 +53,38 @@
 
                <div>
                    <label for="name">Naam:</label>
-                   <input id="name" name="name" type="text" required>
+                   <input id="name" name="name" type="text" required value="{{ $name }}">
                </div>
 
                <div>
                    <label for="description">Beschrijving:</label>
-                   <textarea id="description" name="description" required></textarea>
+                   <textarea id="description" name="description" required>{{ $description }}</textarea>
                </div>
                
                <div>
                    <label for="location">Locatie:</label>
-                   <input id="location" name="location" type="text">
+                   <input id="location" name="location" type="text" value="{{ $location }}">
                </div>
                
                <div>
                    <label for="city">Stad:</label>
-                   <input id="city" name="city" type="text">
+                   <input id="city" name="city" type="text" value="{{ $city }}">
                </div>
                
                <div>
                    <label for="url">Url:</label>
-                   <input id="url" name="url" type="url">
+                   <input id="url" name="url" type="url" value="{{ $url }}">
                </div>
 
                <div>
                    <label for="startdate">Startdatum verkoop:</label>
-                   <input id="startdate" name="startdate" type="date">
+                   <input id="startdate" name="startdate" type="date" value="{{ $date_start_sell }}">
                    <input id="starttime" name="starttime" type="time">
                </div>
                
                <div>
                    <label for="event_date">Datum evenement:</label>
-                   <input id="event_date" name="event_date" type="date">
+                   <input id="event_date" name="event_date" type="date" value="{{ $date_event }}">
                </div>
 
 
