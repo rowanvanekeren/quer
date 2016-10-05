@@ -11,9 +11,9 @@
 
                                 <input id="first_name" type="text" name="first_name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('first_name'))
 
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('first_name') }}</strong>
 
                                 @endif
 
@@ -22,9 +22,9 @@
 
                             <input id="last_name" type="text" name="last_name" value="{{ old('name') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('last_name'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('last_name') }}</strong>
 
                             @endif
 
@@ -33,9 +33,9 @@
 
                             <input id="username" type="text" name="username" value="{{ old('name') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('username'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('username') }}</strong>
 
                             @endif
 
@@ -44,9 +44,9 @@
 
                             <input id="country" type="text" name="country" value="{{ old('country') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('country'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('country') }}</strong>
 
                             @endif
 
@@ -55,9 +55,9 @@
 
                             <input id="city" type="text" name="city" value="{{ old('country') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('city'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('city') }}</strong>
 
                             @endif
 
@@ -66,9 +66,9 @@
 
                             <input id="postal_code" type="text" name="postal_code" value="{{ old('postal_code') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('postal_code'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('postal_code') }}</strong>
 
                             @endif
 
@@ -77,9 +77,9 @@
 
                             <input id="street" type="text" name="street" value="{{ old('street') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('street'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('street') }}</strong>
 
                             @endif
 
@@ -88,9 +88,9 @@
 
                             <input id="house_number" type="text" name="house_number" value="{{ old('house_number') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('house_number'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('house_number') }}</strong>
 
                             @endif
 
@@ -99,9 +99,9 @@
 
                             <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @if ($errors->has('phone_number'))
 
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('phone_number') }}</strong>
 
                             @endif
 
