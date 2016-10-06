@@ -45,7 +45,7 @@ Route::get('/add_advertisement', function () {
     */
 
 Route::get('add_advertisement/{id?}', 'BaseController@add_advertisement')->middleware('auth');
-
+Route::get('add_event', 'BaseController@add_event')->middleware('auth');
 
 
 //posts (new events, new advertisements, new contracts, ...)

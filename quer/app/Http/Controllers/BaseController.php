@@ -24,18 +24,18 @@ class BaseController extends Controller
     //load views
     
     
-    public function add_advertisement ($id = null) {
+    public function add_advertisement ($id = null)
+    {
         //$event = Event::where('project_id', $id)->get();
-        if($id) {
+        if ($id) {
             $event = Events::find($id);
             //dd($event);
             return view('add_advertisement', ['event' => $event]);
-        }
-        else {
+        } else {
             return view('add_advertisement');
         }
-        
-        
+
+
     }
     
     
@@ -80,6 +80,12 @@ class BaseController extends Controller
         
         //hier moet de redirect wel nog staan, want indien het valideren en inserten lukt, gaat hij niet automatisch redirecten
         return redirect('/my_advertisements');
+    }
+
+    public function add_event () {
+
+            return view('add_event');
+
     }
     
     
