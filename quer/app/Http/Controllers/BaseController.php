@@ -29,6 +29,7 @@ class BaseController extends Controller
 
 
 
+    //returns advertisements created by the authenticated user
     public function my_advertisements() {
         //my_advertisements = an array that contains the advertisement info + corresponding event info
         $my_advertisements = [];
