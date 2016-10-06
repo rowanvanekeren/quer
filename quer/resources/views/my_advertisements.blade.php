@@ -6,14 +6,20 @@
    
    <div class="variable_content">
      
-     
+       @include('layouts.dashboard_menu')
       
        <h1>Mijn advertenties</h1>
-       <p>Hier heb je een overzicht van je bestaande advertenties.</p>
+       <p>Hier heb je een overzicht van je bestaande advertenties. + ge zou hier eigenlijk ook de gerelateerde event moeten kunnen ophalen</p>
        <p>Voorlopig nog leeg</p>
        
        
-       @include('layouts.dashboard_menu')
+       
+       @foreach ($advertisements as $advertisement)
+       <div>
+           {{ $advertisement }}
+           <div></div>
+       </div>
+       @endforeach
        
        
        <div>
