@@ -32,22 +32,24 @@ if (Auth::check()) {
 
 Route::get('/dashboard', function () {
         return view('dashboard');
-    });
+    })->middleware('auth');
 
 Route::get('/my_advertisements', function () {
         return view('my_advertisements');
-    });
+    })->middleware('auth');
 
+/*
 Route::get('/add_advertisement', function () {
         return view('add_advertisement');
-    });
+    })->middleware('auth');
+    */
 
-Route::get('add_advertisement/{id?}', 'BaseController@add_advertisement');
+Route::get('add_advertisement/{id?}', 'BaseController@add_advertisement')->middleware('auth');
 
 
 
 //posts (new events, new advertisements, new contracts, ...)
 
-Route::post('/new_advertisement', 'BaseController@store_new_advertisement');
+Route::post('/new_advertisement', 'BaseController@store_new_advertisement')->middleware('auth');
 
 

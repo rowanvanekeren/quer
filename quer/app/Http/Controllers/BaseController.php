@@ -24,7 +24,7 @@ class BaseController extends Controller
     //load views
     
     
-    public function add_advertisement ($id) {
+    public function add_advertisement ($id = null) {
         //$event = Event::where('project_id', $id)->get();
         if($id) {
             $event = Events::find($id);
@@ -56,11 +56,11 @@ class BaseController extends Controller
         
         else {
             //create new event
-            $event = new Events(['name' => $request->name,
+            /*$event = new Events(['name' => $request->name,
                                  'description' $request->description
                                 ]);
             
-            $event->save();
+            $event->save();*/
             
             //get id of this new event
             $event_id = $event->id;
