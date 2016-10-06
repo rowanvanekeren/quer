@@ -121,7 +121,7 @@ class BaseController extends Controller
 
     public function store_new_event (Request $request) {
         //code for if admin event or user event
-        $code = 1;
+        $code = 0;
 
         $startdatetime = $request->startdate. " " . $request->starttime;
         $eventdatetime = $request->eventdate. " " . $request->eventtime;
@@ -160,8 +160,11 @@ class BaseController extends Controller
 
         if(Auth::user()->is_admin == 0)
         {
+
             return $event->id;
         }else if(Auth::user()->is_admin == 1){
+            $event->code = 1;
+            $event->save();
             return redirect('/my_advertisements');
         }
 
