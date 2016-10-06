@@ -3,6 +3,8 @@
 @section('title', 'Dashboard')
 
 @section('content')
+  
+
    
    <div class="variable_content">
      
@@ -16,10 +18,11 @@
        
        @foreach ($advertisements as $advertisement)
        <div>
-           {{ $advertisement }}
-           <div></div>
+           <div>{{ $advertisement->event->name }}</div>
+           <div>{{ $advertisement->advertisement->private_description }}</div>
        </div>
        @endforeach
+       
        
        
        <div>

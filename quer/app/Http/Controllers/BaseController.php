@@ -38,18 +38,14 @@ class BaseController extends Controller
         //dd($advertisements);
         
         foreach($advertisements as $advertisement) {
-            //
-        /*    $event_info = Events::where('id', $advertisement->event_id)->get();
-
-            $my_advertisement = {};
             
-            $my_advertisement.advertisement = "test";
+            $event_info = Events::where('id', $advertisement->event_id)->get();
+            $event_info = $event_info[0];
+            $my_advertisement = (object) ['advertisement' => $advertisement, 'event' => $event_info];
             
-            //$my_advertisement = {'advertisement' => $advertisement, 'event' => $event_info};
-            dd($my_advertisement.test);
-            array_push($my_advertisements, $my_advertisement);*/
+            array_push($my_advertisements, $my_advertisement);
         }
-        
+        //dd($my_advertisements);
         return view('my_advertisements', ['advertisements' => $my_advertisements]);
     }
     
