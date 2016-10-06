@@ -4,7 +4,7 @@
 @section('content')
 
     <div>
-        <form id="add_event_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
+        <form id="add_event_form" action="{{ url('new_event') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <h3 class="title">Evenement toevoegen</h3>
@@ -40,9 +40,9 @@
                 <input id="starttime" name="starttime" type="time" >
             </div>
             <div>
-                <label for="event_date">Datum evenement:</label>
-                <input id="event_date" name="event_date" type="date" >
-                <input id="starttime" name="starttime" type="time" >
+                <label for="eventdate">Datum evenement:</label>
+                <input id="eventdate" name="eventdate" type="date" >
+                <input id="eventtime" name="eventtime" type="time" >
             </div>
 
 
@@ -63,7 +63,7 @@
 
             <div class="add_button">
                 <button type="submit">
-                    Advertentie publiceren
+                    Event toevoegen
                 </button>
             </div>
 
