@@ -127,7 +127,6 @@ class BaseController extends Controller
         //code for if admin event or user event
         $code = 1;
 
-
         $startdatetime = $request->startdate. " " . $request->starttime;
         $eventdatetime = $request->eventdate. " " . $request->eventtime;
 
