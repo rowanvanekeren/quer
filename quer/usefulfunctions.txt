@@ -144,3 +144,13 @@ LET OP HIER ZIJN AL STUKKEN UIT VERWIJDERD
     </div>
 </div>
 @endsection
+
+VOOR HOME PAGE
+      @if (Route::has('login'))
+                <div class="top-right links">
+                    <a href="{{ url('/login') }}">Login</a>
+                    <a href="{{ url('/register') }}">Register</a>
+                </div>
+            @endif
+
+               <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">

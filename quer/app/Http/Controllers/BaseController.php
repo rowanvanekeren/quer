@@ -163,6 +163,27 @@ class BaseController extends Controller
         }
 
     }
+
+    public function get_all_events($limit)
+    {
+        $events = Events::limit($limit)->get();
+       return $events;
+    }
+    public function get_all_advertisements($limit)
+    {
+        $advertisements = Advertisements::limit($limit)->get();
+        return $advertisements;
+    }
+    public function get_homepage(){
+
+      $events =  $this->get_all_events(2);
+      $advertisements =   $this->get_all_advertisements(2);
+        /*return View('home');*/
+
+        $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
+        return view('home', ['main_content' => $page_content]);
+
+    }
     
     
     
