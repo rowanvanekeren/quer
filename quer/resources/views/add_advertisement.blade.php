@@ -87,7 +87,8 @@ if(isset($event)) {
                
                <div>
                    <label for="event_date">Datum evenement:</label>
-                   <input id="event_date" name="event_date" type="date" value="{{ $date_event }}">
+                   <input id="eventdate" name="eventdate" type="date" value="{{ $date_event }}">
+                   <input id="eventtime" name="eventtime" type="time" value="">
                </div>
 
 

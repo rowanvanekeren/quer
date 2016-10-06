@@ -79,22 +79,15 @@ class BaseController extends Controller
         if($request->event_id) {
             //store advertisement
             $event_id = $request->event_id;
-            //echo("advertisement created from existing event");
+            echo("advertisement created from existing event");
             //echo($request->event_id . " " . $request->name);
         }
         
         else {
-            //create new event
-            /*$event = new Events(['name' => $request->name,
-                                 'description' $request->description
-                                ]);
+            //create new event (with existing function)
+            echo("advertisement created from blanco");
+            $event_id = $this->store_new_event($request);
             
-            $event->save();*/
-            
-            //get id of this new event
-            //$event_id = $event->id;
-            //echo("advertisement created from blanco advertisment form");
-            //echo($request->private_description . " " . $request->name);
         }
         
         
@@ -122,6 +115,7 @@ class BaseController extends Controller
     public function store_new_event (Request $request) {
         //code for if admin event or user event
         $code = 0;
+        $category = 0;
 
         $startdatetime = $request->startdate. " " . $request->starttime;
         $eventdatetime = $request->eventdate. " " . $request->eventtime;
@@ -137,7 +131,7 @@ class BaseController extends Controller
             'date_start_sell' => $startdatetime,
             'date_event' => $eventdatetime,
             'image' => $request->image,
-            'categorie_id' => $request->categorie,
+            'categorie_id' => $category,
             'code' => $code,
 
         ]);
