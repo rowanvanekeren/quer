@@ -39,14 +39,14 @@ if(isset($event)) {
    
    <div class="variable_content">
      
-     
+       @include('layouts.dashboard_menu')
       
        <h1>Advertentie toevoegen</h1>
        <p>Hier kan je een nieuwe advertentie aanmaken.</p>
        <p>Als je vertrekt van een bestaand evenement wordt deze info meteen ingeladen, anders vul je dit helemaal zelf in en wordt er ook een nieuw evenement aangemaakt als je een advertentie aanmaakt.</p>
        
        
-       @include('layouts.dashboard_menu')
+       
        
        <div>
            <form id="add_advertisement_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
@@ -115,6 +115,11 @@ if(isset($event)) {
                <div>
                    <label for="private_description">Persoonlijke beschrijving:</label>
                    <textarea id="private_description" name="private_description" required></textarea>
+               </div>
+               
+               <div>
+                   <label for="price">Prijs:</label>
+                   <input id="price" name="price" type="number">
                </div>
 
                <div class="add_button">

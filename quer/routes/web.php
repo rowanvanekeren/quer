@@ -34,9 +34,14 @@ Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware('auth');
 
+
+/*
 Route::get('/my_advertisements', function () {
         return view('my_advertisements');
     })->middleware('auth');
+    */
+
+Route::get('/my_advertisements', 'BaseController@my_advertisements')->middleware('auth');
 
 /*
 Route::get('/add_advertisement', function () {
