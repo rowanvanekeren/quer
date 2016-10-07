@@ -49,7 +49,8 @@ if(isset($event)) {
        
        
        <div>
-           <form id="add_advertisement_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
+           <a href="{{ url('add_event') }}">nieuwe event toevoegen (onderstaande form niet nodig)</a>
+  {{--         <form id="add_event_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
                {{ csrf_field() }}
 
                <h3 class="title">Algemene evenement info (kan ingeladen worden van bestaand event)</h3>
@@ -97,7 +98,10 @@ if(isset($event)) {
                    <input type="file" id="image" name="image">
                </div>
                
+                </form>--}}
 
+           <form id="add_advertisement_form" action="{{ url('new_advertisement') }}" method="POST" >
+               {{ csrf_field() }}
                <h3 class="title fase1">Extra persoonlijke info</h3>
 
 

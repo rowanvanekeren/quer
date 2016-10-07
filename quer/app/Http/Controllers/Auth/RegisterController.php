@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -50,7 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'username' => 'required|max:255',
+            'username' => 'required|max:255|unique:users',
             'country' => 'required|max:255',
             'city' => 'required|max:255',
             'postal_code' => 'required|max:255',
@@ -59,6 +60,7 @@ class RegisterController extends Controller
             'phone_number' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'image' => 'required'
         ]);
     }
 
@@ -70,6 +72,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+     $path= "no image";
+
+        if(isset($data['image']))
+        {
+            $destinationPath =  base_path() . "/public/images/profiles";
+            $ext = pathinfo($data['image']->getClientOriginalName(), PATHINFO_EXTENSION);
+            $imageName = date('d-m-Y') . '_' . $data['username'] . '.' . $ext;
+            $data['image']->move($destinationPath, $imageName);
+            $path = $imageName;
+        }
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -81,8 +94,12 @@ class RegisterController extends Controller
             'house_number' => $data['house_number'],
             'phone_number' => $data['phone_number'],
             'is_admin' => 0,
+            'image' => $path,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+
 }

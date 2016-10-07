@@ -37,15 +37,18 @@ class BaseController extends Controller
         //get all advertisements from user with given id (eventueel nog ne order by erbij zetten)
         $advertisements = Advertisements::where('user_id', Auth::user()->id)->get();
         //dd($advertisements);
-        
+
         foreach($advertisements as $advertisement) {
             
-            $event_info = Events::where('id', $advertisement->event_id)->get();
-            $event_info = $event_info[0];
+            $event_info = Events::where('id',$advertisement->event_id)->get();
+            //$event_info = $event_info[0];
+
             $my_advertisement = (object) ['advertisement' => $advertisement, 'event' => $event_info];
             
             array_push($my_advertisements, $my_advertisement);
         }
+
+
         //dd($my_advertisements);
         return view('my_advertisements', ['advertisements' => $my_advertisements]);
     }
@@ -165,8 +168,8 @@ class BaseController extends Controller
 
         if(Auth::user()->is_admin == 0)
         {
+            return redirect('/add_advertisement/'. $event->id);
 
-            return $event->id;
         }else if(Auth::user()->is_admin == 1){
             $event->code = 1;
             $event->save();

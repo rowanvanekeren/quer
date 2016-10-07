@@ -2,7 +2,7 @@
 
 @section('content')
 
-                    <form  role="form" method="POST" action="{{ url('/register') }}">
+                    <form  role="form" method="POST" action="{{ url('/register') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
 
@@ -117,6 +117,16 @@
 
                             @endif
 
+
+                            <label for="image">Image:</label>
+
+                            <input type="file" id="image" name="image">
+
+                        @if ($errors->has('image'))
+
+                            <strong>{{ $errors->first('image') }}</strong>
+
+                        @endif
 
 
 
