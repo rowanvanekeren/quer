@@ -50,6 +50,24 @@
         </form>
         </div>
     </div>
-<h1>{{$main_content->advertisement[0]->price}}</h1>
+    <section>
+        <h1>DIT ZIJN ALLE EVENEMENTEN</h1>
+        @foreach ($main_content->event as $event)
+                <div>
+
+                    {{$event->name}}
+                </div>
+        @endforeach
+        <h1> DIT ZIJN ALLE ADVERTENTIES MET USER INFROMATIE</h1>
+        @foreach ($main_content->advertisement as $advert)
+           <div>
+               <h1>___________________</h1>
+               <p>{{$advert->user[0]->username}}</p>
+               <p>{{$advert->advert[0]->private_description}}</p>
+               <h1>___________________</h1>
+           </div>
+        @endforeach
+
+    </section>
 </body>
 </html>

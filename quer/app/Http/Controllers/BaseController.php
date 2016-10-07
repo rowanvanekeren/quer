@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Events;
 use App\Advertisements;
-
-
+use App\Usr_Adv;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -100,11 +100,21 @@ class BaseController extends Controller
                             ]);
         
         $advertisement->save();
+
+        $this->store_user_advert($advertisement->user_id,$advertisement->id);
         
         //dd($advertisement);
         
         //hier moet de redirect wel nog staan, want indien het valideren en inserten lukt, gaat hij niet automatisch redirecten
         return redirect('/my_advertisements');
+    }
+
+    public function store_user_advert($user_id,$advert_id){
+        $user_advert = new Usr_Adv(['user_id' => $user_id,
+            'advertisement_id' => $advert_id
+        ]);
+
+        $user_advert->save();
     }
 
     public function add_event () {
@@ -175,13 +185,35 @@ class BaseController extends Controller
         $advertisements = Advertisements::limit($limit)->get();
         return $advertisements;
     }
+
+    // why i dont use the find function is because when i use find i still get all users as return
+    public function get_all_advertisements_with_users()
+    {
+        $complete_adverts_users = array();
+        $users_adverts = Usr_Adv::get();
+
+        foreach($users_adverts as $usr_adv) {
+
+
+            $current_user = User::where('id',$usr_adv->user_id)->get();
+
+            $current_advert = Advertisements::where('id',$usr_adv->advertisement_id)->get();
+
+            $adverts_with_users = (object) ['user' => $current_user, 'advert' => $current_advert];
+
+            array_push($complete_adverts_users,  $adverts_with_users);
+        }
+        return $complete_adverts_users;
+    }
     public function get_homepage(){
 
       $events =  $this->get_all_events(2);
-      $advertisements =   $this->get_all_advertisements(2);
+      $advertisements =   $this->get_all_advertisements_with_users();
         /*return View('home');*/
 
         $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
+
+
         return view('home', ['main_content' => $page_content]);
 
     }
