@@ -19,7 +19,7 @@
             <div>
                {{-- left-side nav bar--}}
                 <ul class="home-nav-left">
-                    <li>quer</li>
+                    <li>Quer</li>
 
                 </ul>
                 {{--right-side nav bar--}}
@@ -50,14 +50,20 @@
             </div>
         </nav>
         <div class="home-center-content">
-        <form class="home-search">
+     {{--   <form class="home-search">
             <ul>
                 <li><input class="searchbox" type="text" placeholder="Zoeken.."></li>
                 <li><input class="datepicker" type="text" placeholder="Van"></li>
                 <li><input class="datepicker" type="text" placeholder="Tot"></li>
                 <li><button class="searchbutton" type="submit">Zoeken</button></li>
             </ul>
-        </form>
+        </form>--}}
+            <h1 id="inspirational-quote"> Wij staan voor jou in de rij</h1>
+            <div class="searchdiv"><input class="searchbox" type="text" placeholder="Zoek advertenties en verdien geld!"></div>
+            <div class="datediv"><input class="datepicker" type="text" placeholder="Van"></div>
+            <div class="datediv"><input class="datepicker" type="text" placeholder="Tot"></div>
+            <div class="submitsearchdiv"><button class="searchbutton" type="submit">Zoeken</button></div>
+
         </div>
     </div>
     <section class="content">
