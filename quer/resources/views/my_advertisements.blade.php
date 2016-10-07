@@ -18,7 +18,7 @@
        
        @foreach ($advertisements as $advertisement)
        <div>
-           
+
            <div>{{ $advertisement->event[0]->name }}</div>
            <div>{{ $advertisement->advertisement->private_description }}</div>
        </div>

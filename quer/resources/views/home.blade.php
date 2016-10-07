@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+
     <script type="text/javascript" src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
     <title>Document</title>
 </head>
 <body>
     <div class="home_banner">
+
         <nav class="home_navigation">
             <div>
                {{-- left-side nav bar--}}
@@ -46,15 +52,15 @@
         <div class="home-center-content">
         <form class="home-search">
             <ul>
-                <li><input type="text"></li>
-                <li><input type="text"></li>
-                <li><input type="text"></li>
-                <li><button type="submit">Zoeken</button></li>
+                <li><input class="searchbox" type="text" placeholder="Zoeken.."></li>
+                <li><input class="datepicker" type="text" placeholder="Van"></li>
+                <li><input class="datepicker" type="text" placeholder="Tot"></li>
+                <li><button class="searchbutton" type="submit">Zoeken</button></li>
             </ul>
         </form>
         </div>
     </div>
-    <section>
+    <section class="content">
         <h1>DIT ZIJN ALLE EVENEMENTEN</h1>
         @foreach ($main_content->event as $event)
                 <div>
@@ -71,6 +77,18 @@
                <h1>___________________</h1>
            </div>
         @endforeach
+<h1> test </h1></br>
+        <h1> test </h1></br><h1> test </h1></br><h1> test </h1></br><h1> test </h1></br>
+
+        <h1> test </h1></br>
+        <h1> test </h1></br>
+        <h1> test </h1></br>
+        <h1> test </h1></br><h1> test </h1></br>
+        <h1> test </h1></br>
+
+
+
+
 
     </section>
 </body>
