@@ -32,7 +32,7 @@ body{
 
 .home-nav-right {
     float: right;
-    font-size: 1em;
+    font-size: 1.5em;
     list-style-type: none;
     padding-right: 15px;
     margin: 0;
@@ -41,10 +41,13 @@ body{
 
 .home-nav-right li {
     display: inline-block;
+    vertical-align: middle;
+
 }
 .home-nav-right li a {
     text-decoration: none;
     color:white;
+
 }
 .home-nav-left{
     padding-left: 15px;
@@ -54,6 +57,13 @@ body{
     list-style-type: none;
     margin: 0;
     margin-top: 20px;
+
+
+}
+
+.home-nav-left  li{
+    display: inline-block;
+    vertical-align: middle;
 
 }
 
@@ -118,10 +128,7 @@ float: left;
     overflow: hidden;
 }
 
-.content{
-    position: absolute;
-    top: 100%;
-}
+
 
 form{
    /* display:table;*/
@@ -150,4 +157,107 @@ float: left;
     color:white;
     text-align: center;
     margin-bottom: 5%;
+}
+
+/*////////////////////////////////////////////*/
+
+.content-wrapper{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.content-center{
+    width: 65%;
+    margin: 0 auto;
+}
+
+footer{
+    width:100%;
+    height: 150px;
+    background-color: #303130;
+    color: #b9b9b9;
+    float:left;
+}
+
+
+/*
+////////////////////////////////////////////*/
+h1{
+    text-align: center;
+    font-size: 2em;
+}
+.homepage-adverts div{
+    width: 33%;
+    float: left;
+    height: 280px;
+    overflow: hidden;
+    min-width: 400px;
+    margin: 0 auto;
+    background-repeat:no-repeat !important;
+    background-size: cover !important;;
+    background-position:center !important;;
+
+
+}
+
+.homepage-adverts-gradient{
+    width: 100% !important;
+    height: 100%;
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+}
+
+.homepage-adverts {
+    clear:both;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.homepage-adverts img{
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /* onderstaant moet nog aangepast worden */
+    -webkit-transform: translateY(-50%) translateX(-50%);
+
+
+}
+.homepage-adverts div h2 {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    color: white;
+
+}
+.homepage-adverts div ul  {
+  position: relative;
+    top: 50%;
+
+
+}
+.homepage-adverts div ul li {
+    display: inline-block;
+    color: white;
+
+    font-weight: bold;
+}
+
+.homepage-adverts div ul li:last-child {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+.homepage-adverts div ul img{
+    position: relative;
+  width: 40px;
+    top: 40px;
+    left: 8px;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
 }

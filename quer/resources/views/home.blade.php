@@ -19,7 +19,8 @@
             <div>
                {{-- left-side nav bar--}}
                 <ul class="home-nav-left">
-                    <li>Quer</li>
+                    <li><img src="{{ asset('images/querlogo/logo5.png') }}" width="50px" /></li>
+                    <li>Que'r</li>
 
                 </ul>
                 {{--right-side nav bar--}}
@@ -66,36 +67,48 @@
 
         </div>
     </div>
-    <section class="content">
-        <h1>DIT ZIJN ALLE EVENEMENTEN</h1>
+    <section class="content-wrapper">
+        <div class ='content-center'>
+        <h1>Evenementen</h1>
         @foreach ($main_content->event as $event)
                 <div>
 
                     {{$event->name}}
                 </div>
         @endforeach
-        <h1> DIT ZIJN ALLE ADVERTENTIES MET USER INFROMATIE</h1>
+        <h1>Advertenties</h1>
+            <div class="homepage-adverts">
         @foreach ($main_content->advertisement as $advert)
-           <div>
-               <h1>___________________</h1>
-               <p>{{$advert->user[0]->username}}</p>
-               <p>{{$advert->advert[0]->private_description}}</p>
-               <h1>___________________</h1>
+
+           <div style="background:url(./images/events/{{  $advert->event->image }})">
+               <div class="homepage-adverts-gradient">
+
+           {{--    <img src="./images/events/{{  $advert->event->image }}"/>--}}
+             {{--  <img src="./images/homepage_banner/party_1.jpg" />--}}
+
+                <h2>{{$advert->event->name}}</h2>
+                   <ul>
+                        <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
+                        <li>  <p>{{$advert->user->username}}</p></li>
+                        <li>  <p>&euro; {{$advert->advert->price}}</p></li>
+
+                   </ul>
+               </div>
            </div>
+
         @endforeach
-<h1> test </h1></br>
-        <h1> test </h1></br><h1> test </h1></br><h1> test </h1></br><h1> test </h1></br>
 
-        <h1> test </h1></br>
-        <h1> test </h1></br>
-        <h1> test </h1></br>
-        <h1> test </h1></br><h1> test </h1></br>
-        <h1> test </h1></br>
+            </div>
 
 
 
 
-
+        </div>
+        <footer>
+            sadfsadf
+        </footer>
     </section>
+
+
 </body>
 </html>

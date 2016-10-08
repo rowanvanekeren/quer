@@ -7,7 +7,7 @@ $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
 
             $('.home_banner').css('background-image','url(./images/homepage_banner/party_'+i+'.jpg)');
 
-        if(i <= 4){
+        if(i <= 3){
             i++;
         }else{
             i=1;

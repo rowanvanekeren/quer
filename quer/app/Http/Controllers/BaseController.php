@@ -193,21 +193,23 @@ class BaseController extends Controller
     public function get_all_advertisements_with_users()
     {
         $complete_adverts_users = array();
-        $users_adverts = Usr_Adv::get();
+        $users_adverts = Advertisements::get();
 
         foreach($users_adverts as $usr_adv) {
 
 
             $current_user = User::where('id',$usr_adv->user_id)->get();
 
-            $current_advert = Advertisements::where('id',$usr_adv->advertisement_id)->get();
+            $current_event = Events::where('id',$usr_adv->event_id)->get();
 
-            $adverts_with_users = (object) ['user' => $current_user, 'advert' => $current_advert];
+
+            $adverts_with_users = (object) ['user' => $current_user[0], 'advert' => $usr_adv, 'event' => $current_event[0] ];
 
             array_push($complete_adverts_users,  $adverts_with_users);
         }
         return $complete_adverts_users;
     }
+
     public function get_homepage(){
 
       $events =  $this->get_all_events(2);
