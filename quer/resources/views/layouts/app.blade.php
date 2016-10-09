@@ -11,8 +11,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+
+    {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 
     <!-- Scripts -->
     <script>
@@ -23,10 +24,44 @@
 
     <script type="text/javascript" src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
+
+
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-static-top">
+<div class="standard-nav">
+    <ul>
+    <li> <a href="#">About</a></li>
+    <li> <a href="#">Services</a></li>
+    <li> <a href="#">Clients</a></li>
+    <li> <a href="#">Contact</a></li>
+        <li onclick="openNav()"><a> <</a></li>
+    </ul>
+
+
+
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()"><</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+
+
+
+{{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>--}}
+ <!-- Resource jQuery -->
+
+
+{{--    <nav class="navbar navbar-default navbar-static-top">
         <div >
             <div >
 
@@ -47,34 +82,33 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown">
-                            <a href="#"  data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
 
-                            <ul  role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
+                                {{ Auth::user()->name }} <span class="caret">
+
+
+
+
+                                    <li><a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                         Logout
-                                    </a>
+                                    </a></li>
 
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST">
                                         {{ csrf_field() }}
                                     </form>
-                                </li>
-                            </ul>
-                        </li>
+
                     @endif
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>--}}
 
     @yield('content')
-
+</div>
     <!-- Scripts -->
-    <script src="{{asset('js/app.js')}}"></script>
+
+   {{-- <script src="{{asset('js/app.js')}}"></script>--}}
+<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

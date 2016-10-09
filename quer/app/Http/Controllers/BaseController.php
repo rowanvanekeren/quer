@@ -7,6 +7,7 @@ use App\Events;
 use App\Advertisements;
 use App\Usr_Adv;
 use App\User;
+use App\Reviews;
 use Illuminate\Http\Request;
 use DateTime;
 
@@ -283,10 +284,6 @@ class BaseController extends Controller
 
                     array_push($all_results,  $advert);
                 }
-
-
-
-
             }
         }
 
@@ -301,5 +298,8 @@ class BaseController extends Controller
         return $search_on_strings;
 
     }
-    
+
+
+
+
 }
