@@ -1,6 +1,9 @@
 <nav>
     <ul>
         <li>
+            <a href="{{ url('/edit_account') }}">Account bewerken</a>
+        </li>
+        <li>
             <a href="#">Que'r</a>
             <ul>
                 <li>Qued</li>

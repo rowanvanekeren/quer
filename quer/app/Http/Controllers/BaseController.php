@@ -130,7 +130,7 @@ class BaseController extends Controller
     public function store_new_event (Request $request) {
         //code for if admin event or user event
         $code = 0;
-        $category = 0;
+        //$category = 0;
 
         $startdatetime = $request->startdate. " " . $request->starttime;
         $eventdatetime = $request->eventdate. " " . $request->eventtime;
@@ -146,7 +146,8 @@ class BaseController extends Controller
             'date_start_sell' => $startdatetime,
             'date_event' => $eventdatetime,
             'image' => $request->image,
-            'categorie_id' => $category,
+            'tags' => $request->tags,
+            'categorie_id' => $request->category,
             'code' => $code,
 
         ]);

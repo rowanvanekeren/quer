@@ -42,6 +42,8 @@ Route::get('/my_advertisements', function () {
     })->middleware('auth');
     */
 
+Route::get('/edit_account', 'AccountController@edit_account')->middleware('auth');
+
 Route::get('/my_advertisements', 'BaseController@my_advertisements')->middleware('auth');
 
 Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview');

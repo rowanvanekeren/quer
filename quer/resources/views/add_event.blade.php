@@ -57,8 +57,8 @@
             </div>
 
             <div>
-                <label for="categorie">Categorie:</label>
-                <input id="categorie" name="categorie" type="text" >
+                <label for="category">Categorie:</label>
+                <input id="category" name="category" type="text" >
             </div>
 
             <div class="add_button">
