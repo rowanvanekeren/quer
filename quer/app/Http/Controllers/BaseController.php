@@ -8,6 +8,7 @@ use App\Advertisements;
 use App\Usr_Adv;
 use App\User;
 use Illuminate\Http\Request;
+use DateTime;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -15,17 +16,17 @@ use App\Http\Controllers\Controller;
 class BaseController extends Controller
 {
     //
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     //load views
-    
-    
+
+
 
 
 
@@ -33,18 +34,18 @@ class BaseController extends Controller
     public function my_advertisements() {
         //my_advertisements = an array that contains the advertisement info + corresponding event info
         $my_advertisements = [];
-        
+
         //get all advertisements from user with given id (eventueel nog ne order by erbij zetten)
         $advertisements = Advertisements::where('user_id', Auth::user()->id)->get();
         //dd($advertisements);
 
         foreach($advertisements as $advertisement) {
-            
+
             $event_info = Events::where('id',$advertisement->event_id)->get();
             //$event_info = $event_info[0];
 
             $my_advertisement = (object) ['advertisement' => $advertisement, 'event' => $event_info];
-            
+
             array_push($my_advertisements, $my_advertisement);
         }
 
@@ -52,9 +53,9 @@ class BaseController extends Controller
         //dd($my_advertisements);
         return view('my_advertisements', ['advertisements' => $my_advertisements]);
     }
-    
-    
-    
+
+
+
     public function add_advertisement ($id = null) {
 
         //$event = Event::where('project_id', $id)->get();
@@ -68,10 +69,10 @@ class BaseController extends Controller
 
 
     }
-    
-    
-    
-    
+
+
+
+
     //store new advertisements
     public function store_new_advertisement(Request $request)
     {
@@ -79,35 +80,35 @@ class BaseController extends Controller
         //check whether there was an event id
             //yes --> create new advertisement
             //no --> first create new event and then create new advertisement with event_id of the newly created event
-        
+
         if($request->event_id) {
             //store advertisement
             $event_id = $request->event_id;
             echo("advertisement created from existing event");
             //echo($request->event_id . " " . $request->name);
         }
-        
+
         else {
             //create new event (with existing function)
             echo("advertisement created from blanco");
             $event_id = $this->store_new_event($request);
-            
+
         }
-        
-        
-        
+
+
+
         $advertisement = new Advertisements(['user_id' => $request->user_id,
                                              'event_id' => $event_id,
                                              'private_description' => $request->private_description,
                                              'price' => $request->price
                             ]);
-        
+
         $advertisement->save();
 
         $this->store_user_advert($advertisement->user_id,$advertisement->id);
-        
+
         //dd($advertisement);
-        
+
         //hier moet de redirect wel nog staan, want indien het valideren en inserten lukt, gaat hij niet automatisch redirecten
         return redirect('/my_advertisements');
     }
@@ -190,10 +191,14 @@ class BaseController extends Controller
     }
 
     // why i dont use the find function is because when i use find i still get all users as return
-    public function get_all_advertisements_with_users()
+    public function get_all_advertisements_with_users($id = null)
     {
         $complete_adverts_users = array();
-        $users_adverts = Advertisements::get();
+        if(isset($id)){
+            $users_adverts = Advertisements::where('id',$id)->get();
+        }else {
+            $users_adverts = Advertisements::get();
+        }
 
         foreach($users_adverts as $usr_adv) {
 
@@ -222,8 +227,78 @@ class BaseController extends Controller
         return view('home', ['main_content' => $page_content]);
 
     }
-    
-    
-    
+
+    public function get_advert_overview($id){
+        $advertisements =   $this->get_all_advertisements_with_users($id);
+
+        return view('advert_overview',['advert' => $advertisements]);
+    }
+    public function get_events_between_dates($from,$till){
+
+    }
+    public function get_adverts_or_events_between_dates($from,$till,$ad_or_ev)
+    {
+        if($ad_or_ev == "ad"){
+            $all_articles = $this->get_all_advertisements_with_users();
+        }else if($ad_or_ev == "ev"){
+            $all_articles = $this->get_all_events(20);
+        }
+
+        $all_results = array();
+        foreach( $all_articles as $aritcle)
+        {
+
+            $searchFrom = new DateTime($from);
+            $searchTill = new DateTime($till);
+
+            $advertSellTime = new DateTime($aritcle->event->date_start_sell);
+            //dd($searchFrom, $searchTill,$advertSellTime );
+            if($advertSellTime >= $searchFrom && $advertSellTime <= $searchTill){
+
+                array_push($all_results,  $aritcle);
+            }
+        }
+
+        return $all_results;
+
+    }
+
+    public function search_on_string(array $adverts, $string){
+        $list_of_search_words = preg_split('/[\ \n\,]+/', $string);
+        $all_results = array();
+        foreach($adverts as $advert){
+
+            foreach($list_of_search_words as $word){
+
+
+                if(   (string)strripos($advert->user->username,$word) != null or
+                    (string)strripos($advert->event->name,$word) != null or
+                    (string)strripos($advert->event->tags,$word) != null or
+                    (string) strripos($advert->event->location,$word) != null or
+                    (string) strripos($advert->event->city,$word) != null or
+                    (string) strripos($advert->advert->private_description,$word) != null
+
+                ){
+
+                    array_push($all_results,  $advert);
+                }
+
+
+
+
+            }
+        }
+
+
+
+        return $all_results;
+    }
+    public function homepage_search(Request $request){
+        $adverts = $this->get_adverts_or_events_between_dates($request->from,$request->till,"ad");
+        $search_on_strings = $this->search_on_string($adverts,$request->search_string);
+
+        return $search_on_strings;
+
+    }
     
 }

@@ -44,6 +44,9 @@ Route::get('/my_advertisements', function () {
 
 Route::get('/my_advertisements', 'BaseController@my_advertisements')->middleware('auth');
 
+Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview');
+
+
 /*
 Route::get('/add_advertisement', function () {
         return view('add_advertisement');
@@ -55,7 +58,7 @@ Route::get('add_event', 'BaseController@add_event')->middleware('auth');
 
 
 //posts (new events, new advertisements, new contracts, ...)
-
+Route::post('/homepage_search', 'BaseController@homepage_search');
 Route::post('/new_advertisement', 'BaseController@store_new_advertisement')->middleware('auth');
 Route::post('/new_event', 'BaseController@store_new_event')->middleware('auth');
 

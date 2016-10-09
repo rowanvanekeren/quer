@@ -60,11 +60,13 @@
             </ul>
         </form>--}}
             <h1 id="inspirational-quote"> Wij staan voor jou in de rij</h1>
-            <div class="searchdiv"><input class="searchbox" type="text" placeholder="Zoek advertenties en verdien geld!"></div>
-            <div class="datediv"><input class="datepicker" type="text" placeholder="Van"></div>
-            <div class="datediv"><input class="datepicker" type="text" placeholder="Tot"></div>
+            <form action="{{ url('/homepage_search') }}" method="POST">
+                {{ csrf_field() }}
+            <div class="searchdiv"><input class="searchbox" name="search_string" type="text" placeholder="Zoek advertenties en verdien geld!"></div>
+            <div class="datediv"><input class="datepicker" type="text" name="from" placeholder="Van"></div>
+            <div class="datediv"><input class="datepicker" type="text" name="till" placeholder="Tot"></div>
             <div class="submitsearchdiv"><button class="searchbutton" type="submit">Zoeken</button></div>
-
+            </form>
         </div>
     </div>
     <section class="content-wrapper">
@@ -86,7 +88,7 @@
            {{--    <img src="./images/events/{{  $advert->event->image }}"/>--}}
              {{--  <img src="./images/homepage_banner/party_1.jpg" />--}}
 
-                <h2>{{$advert->event->name}}</h2>
+                <h2><a href="{{ url('/advert_overview/'. $advert->advert->id) }}">{{$advert->event->name}}</a></h2>
                    <ul>
                         <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
                         <li>  <p>{{$advert->user->username}}</p></li>
