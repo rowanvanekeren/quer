@@ -217,7 +217,7 @@ class BaseController extends Controller
 
     public function get_homepage(){
 
-      $events =  $this->get_all_events(2);
+      $events =  $this->get_all_events(6);
       $advertisements =   $this->get_all_advertisements_with_users();
         /*return View('home');*/
 

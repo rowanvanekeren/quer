@@ -62,9 +62,9 @@
             <h1 id="inspirational-quote"> Wij staan voor jou in de rij</h1>
             <form action="{{ url('/homepage_search') }}" method="POST">
                 {{ csrf_field() }}
-            <div class="searchdiv"><input class="searchbox" name="search_string" type="text" placeholder="Zoek advertenties en verdien geld!"></div>
-            <div class="datediv"><input class="datepicker" type="text" name="from" placeholder="Van"></div>
-            <div class="datediv"><input class="datepicker" type="text" name="till" placeholder="Tot"></div>
+            <div class="searchdiv"><input class="searchbox" name="search_string" type="text" placeholder="Zoek advertenties en verdien geld!" required></div>
+            <div class="datediv"><input class="datepicker" type="text" name="from" placeholder="Van" required></div>
+            <div class="datediv"><input class="datepicker" type="text" name="till" placeholder="Tot" required></div>
             <div class="submitsearchdiv"><button class="searchbutton" type="submit">Zoeken</button></div>
             </form>
         </div>
@@ -72,12 +72,19 @@
     <section class="content-wrapper">
         <div class ='content-center'>
         <h1>Evenementen</h1>
+            <div class="homepage-events">
         @foreach ($main_content->event as $event)
-                <div>
+                <div class="homepage-events-repeated" style="background:url(./images/events/{{  $event->image }})">
 
-                    {{$event->name}}
+                    <div class="homepage-events-gradient">
+                       <h2> {{$event->name}}</h2>
+                        <p class="event-location">Locatie: {{$event->location}} , {{$event->city}}</p>
+                        <p class="event-date">Datum: {{$event->date_event}}</p>
+                    </div>
+
                 </div>
         @endforeach
+            </div>
         <h1>Advertenties</h1>
             <div class="homepage-adverts">
         @foreach ($main_content->advertisement as $advert)
