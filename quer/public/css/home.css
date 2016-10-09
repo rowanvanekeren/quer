@@ -400,18 +400,18 @@ h1 {
     margin-bottom: 50px;
     overflow: hidden;
 }
-
+/*
 .homepage-adverts img{
     min-width: 100%;
     min-height: 100%;
     position: relative;
     left: 50%;
     top: 50%;
-    /* onderstaant moet nog aangepast worden */
+    /* onderstaant moet nog aangepast worden *//*
     -webkit-transform: translateY(-50%) translateX(-50%);
 
 
-}
+}*//*
 .homepage-adverts div h2 {
      position: relative;
      top: 50%;
@@ -455,7 +455,85 @@ h1 {
     left: 8px;
     -webkit-clip-path: circle(40% at 50% 50%);
     clip-path: circle(40% at 50% 50%);
+}*/
+
+
+/* ********************* SARAH's TRIAL ************************** */
+
+.homepage-adverts > div {
+    /*background-color: grey;*/
+    width: 33%;
+    float: left;
+    height: 280px;
+    overflow: hidden;
+    min-width: 300px;
+    margin: 0 auto;
+    background-repeat:no-repeat !important;
+    background-size: cover !important;;
+    background-position:center !important;;
 }
+
+.homepage-adverts-gradient {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.homepage-adverts-gradient h2 {
+    /*background-color: pink;*/
+    position: absolute;
+    top: 20%;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+}
+.homepage-adverts div h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.homepage-adverts-gradient ul {
+    /*background-color: teal;*/
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+
+
+.homepage-adverts-gradient ul li {
+    float: left;
+    color: white;
+    font-weight: bold;
+}
+
+
+.homepage-adverts div ul li:last-child {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+
+
+.homepage-adverts div ul img{
+    width: 40px;
+    margin: 0 10px;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+
+
+
+
+/* *************************************************************** */
+
+
+
+
 
 @media screen and (min-width: 0px) and ( max-width: 700px) {
     .homepage-adverts div{
