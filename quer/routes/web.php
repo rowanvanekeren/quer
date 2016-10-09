@@ -60,7 +60,11 @@ Route::get('add_event', 'BaseController@add_event')->middleware('auth');
 
 
 //posts (new events, new advertisements, new contracts, ...)
+//homepage posts
 Route::post('/homepage_search', 'BaseController@homepage_search');
+
+//admin posts
+Route::post('/update_account', 'AccountController@update_account')->middleware('auth');
 Route::post('/new_advertisement', 'BaseController@store_new_advertisement')->middleware('auth');
 Route::post('/new_event', 'BaseController@store_new_event')->middleware('auth');
 

@@ -19,7 +19,7 @@
 
                                 @endif
 
-                            <label for="last_name">Last name</label>
+                            <label for="last_name">Achternaam</label>
 
 
                             <input id="last_name" type="text" name="last_name" value="{{Auth::user()->last_name}}" required autofocus>
@@ -41,7 +41,7 @@
 
                             @endif
 
-                            <label for="country">Country</label>
+                            <label for="country">Land</label>
 
 
                             <input id="country" type="text" name="country" value="{{ Auth::user()->country }}" required autofocus>
@@ -52,7 +52,7 @@
 
                             @endif
 
-                            <label for="city">City</label>
+                            <label for="city">Stad</label>
 
 
                             <input id="city" type="text" name="city" value="{{ Auth::user()->city }}" required autofocus>
@@ -63,7 +63,7 @@
 
                             @endif
 
-                            <label for="postal_code">Postal code</label>
+                            <label for="postal_code">Postcode</label>
 
 
                             <input id="postal_code" type="text" name="postal_code" value="{{ Auth::user()->postal_code }}" required autofocus>
@@ -74,7 +74,7 @@
 
                             @endif
 
-                            <label for="street">Street</label>
+                            <label for="street">Straat</label>
 
 
                             <input id="street" type="text" name="street" value="{{ Auth::user()->street }}" required autofocus>
@@ -85,7 +85,7 @@
 
                             @endif
 
-                            <label for="house_number">House number</label>
+                            <label for="house_number">Huisnummer</label>
 
 
                             <input id="house_number" type="text" name="house_number" value="{{ Auth::user()->house_number }}" required autofocus>
@@ -96,7 +96,7 @@
 
                             @endif
 
-                            <label for="phone_number">Phone number</label>
+                            <label for="phone_number">Telefoonnummer</label>
 
 
                             <input id="phone_number" type="text" name="phone_number" value="{{ Auth::user()->phone_number }}" required autofocus>
@@ -108,7 +108,7 @@
                             @endif
 
 
-                            <label for="email" >E-Mail Address</label>
+                            <label for="email" >E-Mail adres</label>
 
 
                             <input id="email" type="email"  name="email" value="{{ Auth::user()->email }}" required>
@@ -120,7 +120,7 @@
                             @endif
 
 
-                            <label for="image">Image:</label>
+                            <label for="image">Profielfoto:</label>
 
                             <input type="file" id="image" name="image">
 
@@ -134,7 +134,7 @@
 
 
                                 <button type="submit">
-                                    Update
+                                    Bijwerken
                                 </button>
 
                     </form>

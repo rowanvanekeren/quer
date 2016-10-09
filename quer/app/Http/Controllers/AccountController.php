@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -22,41 +23,38 @@ class AccountController extends Controller
     }
     
     
-    function update_account(){
+    function update_account(Request $request){
         //
         
-        
+        //dd($request);
         $user = User::find(Auth::user()->id);
         
         //check whether a new image was uploaded, if not keep previous imagepath
-        //$imagepath = 
         if ($request->hasFile('image')) {
-            //
+            $destinationPath =  base_path() . "/public/images/profiles";
+            if ($request->file('image')->isValid()){
+                $ext = pathinfo($request->image->getClientOriginalName(), PATHINFO_EXTENSION);
+                $imageName = date('d-m-Y') . '_' . $request->username . '.' . $ext;
+                $request->file('image')->move($destinationPath,$imageName);
+                $user->image = $imageName;
+            }
         }
         
-        if($request->street == "") {
-            $street = $request->street_old;
-        }
-        else {
-            $street = $request->street;
-        }
         
-        //aangezien we nummer niet meer gaan gebruiken, maar het hele adres in street steken, gaan we house_number gewoon standaard op 1 zetten
-        $house_number = 1;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->username = $request->username;
+        $user->country = $request->country;;
+        $user->city = $request->city;
+        $user->street = $request->username;;
+        $user->house_number = $request->house_number;
+        $user->phone_number = $request->phone_number;
+        $user->email = $request->email;
         
-        $project->name = $request->name;
-        $project->description = $request->description;
-        $project->startdate = $request->startdate;
-        $project->hidden = $hidden;
-        $project->imagepath = $imagepath;
-        $project->street = $street;
-        $project->house_number = $house_number;
-        $project->latitude = $request->latitude;
-        $project->longitude = $request->longitude;
-        $project->user_id = $request->user;
         
-        $project->save();
         
+        $user->save();
+        return redirect('/dashboard');
         
     }
     
