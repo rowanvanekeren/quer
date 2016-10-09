@@ -154,7 +154,7 @@ float: left;
     width:15%;
 float: left;
 }
-@media screen and (min-width: 550px) and ( max-width: 1000px) {
+@media screen and (min-width: 1000px) and ( max-width: 1400px) {
     .searchdiv{
         width: 100%;
         float: left;
@@ -178,7 +178,7 @@ float: left;
         float: left;
     }
 }
-@media screen and (min-width: 0px) and ( max-width: 550px) {
+@media screen and (min-width: 0px) and ( max-width: 1000px) {
     .searchdiv{
         width: 100%;
         float: left;
@@ -238,13 +238,13 @@ footer{
     color: #b9b9b9;
     float:left;
 }
-@media screen and (min-width: 0px) and ( max-width: 550px) {
+@media screen and (min-width: 0px) and ( max-width: 700px) {
     .content-center {
         width: 100%;
     }
 }
 
-@media screen and (min-width: 550px) and ( max-width: 1000px) {
+@media screen and (min-width: 700px) and ( max-width: 1400px) {
     .content-center {
         width: 80%;
     }
@@ -338,7 +338,7 @@ h1 {
     top: 29%;
 }
 
-@media screen and (min-width: 0px) and ( max-width: 550px) {
+@media screen and (min-width: 0px) and ( max-width: 700px) {
     .homepage-events-repeated{
         width: 100%;
 
@@ -350,7 +350,7 @@ h1 {
     }
 }
 
-@media screen and (min-width: 550px) and ( max-width: 1000px) {
+@media screen and (min-width: 700px) and ( max-width: 1000px) {
     .homepage-events-repeated{
         width: 50%;
 
@@ -457,7 +457,7 @@ h1 {
     clip-path: circle(40% at 50% 50%);
 }
 
-@media screen and (min-width: 0px) and ( max-width: 550px) {
+@media screen and (min-width: 0px) and ( max-width: 700px) {
     .homepage-adverts div{
         width: 100%;
 
@@ -469,7 +469,7 @@ h1 {
     }
 }
 
-@media screen and (min-width: 550px) and ( max-width: 1400px) {
+@media screen and (min-width: 700px) and ( max-width: 1400px) {
 
     .homepage-adverts div{
         width: 50%;
