@@ -1,6 +1,17 @@
 <nav>
     <ul>
         <li>
+            <a href="{{ url('/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                {{ csrf_field() }}
+            </form>
+        </li>
+        <li>
             <a href="{{ url('/edit_account') }}">Account bewerken</a>
         </li>
         <li>
