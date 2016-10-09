@@ -67,4 +67,5 @@ Route::post('/homepage_search', 'BaseController@homepage_search');
 Route::post('/update_account', 'AccountController@update_account')->middleware('auth');
 Route::post('/new_advertisement', 'BaseController@store_new_advertisement')->middleware('auth');
 Route::post('/new_event', 'BaseController@store_new_event')->middleware('auth');
+Route::post('/new_contract', 'BaseController@store_new_contract')->middleware('auth');
 
