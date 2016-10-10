@@ -226,7 +226,7 @@ class BaseController extends Controller
         $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
 
 
-        return view('home', ['main_content' => $page_content]);
+        return view('home-new', ['main_content' => $page_content]);
 
     }
 
