@@ -6,6 +6,7 @@ use Auth;
 use App\Events;
 use App\Advertisements;
 use App\Usr_Adv;
+use App\Contracts;
 use App\User;
 use App\Reviews;
 use Illuminate\Http\Request;
@@ -180,6 +181,29 @@ class BaseController extends Controller
         }
 
     }
+    
+    
+    //this function will be called every time someone offers to be a quer
+    function store_new_contract(Request $request) {
+        //dd($request);
+        //default a contract always starts with phase 1 aka in_anticipation
+        $phase = 1;
+        
+        
+        $contract = new Contracts([
+            'quer_id' => $request->quer_id,
+            'applicant_id' => $request->applicant_id,
+            'price' => $request->fee,
+            'phase_id' => $phase,
+            'advertisement_id' => $request->advertisement_id,
+        ]);
+        
+        $contract->save();
+        
+        return redirect('/dashboard');
+    }
+    
+    
 
     public function get_all_events($limit)
     {
@@ -233,7 +257,7 @@ class BaseController extends Controller
     public function get_advert_overview($id){
         $advertisements =   $this->get_all_advertisements_with_users($id);
 
-        return view('advert_overview',['advert' => $advertisements]);
+        return view('advert_overview',['advert' => $advertisements[0]]);
     }
     public function get_events_between_dates($from,$till){
 
