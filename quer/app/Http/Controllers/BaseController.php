@@ -71,6 +71,13 @@ class BaseController extends Controller
 
 
     }
+    
+    public function get_amount_of_quers ($id_advert) {
+        //this function should be called in my_advertisments, for each advertisement.
+        $contracts = Contracts::where('advertisement_id', $id_advert)->get();
+        dd($contracts);
+        
+    }
 
 
 
