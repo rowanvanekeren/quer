@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
 $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
     $(".homepage-events-repeated:first-child").addClass("homepage_first-event");
 
@@ -22,8 +24,8 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
 
 
-
 });
+
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -35,3 +37,4 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
