@@ -45,8 +45,9 @@ class BaseController extends Controller
 
             $event_info = Events::where('id',$advertisement->event_id)->get();
             //$event_info = $event_info[0];
+            $amount_of_quers = $this->get_amount_of_quers($advertisement->id);
 
-            $my_advertisement = (object) ['advertisement' => $advertisement, 'event' => $event_info];
+            $my_advertisement = (object) ['advertisement' => $advertisement, 'event' => $event_info, 'amount_of_quers' => $amount_of_quers];
 
             array_push($my_advertisements, $my_advertisement);
         }
@@ -75,7 +76,8 @@ class BaseController extends Controller
     public function get_amount_of_quers ($id_advert) {
         //this function should be called in my_advertisments, for each advertisement.
         $contracts = Contracts::where('advertisement_id', $id_advert)->get();
-        dd($contracts);
+        //dd(count($contracts));
+        return count($contracts);
         
     }
 

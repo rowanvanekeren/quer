@@ -48,6 +48,9 @@ Route::get('/my_advertisements', 'BaseController@my_advertisements')->middleware
 
 Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview');
 
+//test route -> can be used for whatever you want to test
+//Route::get('/test/{id}', 'BaseController@get_amount_of_quers');
+
 
 /*
 Route::get('/add_advertisement', function () {
