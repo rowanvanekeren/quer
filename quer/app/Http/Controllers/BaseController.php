@@ -294,20 +294,23 @@ class BaseController extends Controller
         //contract agreed gets phase_id = 3, which means agreement
         $contract_agreed->phase_id = 3;
         
-        $contract_agreed->save();
         
         
-        $other_contracts = Contracts::where('advertisement_id', $contract_agreed->advertisement_id)->where('applicant_id', $contract_agreed->applicant_id)->get();
+        //$contract_agreed->save();
+        
+        //fetch all other contracts on the same advertisement (the agreed contract (above) should not be fetched)
+        $other_contracts = Contracts::where('advertisement_id', $contract_agreed->advertisement_id)->where('applicant_id', $contract_agreed->applicant_id)->where('id', '!=', $id_contract)->get();
         
         foreach($other_contracts as $cancelled_contract) {
             //all the other events get phase_id = 2, which means cancelled
             $cancelled_contract->phase_id = 2;
-            $cancelled_contract->save();
+            //$cancelled_contract->save();
         }
         
         //a function like soft_delete_advert should be called here
         
         
+        dd($contract_agreed, $other_contracts);
         
         return redirect('/contracts_overview');
         
@@ -436,6 +439,18 @@ class BaseController extends Controller
         return $search_on_strings;
 
     }
+    
+    
+    
+    
+    
+    //HELPER FUNCTIONS
+    
+    
+    public function set_advertisements_inactive () {
+        //
+    }
+    
 
 
 
