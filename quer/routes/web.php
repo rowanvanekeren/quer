@@ -47,10 +47,13 @@ Route::get('/edit_account', 'AccountController@edit_account')->middleware('auth'
 Route::get('/my_advertisements', 'BaseController@my_advertisements')->middleware('auth');
 Route::get('/quer_overview/{id}', 'BaseController@get_quers_overview')->middleware('auth');
 
-Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview');
+Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview')->middleware('auth');
 
 Route::get('/contracts_overview', 'BaseController@get_contracts_overview')->middleware('auth');
 Route::get('/contract_details/{id}', 'BaseController@get_contract_details')->middleware('auth');
+
+Route::get('/update_contract/{id}', 'BaseController@update_contracts')->middleware('auth');
+
 
 
 //test route -> can be used for whatever you want to test

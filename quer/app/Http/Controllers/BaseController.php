@@ -89,8 +89,12 @@ class BaseController extends Controller
         $quers = [];
         
         foreach($contracts as $contract) {
+            //contract_id should be passed as well
             $quer = User::where('id', $contract->quer_id)->get();
-            array_push($quers , $quer[0]);
+            
+            $quer_and_contract = (object) ['quer' => $quer[0], 'contract_id' => $contract->id];
+            
+            array_push($quers , $quer_and_contract);
         }
         //dd($quers);
         
@@ -98,10 +102,6 @@ class BaseController extends Controller
     }
 
     
-    public function get_contracts_overview () {
-        //
-        echo("Page under construction");
-    }
     
     public function get_contract_details ( $id ) {
         //
@@ -112,6 +112,31 @@ class BaseController extends Controller
         return view('contract_details', ['contract' => $contract, 'quer' => $quer, 'applicant' => $applicant]);
     }
     
+    public function get_contracts_overview () {
+        //
+        $quer_contracts = $this->get_quer_contracts_overview();
+        $applicant_contracts = $this->get_applicant_contracts_overview();
+        
+        return view('contracts_overview', ['quer_contracts' => $quer_contracts, 'applicant_contracts' => $applicant_contracts]);
+    }
+    
+    
+    public function get_quer_contracts_overview () {
+        //get all contracts where you are the quer and where the phase_nr >= 10 (at least agreement)
+        
+        $contracts = Contracts::where('quer_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
+        
+        //dd($contracts);
+        return $contracts;
+        
+    }
+    
+    public function get_applicant_contracts_overview () {
+        //get all contracts where you are the applicant and where the phase_nr >= 10 (at least agreement)
+        $contracts = Contracts::where('applicant_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
+        
+        return $contracts;
+    }
     
     
     
@@ -279,6 +304,12 @@ class BaseController extends Controller
             $cancelled_contract->phase_id = 2;
             $cancelled_contract->save();
         }
+        
+        //a function like soft_delete_advert should be called here
+        
+        
+        
+        return redirect('/contracts_overview');
         
     }
     

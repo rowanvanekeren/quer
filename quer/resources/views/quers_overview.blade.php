@@ -17,9 +17,9 @@
        @foreach ($quers as $quer)
        <div>
 
-           <div>{{ $quer->username }}</div>
-           <div>{{ $quer->email }}</div>
-           <div><a href="#">Kies Que'r !</a></div>
+           <div>{{ $quer->quer->username }}</div>
+           <div>{{ $quer->quer->email }}</div>
+           <div><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->contract_id }}</a></div>
        </div>
        @endforeach
        
