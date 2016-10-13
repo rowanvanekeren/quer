@@ -21,7 +21,7 @@
 
            <div>{{ $advertisement->event[0]->name }}</div>
            <div>{{ $advertisement->advertisement->private_description }}</div>
-           <div>{{ $advertisement->amount_of_quers }}</div>
+           <div><a href="{{url('/quer_overview/'.$advertisement->advertisement->id)}}">{{ $advertisement->amount_of_quers }}</a></div>
        </div>
        @endforeach
        

@@ -26,7 +26,7 @@ class BaseController extends Controller
 
 
 
-    //load views
+    //GET FUNCTIONS
 
 
 
@@ -75,13 +75,51 @@ class BaseController extends Controller
     
     public function get_amount_of_quers ($id_advert) {
         //this function should be called in my_advertisments, for each advertisement.
-        $contracts = Contracts::where('advertisement_id', $id_advert)->get();
+        $contracts = Contracts::where('advertisement_id', $id_advert)->where('phase_id', 1)->get();
         //dd(count($contracts));
         return count($contracts);
         
     }
+    
+    public function get_quers_overview ($id_advert) {
+        //
+        $advert = Advertisements::find($id_advert);
+        $event = Events::find($advert->event_id);
+        $contracts = Contracts::where('advertisement_id', $id_advert)->where('phase_id', 1)->get();
+        $quers = [];
+        
+        foreach($contracts as $contract) {
+            $quer = User::where('id', $contract->quer_id)->get();
+            array_push($quers , $quer[0]);
+        }
+        //dd($quers);
+        
+        return view('quers_overview', ['event' => $event, 'quers' => $quers]);
+    }
 
+    
+    public function get_contracts_overview () {
+        //
+        echo("Page under construction");
+    }
+    
+    public function get_contract_details ( $id ) {
+        //
+        $contract = Contracts::find($id);
+        $quer = User::find($contract->quer_id);
+        $applicant = User::find($contract->applicant_id);
+        $advert = Advertisements::find($contract->advertisement_id);
+        return view('contract_details', ['contract' => $contract, 'quer' => $quer, 'applicant' => $applicant]);
+    }
+    
+    
+    
+    
+    
+    
+    
 
+    //STORE FUNCTIONS
 
 
     //store new advertisements
@@ -211,6 +249,42 @@ class BaseController extends Controller
         
         return redirect('/dashboard');
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    //UPDATE FUNCTIONS
+    
+    
+    public function update_contracts ($id_contract) {
+        //the contract that is passed through parameters should be updated to phase agreement
+        //the other contracts with same $advertisment_id and same $applicant_id should be updated to phase cancelled
+        
+        $contract_agreed = Contracts::find($id_contract);
+        
+        //contract agreed gets phase_id = 3, which means agreement
+        $contract_agreed->phase_id = 3;
+        
+        $contract_agreed->save();
+        
+        
+        $other_contracts = Contracts::where('advertisement_id', $contract_agreed->advertisement_id)->where('applicant_id', $contract_agreed->applicant_id)->get();
+        
+        foreach($other_contracts as $cancelled_contract) {
+            //all the other events get phase_id = 2, which means cancelled
+            $cancelled_contract->phase_id = 2;
+            $cancelled_contract->save();
+        }
+        
+    }
+    
+    
+    
+    
     
     
 
