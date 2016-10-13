@@ -21,10 +21,34 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
+        <div class="inner-nav-content">
+
+        @if (Auth::guest())
+            <a href="{{ url('/login') }}">Login</a>
+            <a href="{{ url('/register') }}">Register</a>
+        @else
+            <div class="image-wrapper">
+                <ul>
+                    <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
+                    <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
+                </ul>
+            </div>
+            <a href="{{ url('/dashboard') }}">Dashboard</a>
+                <a href="{{ url('/logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                    {{ csrf_field() }}
+                </form>
+        @endif
+      {{--  <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="#">Contact</a>--}}
+        </div>
     </div>
     <!-- Use any element to open the sidenav -->
 
@@ -53,7 +77,7 @@
 
                 @else
                     <li>
-                        <a href="{{ url('/Dashboard') }}">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
                     </li>
                     <li>
                         <a href="{{ url('/logout') }}"

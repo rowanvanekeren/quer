@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 
@@ -30,18 +31,7 @@
 </head>
 <body>
 <nav>
-<div class="standard-nav">
-    <ul>
-    <li> <a href="#">About</a></li>
-    <li> <a href="#">Services</a></li>
-    <li> <a href="#">Clients</a></li>
-    <li> <a href="#">Contact</a></li>
-        <li onclick="openNav()"><a> <</a></li>
-    </ul>
 
-
-
-</div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">About</a>
@@ -49,12 +39,34 @@
     <a href="#">Clients</a>
     <a href="#">Contact</a>
 </div>
+</nav>
+    <div id="main">
+    <div class="standard-nav">
+        <div class="sub-nav-background-gradient">
+        <ul class="sub-nav-left">
+            <li><img src="{{ asset('images/querlogo/logo5.png') }}" width="50px" /></li>
+            <li  >Que'r</li>
+
+        </ul>
+        <ul class="sub-nav-right">
+            <li> <a href="#">About</a></li>
+            <li> <a href="#">Services</a></li>
+            <li> <a href="#">Clients</a></li>
+            <li> <a href="#">Contact</a></li>
+
+        </ul>
+            <div class="burger-wrapper">
+                <img onclick="openNav()" src="{{ asset('images/icons/burgermenu.png') }}" width="40px"/>
+            </div>
+    <div class="sub-page-title"><h1> Page Title</h1></div>
+        </div>
+    </div>
 
 <!-- Use any element to open the sidenav -->
-<span onclick="openNav()"><</span>
-</nav>
+
+
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
+
 
 
 
