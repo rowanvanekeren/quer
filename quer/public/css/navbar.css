@@ -1,7 +1,6 @@
 /* The side navigation menu */
-*{
-    margin: 0 auto;
-}
+
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -42,7 +41,8 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding: 20px;
+
+    width:100%;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -54,14 +54,14 @@
 .standard-nav{
     width:100%;
     height: 50px;
-    background-color: #5c5c5c;
+    background-color: #000000;
     margin: 0 auto;
 }
 
 .standard-nav ul{
-   position: relative;
-    right: -70%;
-    top: 20%;
+
+   position: absolute;
+   right: 20px;
 }
 
 

@@ -348,6 +348,19 @@ h1 {
 
 
     }
+    .home-nav-right{
+        visibility: hidden;
+    }
+    .home-nav-right-burger{
+        display:block;
+        position: absolute;
+        right:5%;
+        top: 15px;
+    }
+    .burger{
+        visibility: visible;
+
+    }
 }
 
 @media screen and (min-width: 700px) and ( max-width: 1000px) {
@@ -360,6 +373,19 @@ h1 {
 
 
     }
+    .home-nav-right{
+        visibility: hidden;
+    }
+    .home-nav-right-burger{
+        display:block;
+        position: absolute;
+        right:5%;
+        top:15px;
+    }
+    .burger{
+        visibility: visible;
+
+    }
 }
 
 @media screen and (min-width: 1000px) and ( max-width: 1400px) {
@@ -370,6 +396,36 @@ h1 {
 
         min-width: 50%;
 
+
+    }
+    .home-nav-right{
+       visibility: hidden;
+    }
+    .home-nav-right-burger{
+        display:block;
+        position: absolute;
+        right:5%;
+        top: 15px;
+    }
+    .burger{
+ visibility: visible;
+
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    .home-nav-right{
+        visibility: visible;
+    }
+    .home-nav-right-burger{
+        display:none;
+    }
+    .burger{
+        visibility: hidden;
+        position: absolute;
+        right:5%;
+        top: 25px;
 
     }
 }
@@ -551,3 +607,5 @@ h1 {
 
     }
 }
+
+
