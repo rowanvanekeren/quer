@@ -88,6 +88,10 @@ float:right;
 
 }
 
+.inner-nav-content{
+
+}
+
 @media screen and (min-width: 0px) and ( max-width: 1400px){
     .sub-nav-right{
         display:none;
