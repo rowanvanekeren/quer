@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->tinyInteger('is_admin');
             $table->string('image')->nullable();
+            $table->tinyInteger('active');
             $table->rememberToken();
             $table->timestamps();
         });

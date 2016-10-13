@@ -26,6 +26,7 @@ class Events extends Migration
             $table->string('tags')->nullable();
             $table->tinyInteger('categorie_id')->index();
             $table->tinyInteger('code');
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }

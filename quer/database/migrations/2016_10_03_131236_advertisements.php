@@ -19,6 +19,7 @@ class Advertisements extends Migration
             $table->integer('event_id')->index();
             $table->longText('private_description')->nullable();
             $table->decimal('price', 18, 4);
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }

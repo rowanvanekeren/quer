@@ -21,6 +21,7 @@ class Reviews extends Migration
             $table->tinyInteger('rate');
             $table->tinyInteger('succeeded');
             $table->unsignedInteger('advertisement_id')->index();
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }

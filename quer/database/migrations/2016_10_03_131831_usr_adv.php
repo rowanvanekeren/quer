@@ -17,6 +17,7 @@ class UsrAdv extends Migration
             $table->increments('id');
             $table->integer('advertisement_id')->index();
             $table->integer('user_id')->index();
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }
