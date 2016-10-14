@@ -5,6 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Advertisements;
+use App\Reviews;
+use App\Events;
+use App\Usr_Adv;
+
 class User extends Authenticatable
 {
     use Notifiable;

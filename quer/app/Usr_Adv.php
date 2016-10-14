@@ -1,7 +1,10 @@
 <?php
 
 namespace App;
-
+use App\User;
+use App\Advertisements;
+use App\Reviews;
+use App\Events;
 use Illuminate\Database\Eloquent\Model;
 
 class Usr_Adv extends Model

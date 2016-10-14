@@ -1,7 +1,11 @@
 <?php
 
 namespace App;
-
+use App\User;
+use App\Advertisements;
+use App\Reviews;
+use App\Events;
+use App\Usr_Adv;
 use Illuminate\Database\Eloquent\Model;
 
 class Contracts extends Model

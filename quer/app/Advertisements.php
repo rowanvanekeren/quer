@@ -3,6 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Contracts;
+use App\Reviews;
+use App\Events;
+use App\Usr_Adv;
 
 class Advertisements extends Model
 {
@@ -25,13 +30,13 @@ class Advertisements extends Model
         return $this->hasMany(Usr_Adv::class, 'advertisement_id');
     }
 
-    public function events()
+    public function event()
     {
-        return $this->belongsTo('Events');
+        return $this->belongsTo('App\Events');
     }
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
 }
