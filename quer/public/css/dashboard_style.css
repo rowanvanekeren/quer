@@ -1,0 +1,50 @@
+
+
+
+.msg_error {
+    background-color: #e0acac;
+}
+
+.msg_info {
+    background-color: #97d397;
+}
+
+
+
+/* forms */
+
+form label,
+form input,
+form textarea {
+    float: left;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    width: 150px;
+    margin-right: 20px;
+}
+
+form input,
+form textarea {
+    border: 1px solid #3432d5;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+
+
+/*   CLEARFIX   */
+form div::before, form div::after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+form div::after {
+    clear: both;
+}

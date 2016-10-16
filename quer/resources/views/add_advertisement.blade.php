@@ -45,11 +45,20 @@ if(isset($event)) {
        <p>Hier kan je een nieuwe advertentie aanmaken.</p>
        <p>Als je vertrekt van een bestaand evenement wordt deze info meteen ingeladen, anders vul je dit helemaal zelf in en wordt er ook een nieuw evenement aangemaakt als je een advertentie aanmaakt.</p>
        
-       
+       @if($errors->any())
+       <div class="msg_error">{{$errors->first()}}</div>
+       @endif
        
        
        <div>
-           <a href="{{ url('add_event') }}">nieuwe event toevoegen (onderstaande form niet nodig)</a>
+           <h3>Selecteer je evenement</h3>
+           
+           @if(isset($event))
+           <div class="msg_info">Evenement "{{$event->name}}" geselecteerd</div>
+           @else
+           <div>Er is nog geen evenement geselecteerd... <a href="{{ url('add_event') }}">Voeg er één toe</a></div>
+           @endif
+           
   {{--         <form id="add_event_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
                {{ csrf_field() }}
 

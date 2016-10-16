@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 

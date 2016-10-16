@@ -19,7 +19,7 @@ class BaseController extends Controller
 {
     //
 
-
+//all functions which have been moved to the right controller are commented out
     //GET FUNCTIONS
 
 
@@ -49,7 +49,7 @@ class BaseController extends Controller
         return view('my_advertisements', ['advertisements' => $my_advertisements]);
     }*/
 
-
+/*
     public function add_advertisement($id = null)
     {
 
@@ -64,6 +64,7 @@ class BaseController extends Controller
 
 
     }
+    */
 
 /*    public function get_amount_of_quers($id_advert)
     {

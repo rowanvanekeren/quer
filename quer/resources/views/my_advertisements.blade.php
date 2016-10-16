@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Mijn advertenties')
 
 @section('content')
   
@@ -15,7 +15,7 @@
        <p>Voorlopig nog leeg</p>
        
        
-       
+       {{--
        @foreach ($advertisements as $advertisement)
        <div>
 
@@ -24,7 +24,17 @@
            <div><a href="{{url('/quer_overview/'.$advertisement->advertisement->id)}}">{{ $advertisement->amount_of_quers }}</a></div>
        </div>
        @endforeach
+       --}}
        
+       
+       @foreach ($advertisements as $advertisement)
+       <div>
+
+           <div>{{ $advertisement->advertisement->event->name }}</div>
+           <div>{{ $advertisement->advertisement->private_description }}</div>
+           <div><a href="{{url('/quer_overview/'.$advertisement->advertisement->id)}}">{{ $advertisement->amount_of_quers }}</a></div>
+       </div>
+       @endforeach
        
        
        <div>
