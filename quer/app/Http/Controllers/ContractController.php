@@ -63,6 +63,10 @@ class ContractController extends Controller
              $query->where('advertisement_id', $id_advert)->where('phase_id', 1);
          })->get();
         
+        
+        //$quers2 = User::with('contracts_quer')->join('contracts', 'contracts.quer_id', '=', 'users.id')->where('contracts.advertisement_id', 4)->get();
+        
+        
         dd($quers);
         
         
