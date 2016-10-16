@@ -23,14 +23,12 @@
                <th>Kies Que'r</th>
            </tr>
            @foreach ($quers as $quer)
-           <?php echo($quer->contracts_quer) ?>
-           
            <tr>
 
-               <td>{{ $quer->username }}</td>
-               <td><img src="../../public/images/profiles/{{ $quer->image }}" alt="querphoto"></td>
-               <td>{{ $quer->contracts_quer[0]->price }}</td>
-               <td><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->contract_id }}</a></td>
+               <td>{{ $quer->quer->username }}</td>
+               <td><img src="../../public/images/profiles/{{ $quer->quer->image }}" alt="querphoto"></td>
+               <td>hier moet de prijs komen</td>
+               <td><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->quer->contract_id }}</a></td>
            </tr>
            @endforeach
        </table>
