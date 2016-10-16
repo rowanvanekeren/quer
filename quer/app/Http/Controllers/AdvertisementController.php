@@ -47,17 +47,13 @@ class AdvertisementController extends Controller
     {
         //this function should be called in my_advertisments, for each advertisement.
         $contracts = Contracts::where('advertisement_id', $id_advert)->where('phase_id', 1)->get();
-        //dd(count($contracts));
         return count($contracts);
-
     }
     
     
     
     public function add_advertisement($id = null)
     {
-
-        //$event = Event::where('project_id', $id)->get();
         if ($id) {
             $event = Events::find($id);
             //dd($event);
@@ -65,8 +61,6 @@ class AdvertisementController extends Controller
         } else {
             return view('add_advertisement');
         }
-
-
     }
     
     
@@ -74,37 +68,34 @@ class AdvertisementController extends Controller
     //STORE function
     public function store_new_advertisement(Request $request)
     {
-        //dd($request);
         //check whether there was an event id
         //yes --> create new advertisement
-        //no --> first create new event and then create new advertisement with event_id of the newly created event
-
+        //no --> send errormessage
         if ($request->event_id) {
             //store advertisement
             $event_id = $request->event_id;
-            echo("advertisement created from existing event");
-            //echo($request->event_id . " " . $request->name);
         } else {
             //no event was selected -> redirect with error message (flash message)
-            //create new event (with existing function)
-            return \Redirect::back()->withErrors(['halabaoal', 'Je hebt geen evenement geselecteerd!']);
-
+            return \Redirect::back()->withErrors(['Je hebt geen evenement geselecteerd!']);
         }
 
 
+        //advertisement is active by default
+        $active = 1;
+        
         $advertisement = new Advertisements(['user_id' => $request->user_id,
             'event_id' => $event_id,
             'private_description' => $request->private_description,
-            'price' => $request->price
+            'price' => $request->price,
+            'active' => $active
         ]);
 
-        //$advertisement->save();
+        $advertisement->save();
 
         //$this->store_user_advert($advertisement->user_id, $advertisement->id);
 
         //dd($advertisement);
 
-        //hier moet de redirect wel nog staan, want indien het valideren en inserten lukt, gaat hij niet automatisch redirecten
         return redirect('/my_advertisements');
     }
     

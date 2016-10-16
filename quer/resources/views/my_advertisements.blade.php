@@ -11,8 +11,7 @@
        @include('layouts.dashboard_menu')
       
        <h1>Mijn advertenties</h1>
-       <p>Hier heb je een overzicht van je bestaande advertenties. + ge zou hier eigenlijk ook de gerelateerde event moeten kunnen ophalen</p>
-       <p>Voorlopig nog leeg</p>
+       <p>Hier heb je een overzicht van je bestaande advertenties.</p>
        
        
        {{--
@@ -27,14 +26,22 @@
        --}}
        
        
-       @foreach ($advertisements as $advertisement)
-       <div>
+       <table class="my_advertisements">
+           <tr>
+               <th>Datum</th>
+               <th>Evenement</th>
+               <th>Aantal que'rs</th>
+           </tr>
+           @foreach ($advertisements as $advertisement)
+           <tr>
 
-           <div>{{ $advertisement->advertisement->event->name }}</div>
-           <div>{{ $advertisement->advertisement->private_description }}</div>
-           <div><a href="{{url('/quer_overview/'.$advertisement->advertisement->id)}}">{{ $advertisement->amount_of_quers }}</a></div>
-       </div>
-       @endforeach
+               <td>{{ $advertisement->advertisement->event->date_event }}</td>
+               <td>{{ $advertisement->advertisement->event->name }}</td>
+               <td><a href="{{url('/quer_overview/'.$advertisement->advertisement->id)}}">{{ $advertisement->amount_of_quers }}</a></td>
+           </tr>
+           @endforeach
+       </table>
+       
        
        
        <div>

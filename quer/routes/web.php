@@ -49,7 +49,7 @@ Route::get('/quer_overview/{id}', 'BaseController@get_quers_overview')->middlewa
 
 Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview')->middleware('auth');
 
-Route::get('/contracts_overview', 'BaseController@get_contracts_overview')->middleware('auth');
+Route::get('/contracts_overview', 'ContractController@get_contracts_overview')->middleware('auth');
 Route::get('/contract_details/{id}', 'BaseController@get_contract_details')->middleware('auth');
 
 Route::get('/update_contract/{id}', 'BaseController@update_contracts')->middleware('auth');
@@ -67,7 +67,7 @@ Route::get('/add_advertisement', function () {
     */
 
 Route::get('add_advertisement/{id?}', 'AdvertisementController@add_advertisement')->middleware('auth');
-Route::get('add_event', 'BaseController@add_event')->middleware('auth');
+Route::get('add_event', 'EventController@add_event')->middleware('auth');
 
 
 //posts (new events, new advertisements, new contracts, ...)
@@ -77,6 +77,6 @@ Route::post('/homepage_search', 'BaseController@homepage_search');
 //admin posts
 Route::post('/update_account', 'AccountController@update_account')->middleware('auth');
 Route::post('/new_advertisement', 'AdvertisementController@store_new_advertisement')->middleware('auth');
-Route::post('/new_event', 'BaseController@store_new_event')->middleware('auth');
+Route::post('/new_event', 'EventController@store_new_event')->middleware('auth');
 Route::post('/new_contract', 'BaseController@store_new_contract')->middleware('auth');
 

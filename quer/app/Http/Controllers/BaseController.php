@@ -19,7 +19,7 @@ class BaseController extends Controller
 {
     //
 
-//all functions which have been moved to the right controller are commented out
+//all functions which have been moved to the correct controller are commented out
     //GET FUNCTIONS
 
 
@@ -106,7 +106,7 @@ class BaseController extends Controller
         $advert = Advertisements::find($contract->advertisement_id);
         return view('contract_details', ['contract' => $contract, 'quer' => $quer, 'applicant' => $applicant]);
     }
-
+/*
     public function get_contracts_overview()
     {
         //
@@ -135,7 +135,7 @@ class BaseController extends Controller
 
         return $contracts;
     }
-
+*/
 
 
 
@@ -144,7 +144,7 @@ class BaseController extends Controller
 
     //STORE FUNCTIONS
 
-
+/*
     //store new advertisements
     public function store_new_advertisement(Request $request)
     {
@@ -181,7 +181,7 @@ class BaseController extends Controller
         //hier moet de redirect wel nog staan, want indien het valideren en inserten lukt, gaat hij niet automatisch redirecten
         return redirect('/my_advertisements');
     }
-
+*/
     public function store_user_advert($user_id, $advert_id)
     {
         $user_advert = new Usr_Adv(['user_id' => $user_id,
@@ -191,13 +191,15 @@ class BaseController extends Controller
         $user_advert->save();
     }
 
+    /*
     public function add_event()
     {
 
         return view('add_event');
 
     }
-
+    */
+    /*
     public function store_new_event(Request $request)
     {
         //code for if admin event or user event
@@ -230,7 +232,7 @@ class BaseController extends Controller
             if ($request->file('image')->isValid()) {
                 $ext = pathinfo($request->image->getClientOriginalName(), PATHINFO_EXTENSION);
                 $imageName = date('d-m-Y') . '_' . $event->id . '.' . $ext;
-                /*   App::abort(500, 'Error');*/
+                /*   App::abort(500, 'Error');*//*
 
                 $request->file('image')->move($destinationPath, $imageName);
 
@@ -248,7 +250,7 @@ class BaseController extends Controller
             return redirect('/my_advertisements');
         }
 
-    }
+    }*/
 
 
     //this function will be called every time someone offers to be a quer

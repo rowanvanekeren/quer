@@ -1,4 +1,6 @@
-
+body {
+    font-family: "Calibri", sans-serif;
+}
 
 
 .msg_error {
@@ -10,6 +12,37 @@
 }
 
 
+h1 {
+    color: #3432d5;
+}
+
+
+
+/* tables */
+
+table {
+    margin-left: 0;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 0;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+table td {
+    border-bottom: 1px solid #CDCCF5;
+}
+
+table tr:first-child {
+    background-color: #CDCCF5;
+}
+
+table tr:hover {
+    background-color: #EEEEFC;
+}
 
 /* forms */
 

@@ -45,9 +45,7 @@ if(isset($event)) {
        <p>Hier kan je een nieuwe advertentie aanmaken.</p>
        <p>Als je vertrekt van een bestaand evenement wordt deze info meteen ingeladen, anders vul je dit helemaal zelf in en wordt er ook een nieuw evenement aangemaakt als je een advertentie aanmaakt.</p>
        
-       @if($errors->any())
-       <div class="msg_error">{{$errors->first()}}</div>
-       @endif
+       
        
        
        <div>
@@ -57,6 +55,10 @@ if(isset($event)) {
            <div class="msg_info">Evenement "{{$event->name}}" geselecteerd</div>
            @else
            <div>Er is nog geen evenement geselecteerd... <a href="{{ url('add_event') }}">Voeg er één toe</a></div>
+           @endif
+           
+           @if($errors->any())
+           <div class="msg_error">{{$errors->first()}}</div>
            @endif
            
   {{--         <form id="add_event_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
@@ -133,7 +135,7 @@ if(isset($event)) {
                
                <div>
                    <label for="price">Prijs:</label>
-                   <input id="price" name="price" type="number">
+                   <input id="price" name="price" type="number" step="0.01">
                </div>
 
                <div class="add_button">
