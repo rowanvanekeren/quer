@@ -14,15 +14,26 @@
        
        
        
-       @foreach ($quers as $quer)
-       <div>
-
-           <div>{{ $quer->quer->username }}</div>
-           <div>{{ $quer->quer->email }}</div>
-           <div><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->contract_id }}</a></div>
-       </div>
-       @endforeach
        
+       <table class="quers_overview">
+           <tr>
+               <th>Que'r</th>
+               <th></th>
+               <th>Prijs</th>
+               <th>Kies Que'r</th>
+           </tr>
+           @foreach ($quers as $quer)
+           <?php echo($quer->contracts_quer) ?>
+           
+           <tr>
+
+               <td>{{ $quer->username }}</td>
+               <td><img src="../../public/images/profiles/{{ $quer->image }}" alt="querphoto"></td>
+               <td>{{ $quer->contracts_quer[0]->price }}</td>
+               <td><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->contract_id }}</a></td>
+           </tr>
+           @endforeach
+       </table>
        
        
    </div>

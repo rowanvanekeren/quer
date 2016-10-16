@@ -259,6 +259,7 @@ class BaseController extends Controller
         //dd($request);
         //default a contract always starts with phase 1 aka in_anticipation
         $phase = 1;
+        $active = 1;
 
 
         $contract = new Contracts([
@@ -267,6 +268,7 @@ class BaseController extends Controller
             'price' => $request->fee,
             'phase_id' => $phase,
             'advertisement_id' => $request->advertisement_id,
+            'active' => $active,
         ]);
 
         $contract->save();

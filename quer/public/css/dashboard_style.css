@@ -36,13 +36,23 @@ table td {
     border-bottom: 1px solid #CDCCF5;
 }
 
+table tr:hover {
+    background-color: #EEEEFC;
+}
+
 table tr:first-child {
     background-color: #CDCCF5;
 }
 
-table tr:hover {
-    background-color: #EEEEFC;
+
+.quers_overview img {
+    width: 45px;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
 }
+
+
+
 
 /* forms */
 
@@ -63,12 +73,19 @@ form label {
 
 form input,
 form textarea {
-    border: 1px solid #3432d5;
-    border-radius: 5px;
+    /*border: 1px solid #3432d5;
+    border-radius: 5px;*/
+    border: none;
+    background-color: #EEEEFC;
     padding: 5px 10px;
+    width: 250px;
 }
 
-
+form textarea {
+    height: 80px;
+    max-width: 500px;
+    max-height: 350px;
+}
 
 
 /*   CLEARFIX   */

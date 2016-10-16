@@ -57,7 +57,7 @@ Route::get('/update_contract/{id}', 'BaseController@update_contracts')->middlewa
 
 
 //test route -> can be used for whatever you want to test
-//Route::get('/test/{id}', 'BaseController@get_amount_of_quers');
+Route::get('/test/{id}', 'ContractController@get_quers_overview');
 
 
 /*
