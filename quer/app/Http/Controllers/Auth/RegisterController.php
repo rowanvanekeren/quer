@@ -74,6 +74,9 @@ class RegisterController extends Controller
     {
      $path= "no image";
 
+        //user is active by default
+        $active = 1;
+        
         if(isset($data['image']))
         {
             $destinationPath =  base_path() . "/public/images/profiles";
@@ -94,6 +97,7 @@ class RegisterController extends Controller
             'house_number' => $data['house_number'],
             'phone_number' => $data['phone_number'],
             'is_admin' => 0,
+            'active' => 1,
             'image' => $path,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

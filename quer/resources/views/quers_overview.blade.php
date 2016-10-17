@@ -27,8 +27,8 @@
 
                <td>{{ $quer->quer->username }}</td>
                <td><img src="../../public/images/profiles/{{ $quer->quer->image }}" alt="querphoto"></td>
-               <td>hier moet de prijs komen</td>
-               <td><a href="{{url('/update_contract/'.$quer->contract_id)}}">Kies Que'r ! {{ $quer->quer->contract_id }}</a></td>
+               <td>{{ $quer->contract->price }}</td>
+               <td><a href="{{url('/update_contract/'.$quer->contract->id)}}">Kies Que'r ! {{ $quer->contract->id }}</a></td>
            </tr>
            @endforeach
        </table>

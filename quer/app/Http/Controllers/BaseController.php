@@ -74,7 +74,7 @@ class BaseController extends Controller
         return count($contracts);
 
     }*/
-
+/*
     public function get_quers_overview($id_advert)
     {
         //
@@ -95,8 +95,8 @@ class BaseController extends Controller
 
         return view('quers_overview', ['event' => $event, 'quers' => $quers]);
     }
-
-
+*/
+/*
     public function get_contract_details($id)
     {
         //
@@ -106,6 +106,7 @@ class BaseController extends Controller
         $advert = Advertisements::find($contract->advertisement_id);
         return view('contract_details', ['contract' => $contract, 'quer' => $quer, 'applicant' => $applicant]);
     }
+    */
 /*
     public function get_contracts_overview()
     {

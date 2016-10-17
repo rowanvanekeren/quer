@@ -18,7 +18,7 @@
             <a href="#">Que'r</a>
             <ul>
                 <li>Qued</li>
-                <li>Contracten</li>
+                <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
                 <li>Reviews</li>
             </ul>
         </li>
@@ -26,7 +26,7 @@
             <a href="#">Apply'r</a>
             <ul>
                 <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
-                <li>Contracten</li>
+                <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
             </ul>
         </li>
     </ul>
