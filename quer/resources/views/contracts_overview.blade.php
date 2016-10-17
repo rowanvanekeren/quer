@@ -12,6 +12,11 @@
        <h1>Contractenoverzicht</h1>
        <p>Informatie contracten (die minstens status agreement hebben) (dus waar phase_nr >= 10).</p>
        
+       @if (session('msg'))
+           <div class="msg_info">
+               {{ session('msg') }}
+           </div>
+       @endif
        
        <h2>Als Que'r</h2>
        <div>

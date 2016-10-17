@@ -330,9 +330,9 @@ class BaseController extends Controller
     {
         $complete_adverts_users = array();
         if (isset($id)) {
-            $users_adverts = Advertisements::where('id', $id)->get();
+            $users_adverts = Advertisements::where('id', $id)->where('active', 1)->get();
         } else {
-            $users_adverts = Advertisements::get();
+            $users_adverts = Advertisements::where('active', 1)->get();
         }
 
         foreach ($users_adverts as $usr_adv) {

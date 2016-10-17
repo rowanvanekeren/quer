@@ -25,7 +25,7 @@ class AdvertisementController extends Controller
          })->get();*/
 
          //fetch all advertisments and there event info (with event) where the user_id is equal to the currently logged in user
-         $advertisements2 = Advertisements::with('event')->where('user_id',  Auth::user()->id)->get();
+         $advertisements2 = Advertisements::with('event')->where('user_id',  Auth::user()->id)->where('active', 1)->get();
          //dd($advertisements2);
 
            

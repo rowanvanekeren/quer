@@ -52,7 +52,7 @@ Route::get('/advert_overview/{id?}', 'BaseController@get_advert_overview')->midd
 Route::get('/contracts_overview', 'ContractController@get_contracts_overview')->middleware('auth');
 Route::get('/contract_details/{id}', 'ContractController@get_contract_details')->middleware('auth');
 
-Route::get('/update_contract/{id}', 'BaseController@update_contracts')->middleware('auth');
+Route::get('/update_contract/{id}', 'ContractController@update_contracts')->middleware('auth');
 
 
 

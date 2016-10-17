@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Contracts;
 use App\Events;
+use App\Advertisements;
 use Auth;
 
 class ContractController extends Controller
@@ -112,6 +113,44 @@ class ContractController extends Controller
 
         return redirect('/dashboard');
     }
+    
+    
+    
+    
+    public function update_contracts($id_contract)
+    {
+        //the contract that is passed through parameters should be updated to phase agreement
+        //the other contracts with same $advertisment_id and same $applicant_id should be updated to phase cancelled
+
+        $contract_agreed = Contracts::find($id_contract);
+
+        //contract agreed gets phase_id = 3, which means agreement
+        $contract_agreed->phase_id = 3;
+
+
+        $contract_agreed->save();
+
+        //fetch all other contracts on the same advertisement (the agreed contract (above) should not be fetched)
+        $other_contracts = Contracts::where('advertisement_id', $contract_agreed->advertisement_id)->where('applicant_id', $contract_agreed->applicant_id)->where('id', '!=', $id_contract)->get();
+
+        foreach ($other_contracts as $cancelled_contract) {
+            //all the other events get phase_id = 2, which means cancelled
+            $cancelled_contract->phase_id = 2;
+            $cancelled_contract->save();
+        }
+
+        //a function like soft_delete_advert should be called here
+        $advertisement = Advertisements::find($contract_agreed->advertisement_id);
+        $advertisement->active = 0;
+        $advertisement->save();
+
+
+        //dd($contract_agreed, $other_contracts, $advertisement);
+
+        return redirect('/contracts_overview')->with('msg', "Que'r succesvol gekozen.  Bekijk hier je contract");;
+
+    }
+
     
     
     
