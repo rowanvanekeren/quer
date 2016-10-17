@@ -199,6 +199,7 @@ h1 {
     width: 100%;
 }
 
+/*
 .homepage-events-repeated{
     width: 33%;
     float: left;
@@ -278,7 +279,7 @@ h1 {
     right: 2%;
     top: 29%;
 }
-
+*/
 
 .homepage-adverts div{
     width: 33%;
@@ -367,6 +368,87 @@ h1 {
 
 /* ********************* SARAH's TRIAL ************************** */
 
+/* events */
+
+
+.homepage-events-repeated {
+    width: 33%;
+    float: left;
+    height: 220px;
+    overflow: hidden;
+    min-width: 280px;
+    margin: 0 auto;
+
+    background-repeat:no-repeat !important;
+    background-size: cover !important;;
+    background-position:center !important;;
+
+}
+
+
+.homepage-events-gradient{
+    width: 100% !important;
+    height: 100%;
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+    clear: both;
+    position: relative;
+ }
+
+.homepage-events-gradient h2 {
+    position: absolute;
+    top: 10%;
+    color:white;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
+.homepage-events-repeated:not(:first-child) .homepage-events-gradient .event-date {
+    position: absolute;
+    bottom: 10%;
+    color: #ececec;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.homepage-events-repeated:not(:first-child) .homepage-events-gradient .event-location {
+    position: absolute;
+    bottom: 2%;
+    color: #ececec;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.homepage_first-event{
+    width: 66%;
+    height: 440px;
+    min-width: 560px;
+}
+
+.homepage-events {
+    margin-bottom: 50px;
+    width: 100%;
+    height: auto;
+ }
+
+
+.homepage_first-event h2{
+    top: 55%;
+    width: 100%;
+    position: relative;
+    color:white;
+    text-align: center;
+    font-size: 3em;
+}
+
+
+
+
+/* adverts */
 .homepage-adverts > div {
     /*background-color: grey;*/
     width: 33%;
