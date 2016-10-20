@@ -14,10 +14,30 @@
        
        
        <div>
-           {{ $quer->username }}
-           {{ $applicant->username }}
-           {{ $contract->price }}
+           <div>
+               <h3>Quer</h3>
+               <div>
+                   Username: {{ $quer->username }}
+               </div>
+           </div>
+           
+           <div>
+               <h3>Apply'r</h3>
+               <div>
+                   Username: {{ $applicant->username }}
+               </div>
+           </div>
+           <div>
+               <h3>Contractinfo</h3>
+               <div>
+                   Prijs van Que'r: {{ $contract->price }}
+                   Fase van contract: {{ $contract->phase_id }}
+               </div>
+           </div>
+           
        </div>
+       
+       
        
        
        

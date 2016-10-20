@@ -38,6 +38,7 @@
            @foreach($applicant_contracts as $a_contract)
            <div>
                {{ $a_contract->price }}
+               <a href="{{url('/contract_details/'.$a_contract->id)}}">Bekijk contract {{ $a_contract->id }}
            </div>
            @endforeach
        </div>

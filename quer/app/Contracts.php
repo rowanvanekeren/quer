@@ -5,6 +5,7 @@ use App\User;
 use App\Advertisements;
 use App\Reviews;
 use App\Events;
+use App\Phases;
 use App\Usr_Adv;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +22,7 @@ class Contracts extends Model
 
     public function phases()
     {
-        return $this->belongsTo('Phases');
+        return $this->belongsTo('App\Phases', 'phase_id');
     }
 
     public function user()

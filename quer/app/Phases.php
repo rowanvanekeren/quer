@@ -5,6 +5,7 @@ use App\User;
 use App\Advertisements;
 use App\Reviews;
 use App\Events;
+use App\Contracts;
 use App\Usr_Adv;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,6 @@ class Phases extends Model
 
     public function contracts()
     {
-        return $this->hasMany(Contracts::class, 'phase_id');
+        return $this->hasMany('App\Contracts', 'phase_id');
     }
 }
