@@ -33,6 +33,7 @@
                    Prijs van Que'r: {{ $contract->price }}
                    Fase van contract: {{ $contract->phases->phase_description }}
                </div>
+
            </div>
            
        </div>
