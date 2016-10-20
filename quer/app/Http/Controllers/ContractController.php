@@ -151,6 +151,16 @@ class ContractController extends Controller
         return redirect('/contracts_overview')->with('msg', "Que'r succesvol gekozen.  Bekijk hier je contract");;
 
     }
+    
+    
+    public function update_contract_phase ($id_contract, $phase_id)
+    {
+        //
+        $contract = Contracts::find($id_contract);
+        
+        $contract->phase_id = $phase_id
+        
+    }
 
     
     

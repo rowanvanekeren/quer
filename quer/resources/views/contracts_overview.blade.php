@@ -25,6 +25,7 @@
            @foreach($quer_contracts as $q_contract)
            <div>
                {{ $q_contract->price }}
+               <a href="{{url('/contract_details/'.$q_contract->id)}}">Bekijk contract {{ $q_contract->id }}</a>
            </div>
            @endforeach
            
@@ -38,7 +39,7 @@
            @foreach($applicant_contracts as $a_contract)
            <div>
                {{ $a_contract->price }}
-               <a href="{{url('/contract_details/'.$a_contract->id)}}">Bekijk contract {{ $a_contract->id }}
+               <a href="{{url('/contract_details/'.$a_contract->id)}}">Bekijk contract {{ $a_contract->id }}</a>
            </div>
            @endforeach
        </div>
