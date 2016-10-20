@@ -158,7 +158,7 @@ class ContractController extends Controller
         //
         $contract = Contracts::find($id_contract);
         
-        $contract->phase_id = $phase_id
+        $contract->phase_id = $phase_id;
         
     }
 
