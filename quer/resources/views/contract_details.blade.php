@@ -35,6 +35,33 @@
                </div>
            </div>
            
+           
+           @if(Auth::user()->id == $quer->id)
+           <div>
+               <form id="upload_ticket" action="{{ url('upload_ticket') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                   <label for="ticket">Upload ticket:</label>
+                   <input type="file" name="ticket" id="ticket">
+                   <input type="submit" value="Upload">
+               </form>
+           </div>
+           @endif
+           
+           
+           @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number == 15)
+           <div>
+               <form id="accept_ticket" action="{{ url('accept_ticket') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                   <input type="checkbox" name="acceptance" id="acceptance">
+                   <label for="acceptance">Het ontvangen ticket is in orde!</label>
+                   <input type="submit" value="Stuur bevestiging">
+               </form>
+           </div>
+           @endif
+           
+           
+           
+           
        </div>
        
        
