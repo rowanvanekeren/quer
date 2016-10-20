@@ -31,7 +31,7 @@
                <h3>Contractinfo</h3>
                <div>
                    Prijs van Que'r: {{ $contract->price }}
-                   Fase van contract: {{ $contract->phase_id }}
+                   Fase van contract: {{ $contract->phases->phase_description }}
                </div>
            </div>
            
