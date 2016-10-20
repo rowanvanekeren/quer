@@ -74,7 +74,7 @@ class ContractController extends Controller
         //
         //$contract = Contracts::find($id);
         //only fetch this is the contract has been agreed on (phase_id > 2)
-        $contract = Contracts::with('phases')->has('phases')->where('phase_id', '>', 2)->first();
+        $contract = Contracts::with('phases')->has('phases')->where('phase_id', '>', 2)->where('id', $id)->first();
         //dd($contract);
         if($contract) {
             $quer = User::find($contract->quer_id);
@@ -148,17 +148,54 @@ class ContractController extends Controller
 
         //dd($contract_agreed, $other_contracts, $advertisement);
 
-        return redirect('/contracts_overview')->with('msg', "Que'r succesvol gekozen.  Bekijk hier je contract");;
+        return redirect('/contracts_overview')->with('msg', "Que'r succesvol gekozen.  Bekijk hier je contract");
 
     }
     
     
-    public function update_contract_phase ($id_contract, $phase_id)
+    public function upload_ticket(Request $request) {
+        //
+        
+        $contract = Contracts::find($request->contract_id);
+        
+        //upload image and add filename to contracts attachement column
+        $destinationPath = base_path() . "/public/uploads";
+        if (isset($request->ticket)) {
+            if ($request->file('ticket')->isValid()) {
+                
+                $fileName = date('d-m-Y') . '_' . $request->ticket->getClientOriginalName();
+
+                $request->file('ticket')->move($destinationPath, $imageName);
+
+                $contract->attachement = $fileName;
+                $contract->save();
+            }
+        }
+        
+        
+        //update contract phase (4 = transfer)
+        $this->update_contract_phase($request->contract_id, 4);
+        return redirect('/contract_details/'.$request->contract_id)->with('msg', "Je ticket werd succesvol toegevoegd!");
+    }
+    
+    
+    public function accept_ticket(Request $request) {
+        //update contract phase with phase id = 5 (= acceptance applicant)
+        update_contracts_phase($request->contract_id, 5);
+        return redirect('/contract_details/'.$request->contract_id)->with('msg', "Ticket geaccepteerd! Dankjewel en veel plezier met je tickets!");
+    }
+    
+    
+    //this function should be called when uploading a ticket as well as when accepting the ticket
+    public function update_contract_phase ($contract_id, $phase_id)
     {
         //
-        $contract = Contracts::find($id_contract);
+        $contract = Contracts::find($contract_id);
         
         $contract->phase_id = $phase_id;
+        
+        
+        $contract->save();
         
     }
 

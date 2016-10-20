@@ -79,4 +79,5 @@ Route::post('/update_account', 'AccountController@update_account')->middleware('
 Route::post('/new_advertisement', 'AdvertisementController@store_new_advertisement')->middleware('auth');
 Route::post('/new_event', 'EventController@store_new_event')->middleware('auth');
 Route::post('/new_contract', 'ContractController@store_new_contract')->middleware('auth');
-Route::post('/upload_ticket', 'ContractController@update_contract_phase');
+Route::post('/upload_ticket', 'ContractController@upload_ticket');
+Route::post('/accept_ticket', 'ContractController@accept_ticket');
