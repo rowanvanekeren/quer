@@ -12,11 +12,31 @@ body {
 }
 
 
-h1 {
-    color: #3432d5;
+
+
+
+.variable_content {
+    width: 1000px;
+    margin: 0 auto;
 }
 
+.variable_content h1 {
+    color: #3432d5;
+    text-align: center;
+    border-bottom: 2px solid blue;
+}
 
+.contract_users .quer,
+.contract_users .applicant {
+    background-color: grey;
+    width: 45%;
+    margin-right: 10%;
+    float: left;
+}
+
+.contract_users .applicant {
+    margin-right: 0;
+}
 
 /* tables */
 
@@ -89,12 +109,14 @@ form textarea {
 
 
 /*   CLEARFIX   */
+.contract_users::before, .contract_users::after,
 form div::before, form div::after {
     content: "";
     display: table;
     line-height: 0;
 }
 
+.contract_users::after,
 form div::after {
     clear: both;
 }

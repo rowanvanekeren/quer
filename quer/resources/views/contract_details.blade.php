@@ -14,19 +14,23 @@
        
        
        <div>
-           <div>
-               <h3>Quer</h3>
-               <div>
-                   Username: {{ $quer->username }}
+           <div class="contract_users">
+               <div class="quer">
+                   <h3>Quer</h3>
+                   <div>
+                       Username: {{ $quer->username }}
+                   </div>
+               </div>
+
+               <div class="applicant">
+                   <h3>Apply'r</h3>
+                   <div>
+                       Username: {{ $applicant->username }}
+                   </div>
                </div>
            </div>
            
-           <div>
-               <h3>Apply'r</h3>
-               <div>
-                   Username: {{ $applicant->username }}
-               </div>
-           </div>
+           
            <div>
                <h3>Contractinfo</h3>
                <div>
@@ -51,6 +55,11 @@
            
            @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number == 15)
            <div>
+               
+               <div class="ticket">
+                   
+               </div>
+               
                <form id="accept_ticket" action="{{ url('accept_ticket') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                    <input type="checkbox" name="acceptance" id="acceptance">
