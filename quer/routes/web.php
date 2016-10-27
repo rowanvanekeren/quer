@@ -81,3 +81,13 @@ Route::post('/new_event', 'EventController@store_new_event')->middleware('auth')
 Route::post('/new_contract', 'ContractController@store_new_contract')->middleware('auth');
 Route::post('/upload_ticket', 'ContractController@upload_ticket');
 Route::post('/accept_ticket', 'ContractController@accept_ticket');
+
+Route::post('/add_review', 'ReviewController@add_Review');
+
+
+//test
+Route::get('/test', 'ContractController@accept_ticket');
+
+Route::get('/test', function () {
+    return view('test');
+});

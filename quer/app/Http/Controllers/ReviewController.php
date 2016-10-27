@@ -20,20 +20,34 @@ class ReviewController extends Controller
     public function add_Review(Request $request)
     {
         $alreadyHasReview = Reviews::where('advertisement_id',$request->advertisement_id )->get();
+        $succeeded = "";
+        if($request->succeeded == "on"){
+            $succeeded = 1;
 
-        if(!isset($alreadyHasReview)){
+        }else{
+            $succeeded = 0;
+        }
+        if($alreadyHasReview != ""){
             $active = 1;
             $review = new Reviews([
                 'quer_id' => $request->quer_id,
                 'applicant_id' => Auth::user()->id,
-                'content' => $request->content,
+                'content' => $request->revcontent,
                 'rate' => $request->rate,
-                'succeeded' => $request->succeeded,
+                'succeeded' => $succeeded,
                 'advertisement_id' => $request->advertisement_id,
                 'active' => $active,
             ]);
 
             $review->save();
+
+            return "oplsaan gelukt";
         }
+        else{
+            return "opslaan is niet gelukt denk ik" . $alreadyHasReview;
+        }
+return "error";
     }
+
+
 }
