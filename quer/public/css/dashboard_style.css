@@ -16,8 +16,8 @@ body {
 
 
 .variable_content {
-    width: 1000px;
-    margin: 0 auto;
+
+    margin-left: 300px;
 }
 
 .variable_content h1 {
@@ -120,3 +120,17 @@ form div::before, form div::after {
 form div::after {
     clear: both;
 }
+
+
+
+
+@media screen and (max-width: 1400px){
+    .variable_content {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+}
+
+

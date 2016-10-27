@@ -446,11 +446,14 @@ class BaseController extends Controller
 
 
     //HELPER FUNCTIONS
-    public function get_userwithadverts(){
-        $array = User::with('advertisements')->get();
+    public function get_user_with_adv_rev($id){
+        $user = User::with('advertisements')->where("id",$id)->first();
+        $reviews = Reviews::where('quer_id', $id)->get();
 
-        return $array;
+        return view('user_details', ['user' => $user, 'reviews' => $reviews]);;
     }
+
+
 
     public function set_advertisements_inactive()
     {

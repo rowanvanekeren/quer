@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-   
+    @include('layouts.dashboard_menu')
    <div class="variable_content">
      
-       @include('layouts.dashboard_menu')
+
       
        <h1>Dashboard</h1>
        <p>Hierop kan je je huidige contracten, openstaande advertenties, ... zien</p>

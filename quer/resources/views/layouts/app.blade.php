@@ -14,6 +14,7 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 
@@ -79,21 +80,38 @@
                 <li><a href="{{ url('/register') }}">Register</a></li>
 
             @else
-                <li>
-                    <a href="{{ url('/dashboard') }}">Dashboard</a>
-                </li>
-                <li>
-                    <a href="{{ url('/logout') }}"
-                       onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
+                        <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
 
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
+                    </ul>
+                    <div class="dropdown-content">
+                        <div class="arrow-up"></div>
+                        <ul class="navbar-dekstop-home">
 
+                            <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
+                            <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
+                            <li><a>Reviews</a></li>
+                            <li>
+                                <a href="{{ url('/edit_account') }}">Account bewerken</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                   onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
 
 
             @endif

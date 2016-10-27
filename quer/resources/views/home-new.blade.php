@@ -27,6 +27,7 @@
             <a href="{{ url('/login') }}">Login</a>
             <a href="{{ url('/register') }}">Register</a>
         @else
+
             <div class="image-wrapper">
                 <ul>
                     <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
@@ -76,21 +77,42 @@
                     <li><a href="{{ url('/register') }}">Register</a></li>
 
                 @else
-                    <li>
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/logout') }}"
-                           onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
+                    <style>
 
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
+                    </style>
 
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
+                            <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
+
+                        </ul>
+                        <div class="dropdown-content">
+                            <div class="arrow-up"></div>
+                            <ul class="navbar-dekstop-home">
+
+                                <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
+                                <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
+                                <li><a>Reviews</a></li>
+                                <li>
+                                    <a href="{{ url('/edit_account') }}">Account bewerken</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+
+                            </ul>
+
+
+                    </div>
 
 
                 @endif
@@ -145,7 +167,7 @@
                         <h2><a href="{{ url('/advert_overview/'. $advert->advert->id) }}">{{$advert->event->name}}</a></h2>
                         <ul>
                             <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
-                            <li>  <p>{{$advert->user->username}}</p></li>
+                            <li>  <p><a href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a></p></li>
                             <li>  <p>&euro; {{$advert->advert->price}}</p></li>
 
                         </ul>

@@ -54,7 +54,7 @@ Route::get('/contract_details/{id}', 'ContractController@get_contract_details')-
 
 Route::get('/update_contract/{id}', 'ContractController@update_contracts')->middleware('auth');
 
-
+Route::get('/user_details/{id}', 'BaseController@get_user_with_adv_rev');
 
 //test route -> can be used for whatever you want to test
 //Route::get('/test/{id}', 'ContractController@get_quers_overview');

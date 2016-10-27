@@ -2,7 +2,9 @@
                     
 @extends('layouts.app')
 
-@section('content')   
+@section('content')
+@include('layouts.dashboard_menu')
+<div class="variable_content">
 <!-- old values should be displayed here -->
                        <form  role="form" method="POST" action="{{ url('/update_account') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -103,5 +105,5 @@
                                 </button>
 
                     </form>
-                    
+            </div>
 @endsection
