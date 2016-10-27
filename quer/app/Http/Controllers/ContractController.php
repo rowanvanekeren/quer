@@ -165,9 +165,9 @@ class ContractController extends Controller
                 
                 $fileName = date('d-m-Y') . '_' . $request->ticket->getClientOriginalName();
 
-                $request->file('ticket')->move($destinationPath, $imageName);
+                $request->file('ticket')->move($destinationPath, $fileName);
 
-                $contract->attachement = $fileName;
+                $contract->attachment = $fileName;
                 $contract->save();
             }
         }
@@ -178,10 +178,26 @@ class ContractController extends Controller
         return redirect('/contract_details/'.$request->contract_id)->with('msg', "Je ticket werd succesvol toegevoegd!");
     }
     
+    public function download_ticket( $id ) {
+        //
+        
+        $contract = Contracts::find($id);
+        //dd($contract->attachment);
+        
+        $file= base_path() . "/public/uploads/" . $contract->attachment;
+        //dd($file);
+        $headers = array(
+                  'Content-Type: application/pdf',
+                );
+        
+        $this->update_contract_phase($id, 5);
+        
+        return response()->download($file, $contract->attachment, $headers);
+    }
     
     public function accept_ticket(Request $request) {
-        //update contract phase with phase id = 5 (= acceptance applicant)
-        update_contracts_phase($request->contract_id, 5);
+        //update contract phase with phase id = 6 (= acceptance applicant)
+        update_contracts_phase($request->contract_id, 6);
         return redirect('/contract_details/'.$request->contract_id)->with('msg', "Ticket geaccepteerd! Dankjewel en veel plezier met je tickets!");
     }
     

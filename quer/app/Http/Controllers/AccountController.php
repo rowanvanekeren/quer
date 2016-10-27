@@ -44,9 +44,9 @@ class AccountController extends Controller
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->username = $request->username;
-        $user->country = $request->country;;
+        $user->country = $request->country;
         $user->city = $request->city;
-        $user->street = $request->username;;
+        $user->street = $request->username;
         $user->house_number = $request->house_number;
         $user->phone_number = $request->phone_number;
         $user->email = $request->email;

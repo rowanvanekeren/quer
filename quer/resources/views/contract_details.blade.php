@@ -12,6 +12,11 @@
        <h1>Contractdetails</h1>
        <p>Informatie over een aangegaan contract.</p>
        
+       @if (session('msg'))
+           <div class="msg_info">
+               {{ session('msg') }}
+           </div>
+       @endif
        
        <div>
            <div class="contract_users">
@@ -47,17 +52,18 @@
                     {{ csrf_field() }}
                    <label for="ticket">Upload ticket:</label>
                    <input type="file" name="ticket" id="ticket">
+                   <input type="number" name="contract_id" value="{{$contract->id}}">
                    <input type="submit" value="Upload">
                </form>
            </div>
            @endif
            
            
-           @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number == 15)
+           @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number >= 15)
            <div>
                
                <div class="ticket">
-                   
+                   <a href="{{ route('download_ticket', [$contract->id]) }}">Download Ticket</a>
                </div>
                
                <form id="accept_ticket" action="{{ url('accept_ticket') }}" method="POST" enctype="multipart/form-data">

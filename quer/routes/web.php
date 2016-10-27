@@ -54,6 +54,8 @@ Route::get('/contract_details/{id}', 'ContractController@get_contract_details')-
 
 Route::get('/update_contract/{id}', 'ContractController@update_contracts')->middleware('auth');
 
+Route::get('/download_ticket/{id}', ['as' => 'download_ticket', 'uses' => 'ContractController@download_ticket'])->middleware('auth');
+
 
 
 //test route -> can be used for whatever you want to test
