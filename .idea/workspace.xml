@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="202a6eaf-c11b-4084-bac9-56b48a20db1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/quer/public/css/dashboard_navbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/quer/resources/views/user_details.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/app/Http/Controllers/BaseController.php" afterPath="$PROJECT_DIR$/quer/app/Http/Controllers/BaseController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/quer/public/uploads/27-10-2016_thes_script.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/quer/public/js/admin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/quer/public/js/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/app/Http/Controllers/AccountController.php" afterPath="$PROJECT_DIR$/quer/app/Http/Controllers/AccountController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/app/Http/Controllers/ContractController.php" afterPath="$PROJECT_DIR$/quer/app/Http/Controllers/ContractController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/layouts/dashboard_menu.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/layouts/dashboard_menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/public/css/dashboard_style.css" afterPath="$PROJECT_DIR$/quer/public/css/dashboard_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/edit_account.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/edit_account.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/home-new.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/home-new.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/public/css/navbar-sub.css" afterPath="$PROJECT_DIR$/quer/public/css/navbar-sub.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/public/css/navbar.css" afterPath="$PROJECT_DIR$/quer/public/css/navbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/contract_details.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/contract_details.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/resources/views/quers_overview.blade.php" afterPath="$PROJECT_DIR$/quer/resources/views/quers_overview.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quer/routes/web.php" afterPath="$PROJECT_DIR$/quer/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="project-quer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quer/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9367682">
-              <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
+            <state vertical-scroll-proportion="-22.222221">
+              <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -106,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quer/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.75">
-              <caret line="56" column="73" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
+            <state vertical-scroll-proportion="-0.48594847">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -158,7 +154,6 @@
         <option value="$PROJECT_DIR$/quer/public/js/main.js" />
         <option value="$PROJECT_DIR$/quer/resources/views/test.blade.php" />
         <option value="$PROJECT_DIR$/quer/app/Http/Controllers/ReviewController.php" />
-        <option value="$PROJECT_DIR$/quer/routes/web.php" />
         <option value="$PROJECT_DIR$/quer/app/Http/Controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/quer/public/css/dashboard-navbar.css" />
         <option value="$PROJECT_DIR$/quer/resources/views/user_details.blade.php" />
@@ -171,6 +166,7 @@
         <option value="$PROJECT_DIR$/quer/resources/views/home-new.blade.php" />
         <option value="$PROJECT_DIR$/quer/public/css/navbar.css" />
         <option value="$PROJECT_DIR$/quer/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/quer/routes/web.php" />
       </list>
     </option>
   </component>
@@ -911,14 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quer/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.75">
-          <caret line="56" column="73" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quer/resources/views/edit_account.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.472221">
@@ -953,8 +941,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quer/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9367682">
-          <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
+        <state vertical-scroll-proportion="-22.222221">
+          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quer/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.48594847">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>

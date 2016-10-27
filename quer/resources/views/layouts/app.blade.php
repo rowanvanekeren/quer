@@ -26,12 +26,13 @@
     </script>
 
     <script type="text/javascript" src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
-
+    <script type="text/javascript" src="{{asset('js/angular.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
 
 
 
 </head>
-<body>
+<body ng-app="mainApp">
 <nav>
 
 <div id="mySidenav" class="sidenav">
