@@ -19,15 +19,51 @@ body {
 
 .contract_users .quer,
 .contract_users .applicant {
-    background-color: grey;
-    width: 45%;
-    margin-right: 10%;
+    background-color: #fff;
+    width: 47.32%;
+    margin-right: 5%;
     float: left;
+    border: #6564d9 solid 1px;
+    border-radius: 5px;
+    padding-top: 5px;
 }
 
 .contract_users .applicant {
     margin-right: 0;
 }
+
+.contract_users h3 {
+    text-align: center;
+    border-bottom: #6564d9 solid 1px;
+}
+
+.contract_users .details {
+    padding: 3%;
+}
+
+.contract_users .image {
+    width: 40%;
+    height: 175px;
+    margin: 0;
+    margin-right: 10%;
+    overflow: hidden;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.contract_users .image,
+.contract_users .info {
+    float: left;
+}
+
+.contract_info {
+    width: 100%;
+    border: #6564d9 solid 1px;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
 
 /* tables */
 
@@ -101,6 +137,7 @@ form textarea {
 
 /*   CLEARFIX   */
 .contract_users::before, .contract_users::after,
+.contract_users .details::before, .contract_users .details::after,
 form div::before, form div::after {
     content: "";
     display: table;
@@ -108,6 +145,7 @@ form div::before, form div::after {
 }
 
 .contract_users::after,
+.contract_users .details::after,
 form div::after {
     clear: both;
 }

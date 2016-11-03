@@ -22,21 +22,36 @@
            <div class="contract_users">
                <div class="quer">
                    <h3>Quer</h3>
-                   <div>
-                       Username: {{ $quer->username }}
+                   <div class="details">
+                       <div class="image" style="background:url(../images/profiles/{{ $quer->image }})">
+                           
+                       </div>
+                       <div class="info">
+                           <div><label>Gebruikersnaam:</label> {{ $quer->username }}</div>
+                           <div><label>Naam:</label> {{ $quer->first_name }} {{ $quer->last_name }}</div>
+                           <div><label>E-mail:</label> {{ $quer->email }}</div>
+                           <div><label>Telefoon:</label> {{ $quer->phone }}</div>
+                           <div><label>Username:</label> {{ $quer->username }}</div>
+                       </div>
                    </div>
+                   
                </div>
 
                <div class="applicant">
                    <h3>Apply'r</h3>
-                   <div>
-                       Username: {{ $applicant->username }}
+                   <div class="details">
+                       <div class="image" style="background:url(../images/profiles/{{ $applicant->image }})">
+                           
+                       </div>
+                       <div class="info">
+                           <div>Username: {{ $applicant->username }}</div>
+                       </div>
                    </div>
                </div>
            </div>
            
            
-           <div>
+           <div class="contract_info">
                <h3>Contractinfo</h3>
                <div>
                    Prijs van Que'r: {{ $contract->price }}
