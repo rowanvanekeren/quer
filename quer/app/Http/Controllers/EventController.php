@@ -33,7 +33,6 @@ class EventController extends Controller
         $startdatetime = $request->startdate . " " . $request->starttime;
         $eventdatetime = $request->eventdate . " " . $request->eventtime;
 
-
         $event = new Events([
             'name' => $request->name,
             'description' => $request->description,
@@ -52,6 +51,7 @@ class EventController extends Controller
 
         $event->save();
 
+
         $destinationPath = base_path() . "/public/images/events";
         if (isset($request->image)) {
             if ($request->file('image')->isValid()) {
@@ -65,6 +65,8 @@ class EventController extends Controller
                 $event->save();
             }
         }
+
+
 
         if (Auth::user()->is_admin == 0) {
             return redirect('/add_advertisement/' . $event->id);
