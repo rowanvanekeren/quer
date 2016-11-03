@@ -26,6 +26,17 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
 });
 
+function getEventWrapper(i){
+    if(i == 0){
+
+        $('.existing_event_collapse').removeClass('existing_event_collapse_anim');
+        $('.new_event_collapse').addClass('new_event_collapse_anim');
+    }else if(i ==1){
+        $('.existing_event_collapse').addClass('existing_event_collapse_anim');
+        $('.new_event_collapse').removeClass('new_event_collapse_anim');
+    }
+
+}
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
