@@ -76,11 +76,13 @@ class ContractController extends Controller
         //only fetch this is the contract has been agreed on (phase_id > 2)
         $contract = Contracts::with('phases')->has('phases')->with('advertisements')->where('phase_id', '>', 2)->where('id', $id)->first();
         //dd($contract);
+        $event = Events::find($contract->advertisements->event_id);
+        //dd($event);
         if($contract) {
             $quer = User::find($contract->quer_id);
             $applicant = User::find($contract->applicant_id);
             //$advert = Advertisements::find($contract->advertisement_id);
-            return view('contract_details', ['contract' => $contract, 'quer' => $quer, 'applicant' => $applicant]);
+            return view('contract_details', ['contract' => $contract, 'event' => $event, 'quer' => $quer, 'applicant' => $applicant]);
         }
         else {
             //for now -> should be changed into some kind of error / flash message
