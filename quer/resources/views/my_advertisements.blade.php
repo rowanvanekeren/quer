@@ -66,7 +66,7 @@
        
        
        
-       <div>
+       <div class="new_advert_btn">
            <a href="{{ url('/add_advertisement') }}">Nieuwe advertentie</a>
        </div>
     

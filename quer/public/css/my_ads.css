@@ -97,6 +97,7 @@ overflow:hidden;
 
 .my_advert_quers_left  tr:first-child {
     height: 60px;
+    background-color:white;
 }
 
 
@@ -120,4 +121,18 @@ overflow:hidden;
     width: 100%;
 }
 
+}
+
+.new_advert_btn a{
+    font-family: "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
 }
