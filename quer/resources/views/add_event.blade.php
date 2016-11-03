@@ -3,12 +3,15 @@
 
 @section('content')
     <div class="variable_content">
+        <h3 class="title">Evenement toevoegen</h3>
+        <div class="add_event_button_wrapper">
+            <button onclick="getEventWrapper(0)">Maak nieuw evenement</button>
+            <button onclick="getEventWrapper(1)">Kies bestaand evenement</button>
+        </div>
 
+        <div class="new_event_collapse">
         <form id="add_event_form" action="{{ url('new_event') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-
-            <h3 class="title">Evenement toevoegen</h3>
-
             <div>
                 <label for="name">Naam:</label>
                 <input id="name" name="name" type="text" required >
@@ -68,41 +71,36 @@
             </div>
 
         </form>
+        </div>
+
+        <div class="existing_event_collapse">
         <div class="add_event_wrapper">
             <table class="add_event_quers_left" >
                 <tr><th>{{--aantal quers--}}</th></tr>
                 @foreach ($events as $event)
                     <tr> <td><div class="add_event_events" style="background-image: url('../public/images/events/{{$event->image}}') " ></div>
                         </td>
-
                     </tr>
-
                 @endforeach
-
             </table>
-
             <table class="add_event_right" >
                 <tr>
-
                     <th>Evenement</th>
                     <th>Advertentie beschrijving</th>
                     <th>Datum</th>
                     <th>Aantal que'rs</th>
                 </tr>
                 @foreach ($events as $event)
-
                     <tr>
-
                         <td><div class="add_event_right_max_height">{{ $event->name }} </div></td>
                         <td><div class="add_event_right_max_height">{{ $event->location }}</div></td>
                         <td>{{$event->date_start_event}}</td>
                         <td>{{$event->date_sell_start}}</td>
                     </tr>
-
                 @endforeach
             </table>
         </div>
-
+        </div>
 
         </div>
 @endsection

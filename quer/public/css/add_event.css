@@ -1,3 +1,33 @@
+
+.existing_event_collapse{
+    display:none;
+    opacity: 0;
+}
+
+.existing_event_collapse_anim{
+    display:block;
+    opacity: 1;
+    animation-name: exist;
+    animation-duration: 1s;
+}
+@keyframes exist {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.new_event_collapse{
+    display:none;
+}
+
+.new_event_collapse_anim{
+    display:block;
+    animation-name: new;
+    animation-duration: 1s;
+}
+@keyframes new {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 #add_event_form{
     width: 100%;
     overflow: hidden;
@@ -168,6 +198,32 @@
     max-height: 120px;
     overflow: hidden;
 }
+
+
+.add_event_button_wrapper{
+    width:100%;
+}
+
+.add_event_button_wrapper button{
+     padding: 12px 20px 12px 20px;
+     box-sizing: border-box;
+     font-size: 16px;
+     border: 0px solid #ccc;
+     background-color: #3432d5;
+     color: white;
+     width: 49%;
+     float: left;
+     overflow: hidden;
+     border-radius: 4px;
+ }
+
+.add_event_button_wrapper button:first-child{
+margin-right: 2%;
+}
+
+
+
+
 
 @media screen and (max-width: 600px){
     .add_event_quers_left{
