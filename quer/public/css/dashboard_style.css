@@ -31,6 +31,7 @@ body {
 
 /* tables */
 
+/*
 table {
     margin-left: 0;
     border-collapse: collapse;
@@ -54,6 +55,7 @@ table tr:hover {
 table tr:first-child {
     background-color: #CDCCF5;
 }
+*/
 
 
 .quers_overview img {
