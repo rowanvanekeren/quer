@@ -17,7 +17,8 @@ class EventController extends Controller
     
     public function add_event()
     {
-        return view('add_event');
+        $events = Events::all();
+        return view('add_event',['events' => $events]);
     }
     
     
@@ -75,5 +76,7 @@ class EventController extends Controller
         }
 
     }
+
+
     
 }

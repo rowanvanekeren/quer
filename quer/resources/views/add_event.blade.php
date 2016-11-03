@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="variable_content">
 
-    <div>
         <form id="add_event_form" action="{{ url('new_event') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
 
@@ -68,5 +68,41 @@
             </div>
 
         </form>
-    </div>
+        <div class="add_event_wrapper">
+            <table class="add_event_quers_left" >
+                <tr><th>{{--aantal quers--}}</th></tr>
+                @foreach ($events as $event)
+                    <tr> <td><div class="add_event_events" style="background-image: url('../public/images/events/{{$event->image}}') " ></div>
+                        </td>
+
+                    </tr>
+
+                @endforeach
+
+            </table>
+
+            <table class="add_event_right" >
+                <tr>
+
+                    <th>Evenement</th>
+                    <th>Advertentie beschrijving</th>
+                    <th>Datum</th>
+                    <th>Aantal que'rs</th>
+                </tr>
+                @foreach ($events as $event)
+
+                    <tr>
+
+                        <td><div class="add_event_right_max_height">{{ $event->name }} </div></td>
+                        <td><div class="add_event_right_max_height">{{ $event->location }}</div></td>
+                        <td>{{$event->date_start_event}}</td>
+                        <td>{{$event->date_sell_start}}</td>
+                    </tr>
+
+                @endforeach
+            </table>
+        </div>
+
+
+        </div>
 @endsection

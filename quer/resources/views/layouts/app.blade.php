@@ -16,6 +16,7 @@
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/my_ads.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/add_event.css') }}" rel="stylesheet">
    {{-- <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">--}}
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}

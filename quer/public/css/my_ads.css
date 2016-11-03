@@ -40,7 +40,7 @@
     height: 120px;
 
 }
-.my_advert_right tr,td  {
+.my_advert_right tr, .my_advert_right td  {
     height: 120px;
     max-height: 120px;
     padding: .5em;
@@ -52,13 +52,15 @@ overflow:hidden;
 
 }
 
-.my_advert_quers_left tr td  {
+.my_advert_quers_left tr, .my_advert_quers_left td  {
     height: 120px;
+    width: 120px;
     padding-top: .5em;
     padding-bottom: .5em;
     background-color: #377037;
   text-align: center;
     text-decoration: none;
+    border-bottom: 1px solid white;
 }
 .my_advert_quers_left th {
     text-align: center;
@@ -101,7 +103,7 @@ overflow:hidden;
 .my_adv_page_title{
     width: 100%;
 }
-.my_adv_page_title h1,p{
+.my_adv_page_title h1, .my_adv_page_title p{
     text-align: center;
 }
 
