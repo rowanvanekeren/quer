@@ -125,7 +125,6 @@
 .dropdown-content {
     display: none;
     right:0;
-
     position: absolute;
     background-color: white;
     min-width: 160px;
