@@ -5,11 +5,11 @@
     <div class="variable_content">
         <h3 class="title">Evenement toevoegen</h3>
         <div class="add_event_button_wrapper">
-            <button onclick="getEventWrapper(0)">Maak nieuw evenement</button>
-            <button onclick="getEventWrapper(1)">Kies bestaand evenement</button>
+            <button id="new_event_btn" class="add_event_active" onclick="getEventWrapper(0)">Maak nieuw evenement</button>
+            <button id="existing_event_btn" onclick="getEventWrapper(1)">Kies bestaand evenement</button>
         </div>
 
-        <div class="new_event_collapse">
+        <div class="new_event_collapse_anim">
         <form id="add_event_form" action="{{ url('new_event') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div>
@@ -39,12 +39,14 @@
 
             <div>
                 <label for="startdate">Startdatum verkoop:</label>
-                <input id="startdate" name="startdate" type="date" >
+                <input class="datepicker" type="text" name="startdate" placeholder="Startdatum verkoop" required>
+               {{-- <input id="startdate" name="startdate" type="date" >--}}
                 <input id="starttime" name="starttime" type="time" >
             </div>
             <div>
                 <label for="eventdate">Datum evenement:</label>
-                <input id="eventdate" name="eventdate" type="date" >
+                <input class="datepicker" type="text" name="eventdate" placeholder="Datum evenement" required>
+               {{-- <input id="eventdate" name="eventdate" type="date" >--}}
                 <input id="eventtime" name="eventtime" type="time" >
             </div>
 
@@ -86,16 +88,17 @@
             <table class="add_event_right" >
                 <tr>
                     <th>Evenement</th>
-                    <th>Advertentie beschrijving</th>
-                    <th>Datum</th>
-                    <th>Aantal que'rs</th>
+                    <th>Locatie</th>
+                    <th>Datum evenement</th>
+                    <th>Start verkoop</th>
                 </tr>
                 @foreach ($events as $event)
-                    <tr>
+                    <tr onclick="choose_event({{ $event->id  }})">
+
                         <td><div class="add_event_right_max_height">{{ $event->name }} </div></td>
                         <td><div class="add_event_right_max_height">{{ $event->location }}</div></td>
-                        <td>{{$event->date_start_event}}</td>
-                        <td>{{$event->date_sell_start}}</td>
+                        <td>{{$event->date_event}}</td>
+                        <td>{{$event->date_start_sell}}</td>
                     </tr>
                 @endforeach
             </table>

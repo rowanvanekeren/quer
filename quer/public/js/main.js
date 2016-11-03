@@ -25,13 +25,20 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
 
 });
-
+function choose_event(id){
+    window.location.href = "./add_advertisement/" +id;
+}
 function getEventWrapper(i){
     if(i == 0){
 
+        $('#existing_event_btn').removeClass('add_event_active');
+        $('#new_event_btn').addClass('add_event_active');
         $('.existing_event_collapse').removeClass('existing_event_collapse_anim');
         $('.new_event_collapse').addClass('new_event_collapse_anim');
     }else if(i ==1){
+        $('#existing_event_btn').addClass('add_event_active');
+        $('#new_event_btn').removeClass('add_event_active');
+        $('.new_event_collapse_anim').addClass('new_event_collapse');
         $('.existing_event_collapse').addClass('existing_event_collapse_anim');
         $('.new_event_collapse').removeClass('new_event_collapse_anim');
     }
