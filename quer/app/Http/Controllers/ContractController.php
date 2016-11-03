@@ -74,7 +74,7 @@ class ContractController extends Controller
         //
         //$contract = Contracts::find($id);
         //only fetch this is the contract has been agreed on (phase_id > 2)
-        $contract = Contracts::with('phases')->has('phases')->where('phase_id', '>', 2)->where('id', $id)->first();
+        $contract = Contracts::with('phases')->has('phases')->with('advertisements')->where('phase_id', '>', 2)->where('id', $id)->first();
         //dd($contract);
         if($contract) {
             $quer = User::find($contract->quer_id);

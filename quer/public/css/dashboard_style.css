@@ -32,7 +32,8 @@ body {
     margin-right: 0;
 }
 
-.contract_users h3 {
+.contract_users h3,
+.contract_info h3 {
     text-align: center;
     border-bottom: #6564d9 solid 1px;
 }
@@ -41,11 +42,15 @@ body {
     padding: 3%;
 }
 
+.contract_info .details {
+    padding: 1.5%;
+}
+
 .contract_users .image {
     width: 40%;
     height: 175px;
     margin: 0;
-    margin-right: 10%;
+    margin-right: 5%;
     overflow: hidden;
     background-repeat: no-repeat !important;
     background-size: cover !important;

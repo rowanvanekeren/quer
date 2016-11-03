@@ -10,7 +10,6 @@
        @include('layouts.dashboard_menu')
       
        <h1>Contractdetails</h1>
-       <p>Informatie over een aangegaan contract.</p>
        
        @if (session('msg'))
            <div class="msg_info">
@@ -53,9 +52,20 @@
            
            <div class="contract_info">
                <h3>Contractinfo</h3>
-               <div>
-                   Prijs van Que'r: {{ $contract->price }}
-                   Fase van contract: {{ $contract->phases->phase_description }}
+               <div class="details">
+                   <div>
+                       <div>
+                           <label>Fase van contract:</label> {{ $contract->phases->phase_description }}
+                       </div>
+                       <div>
+                           <label>Prijs van Que'r:</label> {{ $contract->advertisements->price }}
+                       </div>
+                       <div>
+                           <label>Prijs van Que'r:</label> {{ $contract->price }}
+                       </div>
+                   </div>
+                   
+                   
                </div>
 
            </div>
