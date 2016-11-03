@@ -26,11 +26,11 @@
                            
                        </div>
                        <div class="info">
-                           <div><label>Gebruikersnaam:</label> {{ $quer->username }}</div>
-                           <div><label>Naam:</label> {{ $quer->first_name }} {{ $quer->last_name }}</div>
-                           <div><label>E-mail:</label> {{ $quer->email }}</div>
-                           <div><label>Telefoon:</label> {{ $quer->phone }}</div>
-                           <div><label>Username:</label> {{ $quer->username }}</div>
+                           <div><label>Gebruiker:</label><span>{{ $quer->username }}</span></div>
+                           <div><label>Naam:</label><span>{{ $quer->first_name }} {{ $quer->last_name }}</span></div>
+                           <div><label>E-mail:</label><span></span>{{ $quer->email }}</span></div>
+                           <div><label>Telefoon:</label><span></span>{{ $quer->phone_number }}</span></div>
+                           <div><label>Username:</label><span></span>{{ $quer->username }}</span></div>
                        </div>
                    </div>
                    
@@ -43,7 +43,11 @@
                            
                        </div>
                        <div class="info">
-                           <div>Username: {{ $applicant->username }}</div>
+                           <div><label>Gebruiker:</label><span>{{ $applicant->username }}</span></div>
+                           <div><label>Naam:</label><span>{{ $applicant->first_name }} {{ $quer->last_name }}</span></div>
+                           <div><label>E-mail:</label><span>{{ $applicant->email }}</span></div>
+                           <div><label>Telefoon:</label><span>{{ $applicant->phone_number }}</span></div>
+                           <div><label>Username:</label><span>{{ $applicant->username }}</span></div>
                        </div>
                    </div>
                </div>
@@ -58,10 +62,13 @@
                            <label>Fase van contract:</label> {{ $contract->phases->phase_description }}
                        </div>
                        <div>
-                           <label>Prijs van Que'r:</label> {{ $contract->advertisements->price }}
+                           <label>Prijs van advertentie:</label> {{ $contract->advertisements->price }}
                        </div>
                        <div>
                            <label>Prijs van Que'r:</label> {{ $contract->price }}
+                       </div>
+                       <div>
+                           <label>Totale prijs:</label> {{ $contract->advertisements->price + $contract->price }}
                        </div>
                    </div>
                    

@@ -20,11 +20,11 @@ body {
 .contract_users .quer,
 .contract_users .applicant {
     background-color: #fff;
-    width: 47.32%;
-    margin-right: 5%;
+    width: 48.32%;
+    margin-right: 2%;
     float: left;
     border: #6564d9 solid 1px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     padding-top: 5px;
 }
 
@@ -47,10 +47,10 @@ body {
 }
 
 .contract_users .image {
-    width: 40%;
-    height: 175px;
+    width: 35%;
+    height: 155px;
     margin: 0;
-    margin-right: 5%;
+    margin-right: 3%;
     overflow: hidden;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -62,10 +62,20 @@ body {
     float: left;
 }
 
+.contract_users .info label,
+.contract_users .info span {
+    display: block;
+    float: left;
+}
+
+.contract_users .info label {
+    width: 80px;
+}
+
 .contract_info {
     width: 100%;
     border: #6564d9 solid 1px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     margin-top: 25px;
 }
 
@@ -143,6 +153,7 @@ form textarea {
 /*   CLEARFIX   */
 .contract_users::before, .contract_users::after,
 .contract_users .details::before, .contract_users .details::after,
+.contract_users .info div::before, .contract_users .info div::after,
 form div::before, form div::after {
     content: "";
     display: table;
@@ -151,6 +162,7 @@ form div::before, form div::after {
 
 .contract_users::after,
 .contract_users .details::after,
+.contract_users .info div::after,
 form div::after {
     clear: both;
 }
