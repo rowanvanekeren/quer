@@ -70,11 +70,11 @@
     <div id="main">
     <div class="standard-nav">
         <div class="sub-nav-background-gradient">
-        <ul class="sub-nav-left">
+        <a href="{{ url('/') }}"><ul class="sub-nav-left">
             <li><img src="{{ asset('images/querlogo/logo5.png') }}" width="50px" /></li>
-            <li  >Que'r</li>
+            <li >Que'r</li>
 
-        </ul>
+        </ul></a>
         <ul class="sub-nav-right">
             @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Login</a></li>
