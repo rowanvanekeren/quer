@@ -1,0 +1,127 @@
+.add_advert_section{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    float:left;
+}
+
+.add_new_advert{
+        position: relative ;
+     height: 250px;
+     width: 45%;
+     float:right;
+
+     border: 3px dashed black;
+ }
+.add_new_advert h2, .add_new_advert a{
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0 solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 4px;
+text-align: center;
+}
+.add_new_advert h2{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left:-25%;
+}
+
+.add_advert_from_section{
+    height: 250px;
+    width: 45%;
+    float: left;
+}
+/*/////////////////////////////////*/
+
+.selected_advert{
+    position: relative ;
+    height: 250px;
+    width: 45%;
+    float:right;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.selected_advert h2{
+     width: 80%;
+     position: absolute;
+     text-align: center;
+     left: 50%;
+     margin-left: -40%;
+     top: 45%;
+     color: white;
+
+ }
+
+.selected_advert p{
+      width: 80%;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      margin-left: -40%;
+      top: 60%;
+      color: white;
+
+  }
+.selected_advert h1{
+    width: 80%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    margin-left: -40%;
+    top: 25%;
+    color: white;
+
+}
+.add_advert_gradient{
+
+    margin:0;
+    padding: 0;
+    width:100%;
+    height: 250px;
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 80%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 80%);
+}
+
+#add_advertisement_form, #add_advertisement_form div{
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+}
+
+#add_advertisement_form input, #add_advertisement_form textarea {
+    float:right;
+    width: 50%;
+}
+#add_advertisement_form label {
+    display:inline-block;
+    width: 40%;
+    float:left;
+    text-align: right;
+}
+#add_advert_submit{
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.add_advert_title{
+    width: 100%;
+
+}
