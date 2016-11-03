@@ -41,25 +41,17 @@ if(isset($event)) {
      
        @include('layouts.dashboard_menu')
       
-       <h1>Advertentie toevoegen</h1>
+     {{--  <h1>Advertentie toevoegen</h1>
        <p>Hier kan je een nieuwe advertentie aanmaken.</p>
-       <p>Als je vertrekt van een bestaand evenement wordt deze info meteen ingeladen, anders vul je dit helemaal zelf in en wordt er ook een nieuw evenement aangemaakt als je een advertentie aanmaakt.</p>
+       <p>Als je vertrekt van een bestaand evenement wordt deze info meteen ingeladen, anders vul je dit helemaal zelf in en wordt er ook een nieuw evenement aangemaakt als je een advertentie aanmaakt.</p>--}}
        
        
        
        
-       <div>
-           <h3>Selecteer je evenement</h3>
-           
-           @if(isset($event))
-           <div class="msg_info">Evenement "{{$event->name}}" geselecteerd</div>
-           @else
-           <div>Er is nog geen evenement geselecteerd... <a href="{{ url('add_event') }}">Voeg er één toe</a></div>
-           @endif
-           
-           @if($errors->any())
-           <div class="msg_error">{{$errors->first()}}</div>
-           @endif
+       <div class="add_advert_title">
+           <h1>Voeg een advertentie toe</h1>
+
+       </div>
            
   {{--         <form id="add_event_form" action="{{ url('new_advertisement') }}" method="POST" enctype="multipart/form-data">
                {{ csrf_field() }}
@@ -110,23 +102,39 @@ if(isset($event)) {
                </div>
                
                 </form>--}}
+        <div class="add_advert_section">
+       @if(isset($event))
+           <div class="selected_advert" style="background-image: url('../images/events/{{$event->image}}')">
+               <div class="add_advert_gradient">
+                    <h1>Geselecteerd evenement:</h1>
+                   <h2>{{$event->name}} </h2>
+               <p>Start verkoop: {{$event->date_start_sell}}</p></div>
+           </div>
+       @else
+           <div class="add_new_advert"><h2><a href="{{ url('add_event') }}">Voeg er één toe</a></h2></div>
+       @endif
 
+       @if($errors->any())
+           <div class="msg_error">{{$errors->first()}}</div>
+       @endif
+
+       <div class="add_advert_from_section">
            <form id="add_advertisement_form" action="{{ url('new_advertisement') }}" method="POST" >
                {{ csrf_field() }}
-               <h3 class="title fase1">Extra persoonlijke info</h3>
 
 
-               <div>
-                   <label for="event_id">Event ID:</label>
-                   <input id="event_id" name="event_id" type="number" value="{{ $id }}">
-                   <span>Dit zal uiteindelijk niet zichtbaar zijn (testfase alleen).  Als dit als leeg wordt doorgegeven weet je dat er een volledig nieuwe advertebtie is aangemaakt</span>
-               </div>
+
+
+                  {{-- <label for="event_id">Event ID:</label>--}}
+                   <input id="event_id" name="event_id" type="hidden" value="{{ $id }}">
+                  {{-- <span>Dit zal uiteindelijk niet zichtbaar zijn (testfase alleen).  Als dit als leeg wordt doorgegeven weet je dat er een volledig nieuwe advertebtie is aangemaakt</span>--}}
+
                
-               <div>
-                   <label for="user_id">User ID:</label>
-                   <input id="user_id" name="user_id" type="number" value="{{Auth::user()->id}}">
-                   <span>Wordt automatisch ingeladen en is niet zichtbaar op het uiteindelijke form</span>
-               </div>
+
+                {{--   <label for="user_id">User ID:</label>--}}
+                   <input id="user_id" name="user_id" type="hidden" value="{{Auth::user()->id}}">
+           {{--        <span>Wordt automatisch ingeladen en is niet zichtbaar op het uiteindelijke form</span>--}}
+
 
                <div>
                    <label for="private_description">Persoonlijke beschrijving:</label>
@@ -139,19 +147,19 @@ if(isset($event)) {
                </div>
 
                <div class="add_button">
-                    <button type="submit">
+                    <button id="add_advert_submit" type="submit">
                         Advertentie publiceren
                     </button>
                </div>
 
            </form>
-       </div>
-       
-       
-       
-       
-       
-       
+
+            </div>
+
+        </div>
+
+
+
    </div>
    
 @endsection
