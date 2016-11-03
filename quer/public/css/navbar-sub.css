@@ -57,6 +57,7 @@ float:right;
     display: inline-block;
     color: #fff;
     text-align: right;
+    vertical-align: middle;
 }
 .standard-nav ul li a{
     text-decoration: none;
