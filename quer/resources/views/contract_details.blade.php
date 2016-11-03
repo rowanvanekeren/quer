@@ -95,7 +95,8 @@
                                <input type="submit" value="Upload">
                            </form>
                        </div>
-                       @else
+                       @endif
+                       @if(Auth::user()->id == $quer->id && $contract->phases->phase_number != 10)
                        <div>
                            Bedankt voor het uploaden van het ticket!  Van zodra de apply'r het ticket geaccepteerd heeft, wordt je geld overgemaakt!
                        </div>

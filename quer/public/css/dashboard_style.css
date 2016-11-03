@@ -104,6 +104,8 @@ form textarea {
 .contracts_quer div a .right,
 .contracts_applicant div a .right {
     float: right;
+    width: 15%;
+    text-align: right;
 }
 
 
@@ -413,7 +415,7 @@ form div::after {
 
 
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1200px){
     .variable_content {
         width: 100%;
         margin: 0 auto;
@@ -421,5 +423,52 @@ form div::after {
     }
 
 }
+
+
+@media screen and (max-width: 600px){
+    
+    .contract_users .quer,
+    .contract_users .applicant,
+    .contract_info {
+        width: 80%;
+    }
+    
+    .contract_users .quer,
+    .contract_users .applicant,
+    .contract_info .static,
+    .contract_info .variable {
+        float: none;
+        clear: both;
+        margin: 20px auto;
+    }
+    
+    .contract_info .details .static,
+    .contract_info .details .variable {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    
+    .contract_info .details .variable {
+        padding-top: 20px;
+        border-top: #CDCCF5 solid 1px;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    
+    .contracts_quer div a .left,
+    .contracts_applicant div a .left {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .contracts_quer div a .right,
+    .contracts_applicant div a .right {
+        display: none;
+    }
+}
+
+
 
 
