@@ -43,27 +43,28 @@ float:right;
     padding-top: 15px;
 }
 
-.sub-nav-left  li{
+.sub-nav-left li{
     display: inline-block;
     vertical-align: middle;
+}
 
+.standard-nav .sub-nav-left li a {
+    font-size: 1em;
 }
 
 
 .standard-nav ul li {
     display: inline-block;
-
-    color:white;
+    color: #fff;
     text-align: right;
+    vertical-align: middle;
 }
 .standard-nav ul li a{
     text-decoration: none;
     color:white;
     font-size: 1.5em;
-
-
-
 }
+
 
 .sub-page-title{
     position: absolute;
@@ -92,28 +93,31 @@ float:right;
 
 }
 .navbar-dekstop-sub{
-    position: relative;
-    left: -38px !important;
+    /*position: relative;
+    left: -38px !important;*/
     width: 100%;
-}
-.navbar-dekstop-sub li a{
-    color: black !important;
-    font-size: 20px !important;
+    padding: 0;
 }
 
-
-.navbar-dekstop-sub li {
+.dropdown .dropdown-content .navbar-dekstop-sub li {
     width: 100%;
     border-bottom: 1px solid #d8d8d8;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    transition: all 0.5s ease;
-    text-align: left !important;
+    text-align: left;
 }
 
-.navbar-dekstop-sub li:hover {
+.dropdown .dropdown-content .navbar-dekstop-sub li a {
+    width: 90%;
+    color: #000;
+    font-size: 20px;
+    display: block;
+    padding: 15px 5%;
+    padding-left: 5px;
+    transition: all 0.5s ease;
+}
 
-    padding-left: 15px;
+
+.dropdown .dropdown-content .navbar-dekstop-sub li a:hover {
+    padding-left: 25px;
     transition: all 0.5s ease;
 }
 

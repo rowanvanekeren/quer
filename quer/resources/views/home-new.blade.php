@@ -12,6 +12,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 
@@ -89,7 +90,7 @@
                         </ul>
                         <div class="dropdown-content">
                             <div class="arrow-up"></div>
-                            <ul class="navbar-dekstop-home">
+                            <ul class="navbar-dekstop-sub">
 
                                 <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
                                 <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>

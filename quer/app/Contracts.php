@@ -17,7 +17,7 @@ class Contracts extends Model
 
     public function advertisements()
     {
-        return $this->belongsTo('Advertisements');
+        return $this->belongsTo('App\Advertisements', 'advertisement_id');
     }
 
     public function phases()

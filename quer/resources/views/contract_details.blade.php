@@ -10,7 +10,6 @@
        @include('layouts.dashboard_menu')
       
        <h1>Contractdetails</h1>
-       <p>Informatie over een aangegaan contract.</p>
        
        @if (session('msg'))
            <div class="msg_info">
@@ -22,25 +21,58 @@
            <div class="contract_users">
                <div class="quer">
                    <h3>Quer</h3>
-                   <div>
-                       Username: {{ $quer->username }}
+                   <div class="details">
+                       <div class="image" style="background:url(../images/profiles/{{ $quer->image }})">
+                           
+                       </div>
+                       <div class="info">
+                           <div><label>Gebruiker:</label><span>{{ $quer->username }}</span></div>
+                           <div><label>Naam:</label><span>{{ $quer->first_name }} {{ $quer->last_name }}</span></div>
+                           <div><label>E-mail:</label><span></span>{{ $quer->email }}</span></div>
+                           <div><label>Telefoon:</label><span></span>{{ $quer->phone_number }}</span></div>
+                           <div><label>Username:</label><span></span>{{ $quer->username }}</span></div>
+                       </div>
                    </div>
+                   
                </div>
 
                <div class="applicant">
                    <h3>Apply'r</h3>
-                   <div>
-                       Username: {{ $applicant->username }}
+                   <div class="details">
+                       <div class="image" style="background:url(../images/profiles/{{ $applicant->image }})">
+                           
+                       </div>
+                       <div class="info">
+                           <div><label>Gebruiker:</label><span>{{ $applicant->username }}</span></div>
+                           <div><label>Naam:</label><span>{{ $applicant->first_name }} {{ $quer->last_name }}</span></div>
+                           <div><label>E-mail:</label><span>{{ $applicant->email }}</span></div>
+                           <div><label>Telefoon:</label><span>{{ $applicant->phone_number }}</span></div>
+                           <div><label>Username:</label><span>{{ $applicant->username }}</span></div>
+                       </div>
                    </div>
                </div>
            </div>
            
            
-           <div>
+           <div class="contract_info">
                <h3>Contractinfo</h3>
-               <div>
-                   Prijs van Que'r: {{ $contract->price }}
-                   Fase van contract: {{ $contract->phases->phase_description }}
+               <div class="details">
+                   <div>
+                       <div>
+                           <label>Fase van contract:</label> {{ $contract->phases->phase_description }}
+                       </div>
+                       <div>
+                           <label>Prijs van advertentie:</label> {{ $contract->advertisements->price }}
+                       </div>
+                       <div>
+                           <label>Prijs van Que'r:</label> {{ $contract->price }}
+                       </div>
+                       <div>
+                           <label>Totale prijs:</label> {{ $contract->advertisements->price + $contract->price }}
+                       </div>
+                   </div>
+                   
+                   
                </div>
 
            </div>
