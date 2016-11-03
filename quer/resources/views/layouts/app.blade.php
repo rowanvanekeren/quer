@@ -11,10 +11,11 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
+
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">
+   {{-- <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">--}}
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 
@@ -75,8 +76,9 @@
             <li  >Que'r</li>
 
         </ul>
-        <ul class="sub-nav-right">
+            <ul class="sub-nav-right">
             @if (Auth::guest())
+
                 <li><a href="{{ url('/login') }}">Login</a></li>
                 <li><a href="{{ url('/register') }}">Register</a></li>
 
@@ -89,7 +91,7 @@
                     </ul>
                     <div class="dropdown-content">
                         <div class="arrow-up"></div>
-                        <ul class="navbar-dekstop-home">
+                        <ul class="navbar-dekstop-sub">
 
                             <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
                             <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
@@ -114,10 +116,10 @@
 
                     </div>
 
-            </div>
+                </div>
             @endif
+                </ul>
 
-        </ul>
             <div class="burger-wrapper">
                 <img onclick="openNav()" src="{{ asset('images/icons/burgermenu.png') }}" width="40px"/>
             </div>
