@@ -16,6 +16,7 @@ body {
 .variable_content h1 {
     text-align: center;
     margin: 10px 0;
+    color: #3432d5;
 }
 
 
@@ -51,6 +52,60 @@ form textarea {
     height: 80px;
     max-width: 500px;
     max-height: 350px;
+}
+
+
+/* ************    CONTRACT OVERVIEW     ************ */
+
+.contracts_quer,
+.contracts_applicant {
+    background-color: #faf4f6;
+    margin-bottom: 50px;
+}
+
+.contracts_quer h2,
+.contracts_applicant h2 {
+    border-bottom: #CDCCF5 solid 1px;
+    padding: 5px;
+    text-align: center;
+}
+
+/*.contracts_quer div div,
+.contracts_applicant div div {
+    padding: 10px;
+    border-bottom: #CDCCF5 solid 1px;
+}*/
+
+
+.contracts_quer div a,
+.contracts_applicant div a {
+    display: block;
+    width: 95%;
+    padding: 15px 2.5%;
+    border-bottom: #CDCCF5 solid 1px;
+    text-decoration: none;
+    color: #3432d5;
+}
+
+.contracts_quer div a:hover,
+.contracts_applicant div a:hover {
+    background-color: #3432d5;
+    color: #fff;
+}
+
+.contracts_quer div a .left,
+.contracts_applicant div a .left {
+    padding-left: 20%;
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+
+.contracts_quer div a .right,
+.contracts_applicant div a .right {
+    float: right;
+    width: 15%;
+    text-align: right;
 }
 
 
@@ -142,11 +197,11 @@ form textarea {
 .contract_info .details label {
     margin: 0;
     font-weight: bold;
-    width: 50%;
+    width: 40%;
 }
 
 .contract_info .details span {
-    width: 35%;
+    width: 45%;
     text-align: right;
 }
 
@@ -325,6 +380,8 @@ table tr:first-child {
 
 
 /*   CLEARFIX   */
+.contracts_quer div a::before, .contracts_quer div a::after,
+.contracts_applicant div a::before, .contracts_applicant div a::after,
 .contract_users::before, .contract_users::after,
 .contract_users .details::before, .contract_users .details::after,
 .contract_users .info div::before, .contract_users .info div::after,
@@ -340,6 +397,8 @@ form div::before, form div::after {
     line-height: 0;
 }
 
+.contracts_quer div a::after,
+.contracts_applicant div a::after,
 .contract_users::after,
 .contract_users .details::after,
 .contract_users .info div::after,
@@ -356,7 +415,7 @@ form div::after {
 
 
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1200px){
     .variable_content {
         width: 100%;
         margin: 0 auto;
@@ -364,5 +423,52 @@ form div::after {
     }
 
 }
+
+
+@media screen and (max-width: 600px){
+    
+    .contract_users .quer,
+    .contract_users .applicant,
+    .contract_info {
+        width: 80%;
+    }
+    
+    .contract_users .quer,
+    .contract_users .applicant,
+    .contract_info .static,
+    .contract_info .variable {
+        float: none;
+        clear: both;
+        margin: 20px auto;
+    }
+    
+    .contract_info .details .static,
+    .contract_info .details .variable {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    
+    .contract_info .details .variable {
+        padding-top: 20px;
+        border-top: #CDCCF5 solid 1px;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    
+    .contracts_quer div a .left,
+    .contracts_applicant div a .left {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .contracts_quer div a .right,
+    .contracts_applicant div a .right {
+        display: none;
+    }
+}
+
+
 
 

@@ -25,14 +25,40 @@ class ContractController extends Controller
     public function get_quer_contracts_overview()
     {
         //get all contracts where you are the quer and where the phase_nr >= 10 (at least agreement)
-        $contracts = Contracts::where('quer_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
-        return $contracts;
+        $contracts = Contracts::with('advertisements')->with('phases')->where('quer_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
+        //dd($contracts);
+        $total_contracts = [];
+        
+        foreach ($contracts as $contract) {
+             
+             $event = Events::find($contract->advertisements->event_id);
+             
+             $total_contract = (object)['contract' => $contract, 'event' => $event];
+
+             array_push($total_contracts, $total_contract);
+         }
+        
+        return $total_contracts;
     }
 
     public function get_applicant_contracts_overview()
     {
         //get all contracts where you are the applicant and where the phase_nr >= 10 (at least agreement)
-        $contracts = Contracts::where('applicant_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
+        $contracts = Contracts::with('advertisements')->with('phases')->where('applicant_id', Auth::user()->id)->where('phase_id', '>', 2)->get();
+        
+        $total_contracts = [];
+        
+        foreach ($contracts as $contract) {
+             
+             $event = Events::find($contract->advertisements->event_id);
+             
+             $total_contract = (object)['contract' => $contract, 'event' => $event];
+
+             array_push($total_contracts, $total_contract);
+         }
+        
+        return $total_contracts;
+        
         return $contracts;
     }
     
