@@ -77,7 +77,7 @@
                    </div>
                    
                    <div class="variable">
-                       @if(Auth::user()->id == $quer->id)
+                       @if(Auth::user()->id == $quer->id && $contract->phases->phase_number == 10)
                        <div>
                            <div>
                                Als je het ticket gekocht hebt, upload het dan hier zodat de aanvrager het kan downloaden.  Het geld wordt overgemaakt zodra de aanvrager het ticket geaccepteerd heeft.
@@ -94,6 +94,10 @@
                                
                                <input type="submit" value="Upload">
                            </form>
+                       </div>
+                       @else
+                       <div>
+                           Bedankt voor het uploaden van het ticket!  Van zodra de apply'r het ticket geaccepteerd heeft, wordt je geld overgemaakt!
                        </div>
                        @endif
                        

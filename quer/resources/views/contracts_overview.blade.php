@@ -10,7 +10,7 @@
        @include('layouts.dashboard_menu')
       
        <h1>Contractenoverzicht</h1>
-       <p>Informatie contracten (die minstens status agreement hebben) (dus waar phase_nr >= 10).</p>
+       
        
        @if (session('msg'))
            <div class="msg_info">
@@ -18,31 +18,30 @@
            </div>
        @endif
        
-       <h2>Als Que'r</h2>
-       <div>
-           als quer
-           
-           @foreach($quer_contracts as $q_contract)
+       <div class="contracts_quer">
+           <h2>Als Que'r</h2>
            <div>
-               {{ $q_contract->price }}
-               <a href="{{url('/contract_details/'.$q_contract->id)}}">Bekijk contract {{ $q_contract->id }}</a>
+               @foreach($quer_contracts as $q_contract)
+               <div>
+                   <a href="{{url('/contract_details/'.$q_contract->contract->id)}}"><span class="left">{{ $q_contract->event->name }}</span> <span class="right">{{ $q_contract->contract->phases->phase_description }}</span></a>
+               </div>
+               @endforeach
+
            </div>
-           @endforeach
-           
        </div>
        
        
-       <h2>Als Applicant</h2>
-       <div>
-           als applicant
-           
-           @foreach($applicant_contracts as $a_contract)
+       <div class="contracts_applicant">
+           <h2>Als Applicant</h2>
            <div>
-               {{ $a_contract->price }}
-               <a href="{{url('/contract_details/'.$a_contract->id)}}">Bekijk contract {{ $a_contract->id }}</a>
+               @foreach($applicant_contracts as $a_contract)
+               <div>
+                   <a href="{{url('/contract_details/'.$a_contract->contract->id)}}"><span class="left">{{ $a_contract->event->name }}</span> <span class="right">{{ $a_contract->contract->phases->phase_description }}</span></a>
+               </div>
+               @endforeach
            </div>
-           @endforeach
        </div>
+       
        
        
    </div>
