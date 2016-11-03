@@ -1,0 +1,71 @@
+.my_advert_wrapper{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 280px;
+    background-color: black;
+    padding: 0;
+
+}
+
+.my_advert_left{
+    margin: 0 ;
+    padding: 0 0 0 0;
+    width: 35%;
+    height:230px;
+    float:left;
+
+    background-color: white;
+}
+.my_advert_left p{
+ text-align: center;
+    margin: 15px;
+}
+
+.my_advert_left h1{
+    text-align: center;
+    margin-top: 15px;
+    color:black;
+
+}
+
+.my_event_right{
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 ;
+    padding: 0 0 0 0;
+    width: 65%;
+    height: 230px;
+    float:right;
+    background-color: #ce8119;
+}
+
+.my_event_right h1{
+    text-align: center;
+    margin-top: 15px;
+    color:white;
+}
+
+.my_advert_footer{
+     margin: 0 ;
+     padding: 0 0 0 0;
+     width: 100%;
+     float:left;
+     height: 50px;
+     background-color: #91ff84;
+ }
+
+.my_advert_footer h1{
+    text-align: center;
+
+}
+.amount_quers{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 80px 80px 0 0;
+    border-color: #ccc9c7 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
