@@ -9,6 +9,7 @@ body {
 
 .msg_info {
     background-color: #97d397;
+    padding: 5px;
 }
 
 
@@ -27,6 +28,8 @@ form label,
 form input,
 form textarea {
     float: left;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 form div {

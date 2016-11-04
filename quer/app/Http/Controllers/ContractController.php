@@ -225,7 +225,7 @@ class ContractController extends Controller
     
     public function accept_ticket(Request $request) {
         //update contract phase with phase id = 6 (= acceptance applicant)
-        update_contracts_phase($request->contract_id, 6);
+        $this->update_contract_phase($request->contract_id, 6);
         return redirect('/contract_details/'.$request->contract_id)->with('msg', "Ticket geaccepteerd! Dankjewel en veel plezier met je tickets!");
     }
     
@@ -235,7 +235,7 @@ class ContractController extends Controller
     {
         //
         $contract = Contracts::find($contract_id);
-        
+        //dd($contract);
         $contract->phase_id = $phase_id;
         
         
