@@ -339,6 +339,32 @@ form textarea {
 }
 
 
+/* ************    EDIT ACCOUNT     ************ */
+.edit_account {
+    /*background-color: #faf4f6;*/
+    margin: 50px 0;
+}
+
+.edit_account form {
+    width: 45%;
+    margin: 0 auto;
+}
+
+.edit_account form button[type="submit"] {
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #3432d5;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
 /* tables */
 
@@ -378,6 +404,23 @@ table tr:first-child {
 
 
 
+/* ************    ADVERT OVERVIEW     ************ */
+
+.left_box,
+.right_box {
+    background-color: #faf4f6;
+    width: 42.5%;
+    margin-right: 5%;
+    float: left;
+}
+
+.right_box {
+    margin-right: 0;
+}
+
+
+
+
 
 /*   CLEARFIX   */
 .contracts_quer div a::before, .contracts_quer div a::after,
@@ -391,6 +434,7 @@ table tr:first-child {
 .variable #accept_ticket::before, .variable #accept_ticket::after,
 #add_review .rate::before, #add_review .rate::after,
 #add_review .rate div::before, #add_review .rate div::after,
+.advert_overview::before, .advert_overview::after,
 form div::before, form div::after {
     content: "";
     display: table;
@@ -408,6 +452,7 @@ form div::before, form div::after {
 .variable #accept_ticket::after,
 #add_review .rate::after,
 #add_review .rate div::after,
+.advert_overview::after,
 form div::after {
     clear: both;
 }
