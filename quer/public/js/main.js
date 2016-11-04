@@ -49,6 +49,14 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
 
 });
+
+function display_login_error(){
+$('#login_error_id').removeClass('hidden');
+    setTimeout(function(){
+        $('#login_error_id').addClass('hidden');
+
+    }, 3000)
+}
 function choose_event(id){
     window.location.href = "./add_advertisement/" +id;
 }

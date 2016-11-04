@@ -20,6 +20,7 @@
     <title>Que'r</title>
 </head>
 <body>
+    <div id="login_error_id" class="login_error hidden"><h2>U moet zich eerst aanmelden om dit te kunnen bekijken</h2></div>
     <div id="login_home" class="login_form hidden"><div class="login_header">
             <h2>Login</h2>
         </div>
@@ -160,6 +161,9 @@
                 <div class="homepage-events-repeated" style="background:url(./images/events/{{  $event->image }})">
 
                     <div class="homepage-events-gradient">
+                        @if($event->code ==1)
+                        <div class="admin-event"></div>
+                        @endif
                         <h2> {{$event->name}}</h2>
                         <p class="event-location">Locatie: {{$event->location}} , {{$event->city}}</p>
                         <p class="event-date">Datum: {{$event->date_event}}</p>
@@ -175,12 +179,16 @@
                 <div style="background:url(./images/events/{{  $advert->event->image }})">
                     <div class="homepage-adverts-gradient">
 
+                            @if(Auth::guest())
+                            <h2><a onclick="display_login_error()">{{$advert->event->name}}</a></h2>
+                            @else
+                            <h2><a href="{{ url('/advert_overview/'. $advert->id) }}">{{$advert->event->name}}</a></h2>
+                            @endif
 
-                        <h2><a href="{{ url('/advert_overview/'. $advert->id) }}">{{$advert->event->name}}</a></h2>
                         <ul>
                             <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
-                            <li>  <p><a href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a></p></li>
-                            <li>  <p>&euro; {{ number_format((float)$advert->price, 2, '.', '') }}</p></li>
+                            <li id="home-adv-usrname">  <p ><a href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a></p></li>
+                            <li id="home-adv-price">  <p >&euro; {{ number_format((float)$advert->price, 2, '.', '') }}</p></li>
 
                         </ul>
                     </div>
