@@ -444,6 +444,56 @@ class BaseController extends Controller
 
     }
 
+    
+    
+    
+    public function search_string($adverts, $string)
+    {
+        $list_of_search_words = preg_split('/[\ \n\,]+/', $string);
+        $all_results = array();
+        foreach ($adverts as $advert) {
+
+            foreach ($list_of_search_words as $word) {
+
+
+                if ((string)strripos($advert->user->username, $word) != null or
+                    (string)strripos($advert->event->name, $word) != null or
+                    (string)strripos($advert->event->tags, $word) != null or
+                    (string)strripos($advert->event->location, $word) != null or
+                    (string)strripos($advert->event->city, $word) != null
+
+                ) {
+
+                    array_push($all_results, $advert);
+                    break;
+                }
+            }
+        }
+
+
+        return $all_results;
+    }
+    
+    public function search_quer(Request $request) {
+        //
+        $adverts = Advertisements::where('active', 1)->with('user')->with('event')->get();
+        $search_results = $this->search_string($adverts, $request->search_string);
+        //dd($search_results);
+        
+        
+        $events = $this->get_all_events(6);
+        
+        //$advertisements = [];
+
+        $page_content = (object)['advertisement' => $search_results, 'event' => $events];
+
+        //dd($page_content->advertisement[0]->event->image);
+        
+        return view('home-new', ['main_content' => $page_content]);
+        
+    }
+    
+    
 
     //HELPER FUNCTIONS
     public function get_user_with_adv_rev($id){

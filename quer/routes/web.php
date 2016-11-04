@@ -77,7 +77,8 @@ Route::get('add_event', 'EventController@add_event')->middleware('auth');
 
 //posts (new events, new advertisements, new contracts, ...)
 //homepage posts
-Route::post('/homepage_search', 'BaseController@homepage_search');
+//Route::post('/homepage_search', 'BaseController@homepage_search');
+Route::post('/homepage_search', 'BaseController@search_quer');
 
 //admin posts
 Route::post('/update_account', 'AccountController@update_account')->middleware('auth');
