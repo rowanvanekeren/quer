@@ -169,7 +169,7 @@
                         <ul>
                             <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
                             <li>  <p><a href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a></p></li>
-                            <li>  <p>&euro; {{$advert->advert->price}}</p></li>
+                            <li>  <p>&euro; {{ number_format((float)$advert->advert->price, 2, '.', '') }}</p></li>
 
                         </ul>
                     </div>
