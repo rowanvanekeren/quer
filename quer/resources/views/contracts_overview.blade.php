@@ -18,6 +18,7 @@
             </div>
         @endif
 
+        @if($quer_contracts)
         <div class="contracts_quer">
             <h2>Als Que'r</h2>
 
@@ -32,8 +33,9 @@
 
             </div>
         </div>
+        @endif
 
-
+        @if($applicant_contracts)
         <div class="contracts_applicant">
             <h2>Als Applicant</h2>
 
@@ -47,7 +49,7 @@
                 @endforeach
             </div>
         </div>
-
+        @endif
 
     </div>
 
