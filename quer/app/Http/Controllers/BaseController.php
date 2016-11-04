@@ -524,9 +524,9 @@ class BaseController extends Controller
         $countRates = 0;
         $totalScore = 0;
         foreach($reviews as $review){
-            $user = User::where('id', $review->applicant_id)->first();
+            $userRev = User::where('id', $review->applicant_id)->first();
 
-            array_push($applicants,[$user, $review]);
+            array_push($applicants,[$userRev, $review]);
             if(isset($review->rate)){
             $totalrate =$totalrate + (float)$review->rate;
             $countRates ++;
