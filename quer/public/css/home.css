@@ -590,6 +590,7 @@ h1 {
         visibility: hidden;
     }
     .home-nav-right-burger{
+
         list-style: none;
         display:block;
         position: absolute;
@@ -616,6 +617,7 @@ h1 {
         visibility: hidden;
     }
     .home-nav-right-burger{
+        list-style: none;
         display:block;
         position: absolute;
         right:15px;
@@ -638,6 +640,7 @@ h1 {
         visibility: visible;
     }
     .home-nav-right-burger{
+        list-style: none;
         display:none;
     }
     .burger{
@@ -684,6 +687,7 @@ h1 {
         visibility: hidden;
     }
     .home-nav-right-burger{
+        list-style: none;
         display:block;
         position: absolute;
         right:15px;

@@ -13,20 +13,31 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 
     <title>Que'r</title>
 </head>
 <body>
+    <div id="login_home" class="login_form hidden"><div class="login_header">
+            <h2>Login</h2>
+        </div>
+        <div class="login_form_content"> @include('auth.login')</div>
+    </div>
 
+    <div id="register_home" class="register_form hidden"><div class="register_header">
+            <h2>Registreren</h2>
+        </div>
+        <div class="register_form_content"> @include('auth.register')</div>
+    </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="inner-nav-content">
 
         @if (Auth::guest())
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
+            <a class="login_btn_nav" onclick="open_login()">Login</a>
+            <a class="register_btn_nav" onclick="open_register()">Register</a>
         @else
 
             <div class="image-wrapper">
@@ -56,8 +67,6 @@
         <a href="#">Contact</a>--}}
         </div>
     </div>
-    <!-- Use any element to open the sidenav -->
-
 
 <div id="main">
 
@@ -73,13 +82,13 @@
             </ul>
             {{--right-side nav bar--}}
             <ul class="home-nav-right-burger">
-                <li><img onclick="openNav()" class="burger"src="{{ asset('images/icons/burgermenu.png') }}" width="40px"/></li>
+                <li><img onclick="openNav()" class="burger" src="{{ asset('images/icons/burgermenu.png') }}" width="40px"/></li>
             </ul>
             <ul class="home-nav-right">
 
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a class="login_btn_nav" onclick="open_login()" >Login</a></li>
+                    <li><a class="register_btn_nav" onclick="open_register()" >Register</a></li>
 
                 @else
                     <style>

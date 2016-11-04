@@ -111,7 +111,7 @@ if(isset($event)) {
                <p>Start verkoop: {{$event->date_start_sell}}</p></div>
            </div>
        @else
-           <div class="add_new_advert"><h2><a href="{{ url('add_event') }}">Voeg er één toe</a></h2></div>
+           <div class="add_new_advert"><h2><a href="{{ url('add_event') }}">Voeg evenement toe</a></h2></div>
        @endif
 
        @if($errors->any())

@@ -26,7 +26,7 @@
 
         </div>
 
-    {{base_path('public/images')}}
+
 
 </div>
     </div>
