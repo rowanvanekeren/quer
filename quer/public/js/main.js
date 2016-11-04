@@ -28,7 +28,7 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
         console.log(target);
         var containerLogin = $('#login_home');
         var containerRegister = $('#register_home');
-        if(!target.is('#login_btn_nav') && containerLogin.has(e.target).length === 0  && !target.is('#login_home')){
+        if(!target.is('.login_btn_nav') && containerLogin.has(e.target).length === 0  && !target.is('#login_home')){
 
             $('#login_home').removeClass('login_form_keep');
             $('#login_home').addClass('login_form_out');
@@ -40,7 +40,7 @@ $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
                $('#login_home').addClass('hidden');
             }, duration);*/
         }
-        if(!target.is('#register_btn_nav') && containerRegister.has(e.target).length === 0  && !target.is('#register_home')){
+        if(!target.is('.register_btn_nav') && containerRegister.has(e.target).length === 0  && !target.is('#register_home')){
             $('#register_home').removeClass('register_form_keep');
             $('#register_home').addClass('register_form_out');
             $('#register_home').removeClass('register_form');

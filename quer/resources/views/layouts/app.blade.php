@@ -62,8 +62,8 @@
     <div class="inner-nav-content">
 
         @if (Auth::guest())
-            <li><a id="login_btn_nav" onclick="open_login()">Login</a></li>
-            <li><a id="register_btn_nav" onclick="open_register()">Register</a></li>
+            <li><a class="login_btn_nav" onclick="open_login()">Login</a></li>
+            <li><a class="register_btn_nav" onclick="open_register()">Register</a></li>
         @else
             <div class="image-wrapper">
                 <ul>
@@ -103,8 +103,8 @@
             <ul class="sub-nav-right">
             @if (Auth::guest())
 
-                    <li><a id="login_btn_nav" onclick="open_login()">Login</a></li>
-                    <li><a id="register_btn_nav" onclick="open_register()">Register</a></li>
+                    <li><a class="login_btn_nav" onclick="open_login()">Login</a></li>
+                    <li><a class="register_btn_nav" onclick="open_register()">Register</a></li>
 
             @else
                 <div class="dropdown">

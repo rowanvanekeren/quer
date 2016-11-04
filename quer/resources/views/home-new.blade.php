@@ -36,8 +36,8 @@
         <div class="inner-nav-content">
 
         @if (Auth::guest())
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
+            <a class="login_btn_nav" onclick="open_login()">Login</a>
+            <a class="register_btn_nav" onclick="open_register()">Register</a>
         @else
 
             <div class="image-wrapper">
@@ -87,8 +87,8 @@
             <ul class="home-nav-right">
 
                 @if (Auth::guest())
-                    <li><a id="login_btn_nav" onclick="open_login()">Login</a></li>
-                    <li><a id="register_btn_nav" onclick="open_register()">Register</a></li>
+                    <li><a class="login_btn_nav" onclick="open_login()" >Login</a></li>
+                    <li><a class="register_btn_nav" onclick="open_register()" >Register</a></li>
 
                 @else
                     <style>
