@@ -137,8 +137,8 @@
         <form action="{{ url('/homepage_search') }}" method="POST">
             {{ csrf_field() }}
             <div class="searchdiv"><input class="searchbox" name="search_string" type="text" placeholder="Zoek advertenties en verdien geld!" required></div>
-            <div class="datediv"><input class="datepicker" type="text" name="from" placeholder="Van" required></div>
-            <div class="datediv"><input class="datepicker" type="text" name="till" placeholder="Tot" required></div>
+            <div class="datediv"><input class="datepicker" type="text" name="from" placeholder="Van"></div>
+            <div class="datediv"><input class="datepicker" type="text" name="till" placeholder="Tot"></div>
             <div class="submitsearchdiv"><button class="searchbutton" type="submit">Zoeken</button></div>
         </form>
     </div>
@@ -147,7 +147,7 @@
     <div class ='content-center'>
         <h1>Evenementen</h1>
         <div class="homepage-events">
-            @foreach ($main_content->event as $event)
+            @foreach ($events as $event)
                 <div class="homepage-events-repeated" style="background:url(./images/events/{{  $event->image }})">
 
                     <div class="homepage-events-gradient">
@@ -161,19 +161,17 @@
         </div>
         <h1>Advertenties</h1>
         <div class="homepage-adverts">
-            @foreach ($main_content->advertisement as $advert)
+            @foreach ($advertisements as $advert)
 
                 <div style="background:url(./images/events/{{  $advert->event->image }})">
                     <div class="homepage-adverts-gradient">
 
-                        {{--    <img src="./images/events/{{  $advert->event->image }}"/>--}}
-                        {{--  <img src="./images/homepage_banner/party_1.jpg" />--}}
 
-                        <h2><a href="{{ url('/advert_overview/'. $advert->advert->id) }}">{{$advert->event->name}}</a></h2>
+                        <h2><a href="{{ url('/advert_overview/'. $advert->id) }}">{{$advert->event->name}}</a></h2>
                         <ul>
                             <li> <img src="./images/profiles/{{  $advert->user->image }}"/></li>
                             <li>  <p><a href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a></p></li>
-                            <li>  <p>&euro; {{ number_format((float)$advert->advert->price, 2, '.', '') }}</p></li>
+                            <li>  <p>&euro; {{ number_format((float)$advert->price, 2, '.', '') }}</p></li>
 
                         </ul>
                     </div>
@@ -188,7 +186,7 @@
 
     </div>
     <footer>
-        sadfsadf
+        &copy; {{ date("Y") }} Que'r
     </footer>
 </section>
 

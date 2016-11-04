@@ -579,6 +579,82 @@ table tr:first-child {
 
 
 
+/* ************    SEARCH RESULTS     ************ */
+
+
+.search_results .homepage-adverts > div {
+    width: 33%;
+    float: left;
+    height: 280px;
+    overflow: hidden;
+    min-width: 300px;
+    margin: 0 auto;
+    background-repeat:no-repeat !important;
+    background-size: cover !important;;
+    background-position:center !important;;
+}
+
+.search_results .homepage-adverts-gradient {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+}
+
+.search_results .homepage-adverts-gradient h2 {
+    position: absolute;
+    top: 20%;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.search_results .homepage-adverts div h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.search_results .homepage-adverts-gradient ul {
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.search_results .homepage-adverts-gradient ul li {
+    float: left;
+    color: white;
+    font-weight: bold;
+}
+
+.search_results .homepage-adverts-gradient ul li p {
+    margin-top: 10px;
+}
+
+.search_results .homepage-adverts-gradient ul li p a {
+    color: #fff;
+}
+
+.search_results .homepage-adverts div ul li:last-child {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+.search_results .homepage-adverts div ul img{
+    width: 40px;
+    margin: 0 10px;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+
+
+
+
 
 
 
@@ -600,6 +676,7 @@ table tr:first-child {
 .advert_overview .date::before, .advert_overview .date::after,
 .right_box .applicant::before, .right_box .applicant::after,
 .right_box .price::before, .right_box .price::after,
+.search_results::before, .search_results::after,
 form div::before, form div::after {
     content: "";
     display: table;
@@ -621,6 +698,7 @@ form div::before, form div::after {
 .advert_overview .date::after,
 .right_box .applicant::after,
 .right_box .price::after,
+.search_results::after,
 form div::after {
     clear: both;
 }

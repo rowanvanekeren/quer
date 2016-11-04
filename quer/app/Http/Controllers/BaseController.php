@@ -360,13 +360,20 @@ class BaseController extends Controller
     {
 
         $events = $this->get_all_events(6);
-        $advertisements = $this->get_all_advertisements_with_users();
+        //$advertisements = $this->get_all_advertisements_with_users();
         /*return View('home');*/
 
+        $advertisements = Advertisements::where('active', 1)->with('user')->with('event')->get();
+        
+        //dd($advertisements);
+        
         $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
+        
+        //dd($advertisements, $events);
 
+        return view('home-new', ['advertisements' => $advertisements, 'events' => $events]);
 
-        return view('home-new', ['main_content' => $page_content]);
+        //return view('home-new', ['main_content' => $page_content]);
 
     }
 
@@ -480,16 +487,28 @@ class BaseController extends Controller
         $search_results = $this->search_string($adverts, $request->search_string);
         //dd($search_results);
         
+        $final_results = [];
         
-        $events = $this->get_all_events(6);
+        //if dates are set, check if results are between dates
+        if($request->from != "" && $request->till != ""){
+            //dd("er zijn datums");
+            foreach($search_results as $result) {
+                if (($result->event->date_start_sell > $request->from && $result->event->date_start_sell < $request->till) || ($result->event->date_event > $request->from && $result->event->date_event < $request->till))
+                {
+                  //dd("is between");
+                    array_push($final_results, $result);
+                }
+                else {
+                    //dd("not in between");
+                }
+            }
+        }
+        else {
+            //dd("no dates");
+            $final_results = $search_results;
+        }
         
-        //$advertisements = [];
-
-        $page_content = (object)['advertisement' => $search_results, 'event' => $events];
-
-        //dd($page_content->advertisement[0]->event->image);
-        
-        return view('home-new', ['main_content' => $page_content]);
+        return view('search_results', ['advertisements' => $final_results, 'search_string' => $request->search_string]);
         
     }
     
