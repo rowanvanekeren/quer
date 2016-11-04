@@ -53,11 +53,15 @@
         @else
             <div class="image-wrapper">
                 <ul>
-                    <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
+                    <li> <img class="user-image" src="{{asset('images/profiles/'. Auth::user()->image)}}"></li>
                     <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
                 </ul>
             </div>
-            <a href="{{ url('/dashboard') }}">Dashboard</a>
+            {{--<a href="{{ url('/dashboard') }}">Dashboard</a>--}}
+            <a href="{{ url('/my_advertisements') }}">Advertenties</a>
+            <a href="{{ url('/contracts_overview') }}">Contracten</a>
+            <a href="{{ url('/user_details/'. Auth::user()->id) }}">Reviews</a>
+            <a href="{{ url('/edit_account') }}">Account bewerken</a>
             <a href="{{ url('/logout') }}"
                onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -92,7 +96,7 @@
                 <div class="dropdown">
                     <ul>
                         <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
-                        <li> <img class="user-image" src="./images/profiles/{{ Auth::user()->image }}"></li>
+                        <li> <img class="user-image" src="{{asset('images/profiles/'. Auth::user()->image)}}"></li>
 
                     </ul>
                     <div class="dropdown-content">

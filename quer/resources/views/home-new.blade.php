@@ -35,7 +35,11 @@
                     <li><a href="{{ url('/dashboard') }}">Hallo {{ Auth::user()->username }}!</a></li>
                 </ul>
             </div>
-            <a href="{{ url('/dashboard') }}">Dashboard</a>
+            {{--<a href="{{ url('/dashboard') }}">Dashboard</a>--}}
+                <a href="{{ url('/my_advertisements') }}">Advertenties</a>
+                <a href="{{ url('/contracts_overview') }}">Contracten</a>
+                <a href="{{ url('/user_details/'. Auth::user()->id) }}">Reviews</a>
+                <a href="{{ url('/edit_account') }}">Account bewerken</a>
                 <a href="{{ url('/logout') }}"
                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -94,7 +98,7 @@
 
                                 <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
                                 <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
-                                <li><a>Reviews</a></li>
+                                <li><a href="{{ url('/user_details/'. Auth::user()->id) }}">Reviews</a></li>
                                 <li>
                                     <a href="{{ url('/edit_account') }}">Account bewerken</a>
                                 </li>
