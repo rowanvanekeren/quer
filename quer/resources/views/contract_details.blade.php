@@ -30,7 +30,6 @@
                            <div>{{ $quer->first_name }} {{ $quer->last_name }}</div>
                            <div><a href="mailto:{{ $quer->email }}">{{ $quer->email }}</a></div>
                            <div>{{ $quer->phone_number }}</div>
-                           <div>{{ $quer->username }}</div>
                        </div>
                    </div>
                    
@@ -47,7 +46,6 @@
                            <div>{{ $applicant->first_name }} {{ $applicant->last_name }}</div>
                            <div><a href="mailto:{{ $applicant->email }}">{{ $applicant->email }}</a></div>
                            <div>{{ $applicant->phone_number }}</div>
-                           <div>{{ $applicant->username }}</div>
                        </div>
                    </div>
                </div>

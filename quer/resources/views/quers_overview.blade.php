@@ -13,9 +13,7 @@
      
        @include('layouts.dashboard_menu')
       
-       <h1>Que'rs voor de advertentie {{ $event->name }}</h1>
-       <p>Hier heb je een overzicht van mensen die gequeued hebben voor deze advertentie.</p>
-       
+       <h1>Que'rs voor je advertentie: {{ $event->name }}</h1>
        
        
        
@@ -27,12 +25,12 @@
                <th>Kies Que'r</th>
            </tr>
            @foreach ($quers as $quer)
-           <tr>
-               <td>{{ $quer->quer->username }}</td>
+           <tr class="body">
                <td><img src="../../public/images/profiles/{{ $quer->quer->image }}" alt="querphoto"></td>
-               <td>{{ $quer->contract->price }}</td>
+               <td><a href="{{ url('/user_details/'. $quer->quer->id) }}">{{ $quer->quer->username }}</td>
+               <td>&euro;{{ number_format((float)$quer->contract->price, 2, '.', '') }}</td>
                <!-- oorspronkelijke href: {{url('/update_contract/'.$quer->contract->id)}} -->
-               <td><a href="#" ng-click="choose_quer('{{$quer->quer->username}}', {{$event->advertisements[0]->price}}, {{$quer->contract->price}}, {{$quer->contract->id}})">Kies Que'r ! {{ $quer->contract->id }}</a></td>
+               <td><a class="choose" href="#" ng-click="choose_quer('{{$quer->quer->username}}', {{$event->advertisements[0]->price}}, {{$quer->contract->price}}, {{$quer->contract->id}})">Kies Que'r !</a></td>
            </tr>
            @endforeach
        </table>
