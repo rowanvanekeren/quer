@@ -5,6 +5,7 @@
 .variable_content {
 
 }
+
  /*____________________________________________________________________*/
 .login_form{
     z-index: 2;
@@ -23,6 +24,8 @@ position: absolute;
     animation-name: loginAppear;
     animation-duration: 2s;
 }
+
+
 .login_form_keep{
     z-index: 2;
     display: block;
@@ -249,5 +252,78 @@ width: 100%;
 @media screen and (min-width: 0px) and ( max-width: 1000px) {
     .variable_content{
         width: 90%;
+    }
+}
+
+@media screen and (min-width: 0px) and ( max-width: 1000px) {
+    .register_form_content{
+        overflow-x: hidden;
+    }
+    .register_form{
+        width: 300px;
+        margin-left:-150px;
+        top:70%;
+        animation-name: registerAppear1000;
+        animation-duration: 2s;
+        overflow-x: hidden;
+    }
+
+    .register_form_keep{
+        width: 300px;
+        margin-left:-150px;
+        top:70%;
+        overflow-x: hidden;
+    }
+
+    .register_form_out{
+        width: 300px;
+        margin-left:-150px;
+        top:70%;
+        animation-name: registerDisappear1000;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        overflow-x: hidden;
+    }
+
+
+    .login_form{
+        width: 300px;
+        margin-left:-150px;
+        top:60%;
+        animation-name: loginAppear1000;
+        animation-duration: 2s;
+    }
+    .login_form_keep{
+        width: 300px;
+        margin-left:-150px;
+        top:60%;
+    }
+    .login_form_out{
+        width: 300px;
+        margin-left:-150px;
+        top:60%;
+        animation-name: loginDisappear1000;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes loginAppear1000 {
+        from {top: -60%;}
+        to {top: 60%;}
+    }
+
+    @keyframes loginDisappear1000 {
+        from {top: 60%;}
+        to {top: -60%;visibility: hidden ; display:none}
+    }
+
+    @keyframes registerAppear1000 {
+        from {top: -70%;}
+        to {top: 70%;}
+    }
+
+    @keyframes registerDisappear1000 {
+        from {top: 70%;}
+        to {top: -70%;visibility: hidden ; display:none}
     }
 }
