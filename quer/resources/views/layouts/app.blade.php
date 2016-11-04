@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
+
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link href="{{ asset('css/add_advert.css') }}" rel="stylesheet">
     <link href="{{ asset('css/user_details.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
    {{-- <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">--}}
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
@@ -41,6 +42,17 @@
 
 </head>
 <body ng-app="mainApp">
+<div id="login_home" class="login_form hidden"><div class="login_header">
+        <h2>Login</h2>
+    </div>
+    <div class="login_form_content"> @include('auth.login')</div>
+</div>
+
+<div id="register_home" class="register_form hidden"><div class="register_header">
+        <h2>Registreren</h2>
+    </div>
+    <div class="register_form_content"> @include('auth.register')</div>
+</div>
 <nav>
 
 <div id="mySidenav" class="sidenav">
@@ -48,8 +60,8 @@
     <div class="inner-nav-content">
 
         @if (Auth::guest())
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
+            <li><a id="login_btn_nav" onclick="open_login()">Login</a></li>
+            <li><a id="register_btn_nav" onclick="open_register()">Register</a></li>
         @else
             <div class="image-wrapper">
                 <ul>
@@ -89,8 +101,8 @@
             <ul class="sub-nav-right">
             @if (Auth::guest())
 
-                <li><a href="{{ url('/login') }}">Login</a></li>
-                <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a id="login_btn_nav" onclick="open_login()">Login</a></li>
+                    <li><a id="register_btn_nav" onclick="open_register()">Register</a></li>
 
             @else
                 <div class="dropdown">

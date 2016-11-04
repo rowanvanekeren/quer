@@ -1,141 +1,175 @@
-@extends('layouts.app')
 
-@section('content')
 
-                    <form  role="form" method="POST" action="{{ url('/register') }}" enctype="multipart/form-data">
+                    <form class="register_form_elem" role="form" method="POST" action="{{ url('/register') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
 
-                            <div>
-                                <label for="first_name">First name</label>
-                                <input id="first_name" type="text" name="first_name" value="{{ old('name') }}" required autofocus>
+                            <div class="register_elements">
+                {{--                <label for="first_name">First name</label>--}}
+                                <input id="first_name" type="text" name="first_name" value="{{ old('name') }}" placeholder="Voornaam" required autofocus>
                                 @if ($errors->has('first_name'))
-                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg"> <strong>{{ $errors->first('first_name') }}</strong></div>
                                 @endif
+
                             </div>
                             
 
-                            <div>
-                                <label for="last_name">Last name</label>
-                                <input id="last_name" type="text" name="last_name" value="{{ old('name') }}" required autofocus>
+                            <div class="register_elements" >
+                             {{--   <label for="last_name">Last name</label>--}}
+                                <input id="last_name" type="text" name="last_name" value="{{ old('name') }}" placeholder="Achternaam" required autofocus>
                                 @if ($errors->has('last_name'))
-                                    <strong>{{ $errors->first('last_name') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg"> <strong>{{ $errors->first('last_name') }}</strong></div>
                                 @endif
                             </div>
                             
 
-                            <div>
-                                <label for="username">Username</label>
-                                <input id="username" type="text" name="username" value="{{ old('name') }}" required autofocus>
+                            <div class="register_elements">
+                      {{--          <label for="username">Username</label>--}}
+                                <input id="username" type="text" name="username" value="{{ old('name') }}" placeholder="Gebruikersnaam" required autofocus>
                                 @if ($errors->has('username'))
-                                    <strong>{{ $errors->first('username') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">  <strong>{{ $errors->first('username') }}</strong></div>
                                 @endif
                             </div>
                             
 
-                            <div>
-                                <label for="country">Country</label>
-                                <input id="country" type="text" name="country" value="{{ old('country') }}" required autofocus>
+                            <div class="register_elements">
+                         {{--       <label for="country">Country</label>--}}
+                                <input id="country" type="text" name="country" value="{{ old('country') }}" placeholder="Land" required autofocus>
                                 @if ($errors->has('country'))
-                                    <strong>{{ $errors->first('country') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg"> <strong>{{ $errors->first('country') }}</strong></div>
                                 @endif
                             </div>
                             
 
-                            <div>
-                                <label for="city">City</label>
-                                <input id="city" type="text" name="city" value="{{ old('country') }}" required autofocus>
+                            <div class="register_elements">
+           {{--                     <label for="city">City</label>--}}
+                                <input id="city" type="text" name="city" value="{{ old('country') }}" placeholder="Plaats" required autofocus>
                                 @if ($errors->has('city'))
-                                    <strong>{{ $errors->first('city') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">  <strong>{{ $errors->first('city') }}</strong></div>
                                 @endif
                             </div>
                             
 
-                            <div>
-                                <label for="postal_code">Postal code</label>
-                                <input id="postal_code" type="text" name="postal_code" value="{{ old('postal_code') }}" required autofocus>
-                                @if ($errors->has('postal_code'))
-                                    <strong>{{ $errors->first('postal_code') }}</strong>
-                                @endif
-                            </div>
+
                             
 
-                            <div>
-                                <label for="street">Street</label>
-                                <input id="street" type="text" name="street" value="{{ old('street') }}" required autofocus>
+                            <div class="register_elements">
+                             {{--   <label for="street">Street</label>--}}
+                                <input id="street" type="text" name="street" value="{{ old('street') }}" placeholder="Straat" required autofocus>
                                 @if ($errors->has('street'))
-                                    <strong>{{ $errors->first('street') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">   <strong>{{ $errors->first('street') }}</strong></div>
                                 @endif
                             </div>
                             
 
-                            <div>
-                                <label for="house_number">House number</label>
-                                <input id="house_number" type="text" name="house_number" value="{{ old('house_number') }}" required autofocus>
+                            <div class="register_elements">
+                              {{--  <label for="house_number">House number</label>--}}
+                                <input id="house_number" type="number" name="house_number" value="{{ old('house_number') }}" placeholder="Huisnummer" required autofocus>
                                 @if ($errors->has('house_number'))
-                                    <strong>{{ $errors->first('house_number') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">   <strong>{{ $errors->first('house_number') }}</strong></div>
                                 @endif
                             </div>
-                            
 
-                            <div>
-                                <label for="phone_number">Phone number</label>
-                                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" required autofocus>
+                        <div class="register_elements">
+                            {{--         <label for="postal_code">Postal code</label>--}}
+                            <input id="postal_code" type="text" name="postal_code" value="{{ old('postal_code') }}" placeholder="Post code" required autofocus>
+                            @if ($errors->has('postal_code'))
+                                <script type="text/javascript">
+                                    keep_register_at_error();
+                                </script>
+                                <div class="showReg">   <strong>{{ $errors->first('postal_code') }}</strong></div>
+                            @endif
+                        </div>
+
+                            <div class="register_elements">
+                       {{--         <label for="phone_number">Phone number</label>--}}
+                                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" placeholder="Telefoonnummer" required autofocus>
                                 @if ($errors->has('phone_number'))
-                                    <strong>{{ $errors->first('phone_number') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">  <strong>{{ $errors->first('phone_number') }}</strong></div>
                                 @endif
                             </div>
                             
 
 
-                            <div>
-                                <label for="email" >E-Mail Address</label>
-                                <input id="email" type="email"  name="email" value="{{ old('email') }}" required>
+                            <div class="register_elements">
+                        {{--        <label for="email" >E-Mail Address</label>--}}
+                                <input id="email" type="email"  name="email" value="{{ old('email') }}" placeholder="E-mail" required>
                                 @if ($errors->has('email'))
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
+                                    <div class="showReg">   <strong>{{ $errors->first('email') }}</strong></div>
                                 @endif
                             </div>
                             
 
 
-                            <div>
-                                <label for="image">Image:</label>
-                                <input type="file" id="image" name="image">
-                                @if ($errors->has('image'))
-                                    <strong>{{ $errors->first('image') }}</strong>
-                                @endif
-                            </div>
-                            
-
-
-
-                            <div>
-                                <label for="password">Password</label>
-                                <input id="password" type="password"  name="password" required>
+                            <div class="register_elements">
+                               {{-- <label for="password">Password</label>--}}
+                                <input id="password" type="password"  name="password" placeholder="Wachtwoord" required>
                                 @if ($errors->has('password'))
+                                    <script type="text/javascript">
+                                        keep_register_at_error();
+                                    </script>
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                    <div class="showReg">     <strong>{{ $errors->first('password') }}</strong></div>
                                     </span>
                                 @endif
                             </div>
                             
 
 
-                             <div>
-                                 <label for="password-confirm" >Confirm Password</label>
-                                 <input id="password-confirm" type="password"  name="password_confirmation" required>
+                             <div class="register_elements">
+                               {{--  <label for="password-confirm" >Confirm Password</label>--}}
+                                 <input id="password-confirm" type="password"  name="password_confirmation" placeholder="Wachtwoord bevestingen" required>
                                  @if ($errors->has('password_confirmation'))
-                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                     <script type="text/javascript">
+                                         keep_register_at_error();
+                                     </script>
+                                     <div class="showReg">      <strong>{{ $errors->first('password_confirmation') }}</strong></div>
                                  @endif
                              </div>
 
-                            
 
+                        <div class="register_elements">
+                                   <div style="margin-bottom: 5px;">  <label for="image" ><strong >Foto toevoegen</strong></label></div>
+                            <input type="file" id="image" name="image" >
+                            @if ($errors->has('image'))
+                                <script type="text/javascript">
+                                    keep_register_at_error();
+                                </script>
+                                <div class="showReg">  <strong>{{ $errors->first('image') }}</strong></div>
+                            @endif
+                        </div>
 
-
-                                <button type="submit">
-                                    Register
+                        <div class="register_elements">
+                                <button type="submit" >
+                                    Registreren
                                 </button>
-
+                        </div>
                     </form>
-@endsection
+
