@@ -590,6 +590,7 @@ h1 {
         visibility: hidden;
     }
     .home-nav-right-burger{
+        list-style: none;
         display:block;
         position: absolute;
         right:15px;
