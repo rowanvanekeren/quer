@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Reviews')
 
 @section('content')
     <div class="variable_content">

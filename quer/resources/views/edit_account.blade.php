@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Account bewerken')
 @section('content')
     @include('layouts.dashboard_menu')
     <div class="variable_content">

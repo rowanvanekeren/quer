@@ -33,7 +33,7 @@ if (isset($event)) {
 
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Advertentie toevoegen')
 
 @section('content')
 

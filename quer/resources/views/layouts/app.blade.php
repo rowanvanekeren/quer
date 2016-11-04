@@ -147,7 +147,7 @@
             <div class="burger-wrapper">
                 <img onclick="openNav()" src="{{ asset('images/icons/burgermenu.png') }}" width="40px"/>
             </div>
-    <div class="sub-page-title"><h1> Page Title</h1></div>
+    <div class="sub-page-title"><h1>@yield('title')</h1></div>
         </div>
     </div>
 
@@ -212,5 +212,6 @@
 
    {{-- <script src="{{asset('js/app.js')}}"></script>--}}
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Evenement toevoegen')
 @section('content')
     <div class="variable_content">
         <h3 class="title">Evenement toevoegen</h3>
