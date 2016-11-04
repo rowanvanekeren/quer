@@ -2,7 +2,7 @@
 @section('title', 'Evenement toevoegen')
 @section('content')
     <div class="variable_content">
-        <h3 class="title">Evenement toevoegen</h3>
+        <h1 class="title">Evenement toevoegen</h1>
 
         <div class="add_event_button_wrapper">
             <button id="new_event_btn" class="add_event_active" onclick="getEventWrapper(0)">Maak nieuw evenement

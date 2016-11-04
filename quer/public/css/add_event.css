@@ -91,7 +91,27 @@ display:inline-block;
 .max_height_events_table{
     max-height: 120px;
 }
+.add_button{
+    width: 100%;
+    margin: 0 auto;
 
+    cursor: hand;
+}
+.add_button button{
+    float: right;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 54%;
+
+
+    overflow: hidden;
+    border-radius: 4px;
+
+}
 
 .add_event_wrapper{
     position: relative;
@@ -261,17 +281,31 @@ margin-right: 2%;
     #add_event_form input,#description{
         margin:0;
         padding: 4%;
-        width: 70%;
-        float:right;
+        width: 100%;
+        float:none;
     }
 
     #add_event_form label{
         padding:0;
         margin: 0;
-        width: 22%;
-        text-align: right;
+        width: 100%;
+        text-align: center;
         display:inline-block;
         float:left;
     }
+    .add_button button{
+        float: right;
+        padding: 12px 20px 12px 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border: 0px solid #ccc;
+        background-color: #3432d5;
+        color: white;
+        width: 100%;
 
+
+        overflow: hidden;
+        border-radius: 4px;
+
+    }
 }
