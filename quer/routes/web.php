@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-
+Route::post('/homepage_search', 'BaseController@search_quer');
 
 
 //testing routes

@@ -415,42 +415,6 @@ class BaseController extends Controller
 
     }
 
-    public function search_on_string(array $adverts, $string)
-    {
-        $list_of_search_words = preg_split('/[\ \n\,]+/', $string);
-        $all_results = array();
-        foreach ($adverts as $advert) {
-
-            foreach ($list_of_search_words as $word) {
-
-
-                if ((string)strripos($advert->user->username, $word) != null or
-                    (string)strripos($advert->event->name, $word) != null or
-                    (string)strripos($advert->event->tags, $word) != null or
-                    (string)strripos($advert->event->location, $word) != null or
-                    (string)strripos($advert->event->city, $word) != null or
-                    (string)strripos($advert->advert->private_description, $word) != null
-
-                ) {
-
-                    array_push($all_results, $advert);
-                }
-            }
-        }
-
-
-        return $all_results;
-    }
-
-    public function homepage_search(Request $request)
-    {
-        $adverts = $this->get_adverts_or_events_between_dates($request->from, $request->till, "ad");
-        $search_on_strings = $this->search_on_string($adverts, $request->search_string);
-
-        return $search_on_strings;
-
-    }
-
     
     
     
