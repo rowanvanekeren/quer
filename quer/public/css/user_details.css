@@ -45,3 +45,17 @@
 .usr_rev_content{
     text-align: center;
 }
+@media screen and (min-width: 0px) and ( max-width: 1000px) {
+    .usr_det_review{
+        float:left;
+        width:calc(100% - 30px);
+        height: 200px;
+        overflow:hidden;
+        margin:0;
+        padding: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+
+
+    }
+}

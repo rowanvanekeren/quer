@@ -183,7 +183,7 @@ float: left;
 }
 
 footer{
-    width: calc(100%-50px);
+    width: calc(100% - 50px);
     height: 100px;
     padding: 25px;
     background-color: #303130;
@@ -286,7 +286,10 @@ h1 {
     top: 29%;
 }
 */
-
+.event-location:first-child{
+   position: absolute;
+    color:white;
+}
 .homepage-adverts div{
     width: 33%;
     float: left;
@@ -395,15 +398,15 @@ h1 {
 .homepage-events-gradient{
     width: 100% !important;
     height: 100%;
-    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
-    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 85%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 85%);
     clear: both;
     position: relative;
  }
 
 .homepage-events-gradient h2 {
     position: absolute;
-    top: 10%;
+    top: 25%;
     color:white;
     width: 100%;
     text-align: center;
@@ -443,14 +446,36 @@ h1 {
 
 
 .homepage_first-event h2{
-    top: 55%;
+    top: 52%;
     width: 100%;
-    position: relative;
+    position: absolute;
     color:white;
     text-align: center;
     font-size: 3em;
 }
 
+.homepage_first-event .event-location{
+  width: 90%;
+position: absolute;
+    top: 85%;
+    overflow:hidden;
+    text-align: center;
+    margin-left: -45%;
+    left: 50%;
+    color: white;
+}
+
+.homepage_first-event .event-date{
+    width: 90%;
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    overflow:hidden;
+    text-align: center;
+    margin-left: -45%;
+    left: 50%;
+    color: white;
+}
 
 
 
@@ -491,7 +516,7 @@ h1 {
     /*background-color: teal;*/
     position: absolute;
     width: 100%;
-    bottom: 0%;
+    bottom: 0;
     margin: 0;
     list-style: none;
     padding: 0;
@@ -499,12 +524,40 @@ h1 {
 
 
 
-.homepage-adverts-gradient ul li {
-    float: left;
-    color: white;
-    font-weight: bold;
+.homepage-adverts-gradient ul li:first-child{
+    position: absolute;
+    bottom: 0;
+    left:0;
 }
 
+#home-adv-usrname{
+    position: absolute;
+    bottom: 20px;
+    left:60px;
+
+
+}
+#home-adv-price{
+    width: 60%;
+
+    position: absolute;
+    bottom: 20px;
+    right:15px;
+    color:white
+}
+#home-adv-price p{
+ text-align: right;
+}
+#home-adv-usrname a{
+text-decoration: none;
+    color:white ;
+
+}
+#home-adv-usrname a:hover{
+    text-decoration: underline;
+
+
+}
 
 .homepage-adverts div ul li:last-child {
     position: absolute;
@@ -521,8 +574,42 @@ h1 {
 }
 
 
+.admin-event{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: #3432d5 transparent transparent transparent;
+}
 
 
+.login_error{
+    z-index: 8;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width:400px;
+    height: 200px;
+    margin-left: -200px;
+    margin-top: -100px;
+    background-color: #3432d5;
+    animation-name: error_fade;
+    animation-duration: 1s;
+}
+@keyframes error_fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.login_error h2{
+    position: absolute;
+    top: 30%;
+ color: white;
+    text-align: center;
+
+}
 
 /* *************************************************************** */
 
