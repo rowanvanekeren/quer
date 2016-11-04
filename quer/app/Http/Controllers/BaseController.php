@@ -449,8 +449,25 @@ class BaseController extends Controller
     public function get_user_with_adv_rev($id){
         $user = User::with('advertisements')->where("id",$id)->first();
         $reviews = Reviews::where('quer_id', $id)->get();
+        $applicants = array();
 
-        return view('user_details', ['user' => $user, 'reviews' => $reviews]);;
+        $totalrate = 0;
+        $countRates = 0;
+        $totalScore = 0;
+        foreach($reviews as $review){
+            $user = User::where('id', $review->applicant_id)->first();
+
+            array_push($applicants,[$user, $review]);
+            if(isset($review->rate)){
+            $totalrate =$totalrate + (float)$review->rate;
+            $countRates ++;
+            }
+        }
+        if($totalrate != 0 || $countRates != 0){
+        $totalScore = $totalrate / $countRates;
+        }
+
+        return view('user_details', ['user' => $user, 'reviews' => $applicants, 'rate_score' => $totalScore] );;
     }
 
 

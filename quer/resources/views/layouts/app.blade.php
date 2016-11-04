@@ -18,6 +18,7 @@
     <link href="{{ asset('css/my_ads.css') }}" rel="stylesheet">
     <link href="{{ asset('css/add_event.css') }}" rel="stylesheet">
     <link href="{{ asset('css/add_advert.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user_details.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
    {{-- <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">--}}
 
@@ -100,7 +101,7 @@
 
                             <li><a href="{{ url('/my_advertisements') }}">Advertenties</a></li>
                             <li><a href="{{ url('/contracts_overview') }}">Contracten</a></li>
-                            <li><a>Reviews</a></li>
+                            <li><a href="{{ url('/user_details/'. Auth::user()->id) }}">Reviews</a></li>
                             <li>
                                 <a href="{{ url('/edit_account') }}">Account bewerken</a>
                             </li>

@@ -1,0 +1,47 @@
+.usr_det_img{
+    width: 250px;
+    height: 250px;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+.usr_det_inf{
+    width: 100%;
+}
+.usr_det_inf h2,.usr_det_inf p{
+    text-align: center;
+}
+
+.usr_det_rev_wrapper{
+    width: 100%;
+}
+
+.usr_rev_img{
+    width: 50px;
+    height: 50px;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+.usr_det_review{
+    float:left;
+    width:calc(50% - 30px);
+    height: 200px;
+    overflow:hidden;
+    margin:0;
+    padding: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+
+
+}
+.usr_rev_content{
+    text-align: center;
+}

@@ -57,7 +57,7 @@ overflow:hidden;
     width: 120px;
     padding-top: .5em;
     padding-bottom: .5em;
-    background-color: #377037;
+    background-color: #3432d5;
   text-align: center;
     text-decoration: none;
     border-bottom: 1px solid white;
@@ -122,8 +122,11 @@ overflow:hidden;
 }
 
 }
-
+.new_advert_btn{
+text-align: right;
+}
 .new_advert_btn a{
+
     font-family: "Helvetica Neue", sans-serif;
     text-decoration: none;
     padding: 12px 20px 12px 20px;
