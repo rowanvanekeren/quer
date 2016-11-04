@@ -406,9 +406,12 @@ table tr:first-child {
 
 /* ************    ADVERT OVERVIEW     ************ */
 
+.advert_overview {
+    margin-bottom: 50px;
+}
+
 .left_box,
 .right_box {
-    background-color: #faf4f6;
     width: 42.5%;
     margin-right: 5%;
     float: left;
@@ -417,6 +420,115 @@ table tr:first-child {
 .right_box {
     margin-right: 0;
 }
+
+.left_box h3,
+.right_box h3 {
+    text-align: center;
+    border-bottom: #CDCCF5 solid 1px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.advert_overview .left_box img {
+    width: 100%;
+    height: auto;
+}
+
+.left_box .description {
+    margin: 20px 0;
+}
+
+.left_box label,
+.left_box span {
+    display: block;
+    margin: 0;
+    margin-right: 5%;
+    width: 40%;
+    float: left;
+}
+
+.left_box label {
+    font-weight: bold;
+}
+
+.left_box span {
+    margin-right: 0;
+}
+
+.right_box .applicant {
+    margin-bottom: 10px;
+}
+
+.right_box .applicant img,
+.right_box .applicant span {
+    float: left;
+    margin-right: 10px;
+}
+
+.right_box img {
+    width: 45px;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+.right_box .applicant span {
+    padding: 6px 0;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.right_box .description {
+    margin-bottom: 20px;
+}
+
+.right_box .price label,
+.right_box .price span {
+    display: block;
+    float: left;
+    width: 30%;
+}
+
+.right_box .price label {
+    width: 15%;
+}
+
+.form {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: #CDCCF5 solid 1px;
+}
+
+.form div label,
+.form div input {
+    display: block;
+    width: 120px;
+    float: left;
+}
+
+.form div input {
+    width: calc(100% - 160px);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #f0f0f7;
+}
+
+.form button[type="submit"] {
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #3432d5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
 
 
 
@@ -435,6 +547,9 @@ table tr:first-child {
 #add_review .rate::before, #add_review .rate::after,
 #add_review .rate div::before, #add_review .rate div::after,
 .advert_overview::before, .advert_overview::after,
+.advert_overview .date::before, .advert_overview .date::after,
+.right_box .applicant::before, .right_box .applicant::after,
+.right_box .price::before, .right_box .price::after,
 form div::before, form div::after {
     content: "";
     display: table;
@@ -453,6 +568,9 @@ form div::before, form div::after {
 #add_review .rate::after,
 #add_review .rate div::after,
 .advert_overview::after,
+.advert_overview .date::after,
+.right_box .applicant::after,
+.right_box .price::after,
 form div::after {
     clear: both;
 }

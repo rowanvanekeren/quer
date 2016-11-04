@@ -16,7 +16,7 @@
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 
-    <title>Document</title>
+    <title>Que'r</title>
 </head>
 <body>
 
