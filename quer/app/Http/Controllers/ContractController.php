@@ -32,9 +32,7 @@ class ContractController extends Controller
         foreach ($contracts as $contract) {
              
              $event = Events::find($contract->advertisements->event_id);
-             
              $total_contract = (object)['contract' => $contract, 'event' => $event];
-
              array_push($total_contracts, $total_contract);
          }
         
@@ -51,18 +49,13 @@ class ContractController extends Controller
         foreach ($contracts as $contract) {
              
              $event = Events::find($contract->advertisements->event_id);
-             
              $total_contract = (object)['contract' => $contract, 'event' => $event];
-
              array_push($total_contracts, $total_contract);
          }
         
         return $total_contracts;
         
-        return $contracts;
     }
-    
-    
     
     
     //overview of contracts "in anticipation"
@@ -73,15 +66,9 @@ class ContractController extends Controller
              $query->where('id', '=', $id_advert);
          })->first();
         
-        //$contracts = Contracts::where('advertisement_id', $id_advert)->where('phase_id', 1)->get();
-        //$contracts2 = Contracts::with('user')->where('advertisement_id', $id_advert)->get();
-        
         $quers = User::with('contracts_quer')->has('contracts_quer')->whereHas('contracts_quer', function ($query) use ($id_advert) {
              $query->where('advertisement_id', $id_advert)->where('phase_id', 1);
          })->get();
-        
-        
-        //$quers2 = User::with('contracts_quer')->join('contracts', 'contracts.quer_id', '=', 'users.id')->where('contracts.advertisement_id', 4)->get();
         
         $quers_info = [];
         
@@ -97,17 +84,12 @@ class ContractController extends Controller
     
     public function get_contract_details($id)
     {
-        //
-        //$contract = Contracts::find($id);
-        //only fetch this is the contract has been agreed on (phase_id > 2)
         $contract = Contracts::with('phases')->has('phases')->with('advertisements')->where('phase_id', '>', 2)->where('id', $id)->first();
-        //dd($contract);
         $event = Events::find($contract->advertisements->event_id);
-        //dd($event);
+        
         if($contract) {
             $quer = User::find($contract->quer_id);
             $applicant = User::find($contract->applicant_id);
-            //$advert = Advertisements::find($contract->advertisement_id);
             return view('contract_details', ['contract' => $contract, 'event' => $event, 'quer' => $quer, 'applicant' => $applicant]);
         }
         else {
@@ -124,7 +106,6 @@ class ContractController extends Controller
     //this function will be called every time someone offers to be a quer
     function store_new_contract(Request $request)
     {
-        //dd($request);
         //default a contract always starts with phase 1 aka in_anticipation
         $phase = 1;
         $active = 1;
@@ -168,13 +149,10 @@ class ContractController extends Controller
             $cancelled_contract->save();
         }
 
-        //a function like soft_delete_advert should be called here
+        //the advertisement will be soft-deleted
         $advertisement = Advertisements::find($contract_agreed->advertisement_id);
         $advertisement->active = 0;
         $advertisement->save();
-
-
-        //dd($contract_agreed, $other_contracts, $advertisement);
 
         return redirect('/contracts_overview')->with('msg', "Que'r succesvol gekozen.  Bekijk hier je contract");
 
@@ -182,7 +160,6 @@ class ContractController extends Controller
     
     
     public function upload_ticket(Request $request) {
-        //
         
         $contract = Contracts::find($request->contract_id);
         
@@ -200,20 +177,17 @@ class ContractController extends Controller
             }
         }
         
-        
         //update contract phase (4 = transfer)
         $this->update_contract_phase($request->contract_id, 4);
         return redirect('/contract_details/'.$request->contract_id)->with('msg', "Je ticket werd succesvol toegevoegd!");
     }
     
     public function download_ticket( $id ) {
-        //
         
         $contract = Contracts::find($id);
-        //dd($contract->attachment);
         
         $file= base_path() . "/public/uploads/" . $contract->attachment;
-        //dd($file);
+        
         $headers = array(
                   'Content-Type: application/pdf',
                 );
@@ -233,14 +207,9 @@ class ContractController extends Controller
     //this function should be called when uploading a ticket as well as when accepting the ticket
     public function update_contract_phase ($contract_id, $phase_id)
     {
-        //
         $contract = Contracts::find($contract_id);
-        //dd($contract);
         $contract->phase_id = $phase_id;
-        
-        
         $contract->save();
-        
     }
 
     

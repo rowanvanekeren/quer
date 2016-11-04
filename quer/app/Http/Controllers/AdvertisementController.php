@@ -18,23 +18,13 @@ class AdvertisementController extends Controller
          //my_advertisements = an array that contains the advertisement info + corresponding event info
          $my_advertisements = [];
 
-         //get all advertisements from user with given id (eventueel nog ne order by erbij zetten)
-       /*  $advertisements = Advertisements::where('user_id', Auth::user()->id)->get();
-         $advertisements = Events::with('advertisements')->has('advertisements')->whereHas('advertisements', function ($query) {
-             $query->where('user_id', '=', Auth::user()->id);
-         })->get();*/
-
          //fetch all advertisments and there event info (with event) where the user_id is equal to the currently logged in user
          $advertisements2 = Advertisements::with('event')->where('user_id',  Auth::user()->id)->where('active', 1)->get();
-         //dd($advertisements2);
-
            
          foreach ($advertisements2 as $advertisement) {
              
              $amount_of_quers = $this->get_amount_of_quers($advertisement->id);
-             
              $my_advertisement = (object)['advertisement' => $advertisement, 'amount_of_quers' => $amount_of_quers];
-
              array_push($my_advertisements, $my_advertisement);
          }
            
@@ -56,7 +46,6 @@ class AdvertisementController extends Controller
     {
         if ($id) {
             $event = Events::find($id);
-            //dd($event);
             return view('add_advertisement', ['event' => $event]);
         } else {
             return view('add_advertisement');
@@ -91,10 +80,6 @@ class AdvertisementController extends Controller
         ]);
 
         $advertisement->save();
-
-        //$this->store_user_advert($advertisement->user_id, $advertisement->id);
-
-        //dd($advertisement);
 
         return redirect('/my_advertisements');
     }
