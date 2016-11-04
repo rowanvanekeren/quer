@@ -199,9 +199,16 @@
 
                             <ul>
                                 <li><img src="./images/profiles/{{  $advert->user->image }}"/></li>
-                                <li id="home-adv-usrname"><p><a
-                                                href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a>
-                                    </p></li>
+                                @if(Auth::guest())
+                                    <li id="home-adv-usrname"><p><a
+                                                    onclick="display_login_error()">{{$advert->user->username}} </a>
+                                        </p></li>
+                                @else
+                                    <li id="home-adv-usrname"><p><a
+                                                    href="{{ url('/user_details/'. $advert->user->id) }}">{{$advert->user->username}} </a>
+                                        </p></li>
+                                @endif
+
                                 <li id="home-adv-price">
                                     <p>&euro; {{ number_format((float)$advert->price, 2, '.', '') }}</p></li>
 
