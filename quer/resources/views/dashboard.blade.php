@@ -3,12 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    @include('layouts.dashboard_menu')
-   <div class="variable_content">
-     
 
-      
-       <h1>Welkom {{ Auth::user()->first_name }}</h1>
+    <div class="variable_content">
+
+
+        <h1>Welkom {{ Auth::user()->first_name }}</h1>
        
        <div>
            Wat kan je allemaal doen op dit dashboard?
@@ -21,11 +20,8 @@
        <p>Hierop kan je je huidige contracten, openstaande advertenties, ... zien</p>
       
        <p>Onderstaand dashboard menu moet ook in een soort layout staan die ge-extend kan worden</p>
-       
-       
-       
-       
-       
-   </div>
-   
+
+
+    </div>
+
 @endsection
