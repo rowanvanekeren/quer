@@ -58,6 +58,7 @@ form textarea {
 }
 
 
+
 /* ************    QUE'RS OVERVIEW     ************ */
 
 .quers_overview {
@@ -106,6 +107,46 @@ form textarea {
     width: 100%;
     border-radius: 4px;
     text-decoration: none;
+}
+
+
+/* ************    DASHBOARD     ************ */
+
+.dashboard h3,
+.dashboard h3 {
+    border-bottom: #CDCCF5 solid 1px;
+    padding: 5px;
+}
+
+.dashboard ul {
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard ul li {
+    padding: 10px 0;
+}
+
+.dashboard ul li:before{
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-size: contain;
+    background-image: url(../images/querlogo/mini_logo.png);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.dashboard ul li a {
+    font-weight: bold;
+    color: #3432d5;
+    text-decoration: none;
+}
+
+.dashboard ul li a:hover {
+    text-decoration: underline;
 }
 
 
