@@ -56,15 +56,12 @@
                <h3>Contractinfo</h3>
                <div class="details">
                    <div class="static">
-                       <div>
-                           <label>Evenement:</label><span>{{ $event->name }}</span>
-                       </div>
                        
                        <div>
                            <label>Fase van contract:</label><span>{{ $contract->phases->phase_description }}</span>
                        </div>
                        <div>
-                           <label>Prijs van advertentie (&euro;):</label><span class="price">{{ number_format((float)$contract->advertisements->price, 2, '.', '') }}</span>
+                           <label>Prijs van tickets (&euro;):</label><span class="price">{{ number_format((float)$contract->advertisements->price, 2, '.', '') }}</span>
                        </div>
                        <div>
                            <label>Prijs van Que'r (&euro;):</label><span class="price">{{ number_format((float)$contract->price, 2, '.', '') }}</span>
@@ -72,6 +69,12 @@
                        <div>
                            <label>Totale prijs (&euro;):</label><span class="price">{{ number_format((float)($contract->advertisements->price + $contract->price), 2, '.', '') }}</span>
                        </div>
+                       
+                       <div class="ad_info">
+                           <h4>{{ $event->name }}</h4>
+                           <div>{{ $contract->advertisements->private_description }}</div>
+                       </div>
+                       
                    </div>
                    
                    <div class="variable">
@@ -94,11 +97,18 @@
                            </form>
                        </div>
                        @endif
-                       @if(Auth::user()->id == $quer->id && $contract->phases->phase_number != 10)
+                       @if(Auth::user()->id == $quer->id && $contract->phases->phase_number != 10 && $contract->phases->phase_number < 25)
                        <div>
                            Bedankt voor het uploaden van het ticket!  Van zodra de apply'r het ticket geaccepteerd heeft, wordt je geld overgemaakt!
                        </div>
                        @endif
+                       
+                       @if(Auth::user()->id == $quer->id && $contract->phases->phase_number > 20)
+                       <div>
+                           De apply'r heeft je ticket geaccepteerd.  Het bedrag is overgemaakt naar je rekening.
+                       </div>
+                       @endif
+                       
                        
                        @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number == 10)
                        <div>De que'r heeft je ticket nog niet geüpload.  Nog eventjes geduld.</div>
@@ -114,7 +124,8 @@
                            @if($contract->phases->phase_number < 25)
                            <form id="accept_ticket" action="{{ url('accept_ticket') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                               <input type="checkbox" name="acceptance" id="acceptance">
+                                <input type="hidden" name="contract_id" value="{{$contract->id}}">
+                               <input type="checkbox" name="acceptance" id="acceptance" checked>
                                <label for="acceptance">Het ontvangen ticket is in orde!</label>
                                <input type="submit" value="Stuur bevestiging">
                            </form>
@@ -124,10 +135,11 @@
                        
                        @if(Auth::user()->id == $applicant->id && $contract->phases->phase_number >= 20 && $contract->phases->phase_number != 30)
                        <div class="review">
-                           <form id="add_review" action="{{ url('') }}" method="POST" >
+                           <form id="add_review" action="{{ url('add_review') }}" method="POST" >
+                               {{ csrf_field() }}
                                <input type="hidden" name="quer_id" id="add_rev_querid" value="{{$quer->id}}">
                                <input type="hidden" name="advertisement_id" id="add_rev_advertid" value="{{$contract->advertisement_id}}">
-
+                               <input type="hidden" name="contract_id" value="{{$contract->id}}">
                                <div>
                                    <label for="add_rev_content">Schrijf hier je review:</label>
                                    <textarea type="text" name="content" id="add_rev_content"></textarea>
