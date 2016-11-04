@@ -38,6 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard');
     });
     
+    Route::get('/users_overview', 'BaseController@get_all_users');
+    Route::get('/delete_user/{id}', 'BaseController@delete_user');
+    
     Route::get('/edit_account', 'AccountController@edit_account');
 
     Route::get('/my_advertisements', 'AdvertisementController@my_advertisements');

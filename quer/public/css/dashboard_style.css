@@ -116,6 +116,34 @@ form select {
 }
 
 
+/* ************    USERS OVERVIEW     ************ */
+
+.user_overview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user_overview table th,
+.user_overview table td {
+    border: 0;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.user_overview table td {
+    border-bottom: 1px solid #CDCCF5;
+}
+
+.user_overview table tr:first-child {
+    background-color: #ece7e9;
+}
+
+.user_overview table tr:hover {
+    background-color: #faf4f6;
+}
+
+
+
 /* ************    DASHBOARD     ************ */
 
 .dashboard h3,
