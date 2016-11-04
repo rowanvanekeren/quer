@@ -14,19 +14,14 @@ class AccountController extends Controller
 {
     //
     
-    
-    
     function edit_account() {
         //return form with current values
         return view('edit_account');
-        
     }
     
     
     function update_account(Request $request){
-        //
         
-        //dd($request);
         $user = User::find(Auth::user()->id);
         
         //check whether a new image was uploaded, if not keep previous imagepath
@@ -40,7 +35,6 @@ class AccountController extends Controller
             }
         }
         
-        
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->username = $request->username;
@@ -50,8 +44,6 @@ class AccountController extends Controller
         $user->house_number = $request->house_number;
         $user->phone_number = $request->phone_number;
         $user->email = $request->email;
-        
-        
         
         $user->save();
         return redirect('/dashboard');

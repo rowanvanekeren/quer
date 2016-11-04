@@ -42,35 +42,6 @@ class ReviewController extends Controller
         
         return redirect('/contract_details/'.$request->contract_id)->with('msg', "Review verstuurd! Dankjewel!");
         
-        //return "oplsaan gelukt";
-        
-        
-        /*if($request->succeeded == "on"){
-            $succeeded = 1;
-
-        }else{
-            $succeeded = 0;
-        }*/
-        /*if($alreadyHasReview != ""){
-            $active = 1;
-            $review = new Reviews([
-                'quer_id' => $request->quer_id,
-                'applicant_id' => Auth::user()->id,
-                'content' => $request->content,
-                'rate' => $request->rate,
-                'succeeded' => $succeeded,
-                'advertisement_id' => $request->advertisement_id,
-                'active' => $active,
-            ]);
-
-            $review->save();
-
-            return "oplsaan gelukt";
-        }
-        else{
-            return "opslaan is niet gelukt denk ik" . $alreadyHasReview;
-        }*/
-return "error";
     }
 
 
