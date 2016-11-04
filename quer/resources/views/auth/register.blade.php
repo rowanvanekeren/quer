@@ -12,6 +12,8 @@
                                         keep_register_at_error();
                                     </script>
                                     <div class="showReg"> <strong>{{ $errors->first('first_name') }}</strong></div>
+
+
                                 @endif
 
                             </div>
@@ -34,6 +36,7 @@
                                 <input id="username" type="text" name="username" value="{{ old('name') }}" placeholder="Gebruikersnaam" required autofocus>
                                 @if ($errors->has('username'))
                                     <script type="text/javascript">
+
                                         keep_register_at_error();
                                     </script>
                                     <div class="showReg">  <strong>{{ $errors->first('username') }}</strong></div>
@@ -120,6 +123,7 @@
                                 <input id="email" type="email"  name="email" value="{{ old('email') }}" placeholder="E-mail" required>
                                 @if ($errors->has('email'))
                                     <script type="text/javascript">
+                                        console.log("ik word uitgevoerd");
                                         keep_register_at_error();
                                     </script>
                                     <div class="showReg">   <strong>{{ $errors->first('email') }}</strong></div>

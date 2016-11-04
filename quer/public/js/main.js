@@ -75,14 +75,17 @@ $('#menucontainer').click(function(event){
 
 var cookie = document.cookie;
 var logorreg = cookie.split(';');
+var errors = false;
 function keep_login_at_error(){
-
+    errors = true;
     if(logorreg[0] == "logorreg=log"){
     $('#login_home').addClass('login_form_keep');
     $('#login_home').removeClass('login_form');
     $('#login_home').removeClass('hidden');
+
     $('#register_home').addClass('hidden');
 
+        console.log("login uitgevoerd");
        // $('.showLog').removeClass('hidden');
     }
 
@@ -91,20 +94,23 @@ function keep_login_at_error(){
 
 
 function keep_register_at_error(){
+    errors = true;
     if(logorreg[0] == "logorreg=reg"){
     $('#register_home').addClass('register_form_keep');
     $('#register_home').removeClass('register_form');
     $('#register_home').removeClass('hidden');
     $('#login_home').addClass('hidden');
-
-    }else{
+        console.log("reg uitgevoerd");
 
     }
 
 }
 function open_login(){
-    document.cookie = "logorreg=log";
+    if(errors == true){
 
+    }
+    document.cookie = "logorreg=log";
+    $('.showLog').addClass('hidden');
     $('#login_home').removeClass('login_form_keep');
     $('#login_home').addClass('login_form');
     $('.login_form_out').addClass('login_form');
@@ -113,6 +119,10 @@ function open_login(){
 }
 
 function open_register(){
+    if(errors == true){
+
+    }
+    $('.showReg').addClass('hidden');
     document.cookie = "logorreg=reg";
     $('#register_home').removeClass('register_form_keep');
     $('#register_home').addClass('register_form');
