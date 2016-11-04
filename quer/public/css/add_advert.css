@@ -124,3 +124,69 @@ text-align: center;
 .add_advert_title{
     width: 100%;
 }
+
+@media screen and (min-width: 0px) and ( max-width: 1000px) {
+    .selected_advert{
+        width: 100%;
+    }
+.add_new_advert{
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+
+}
+    #add_advertisement_form textarea,#add_advertisement_form {
+        float:none;
+        width: 100%;
+        padding:0;
+
+        max-width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+    }
+    #add_advertisement_form input {
+        float:none;
+        width: 60%;
+        margin-left:20%;
+        height: 50px;
+        max-width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #add_advertisement_form label{
+        width: 100%;
+        float:none;
+        text-align: center;
+    }
+    #add_advertisement_form, #add_advertisement_form div{
+    padding: 0;
+    }
+
+    #private_description{
+        width: 100%;
+
+    }
+    .add_advert_from_section{
+        padding:0;
+        height: 250px;
+        width: 100%;
+        float: none;
+    }
+    .add_button{
+       margin:0 ;
+        padding:0;
+
+    }
+    .add_new_advert{
+
+    }
+    .add_new_advert h2, .add_new_advert a {
+        position: relative;
+    width: 80%;
+    float:none
+    }
+    .add_new_advert h2{
+        margin-left:-40%;
+    }
+}
