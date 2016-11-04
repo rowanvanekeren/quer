@@ -16,7 +16,7 @@
 });*/
 Route::get('/', 'BaseController@get_homepage');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index');
 
@@ -32,8 +32,8 @@ if (Auth::check()) {
 */
 
 
-Route::group(['middleware' => 'auth'], function () {
-    
+Route::group(['middleware' => 'web'], function () {
+    Auth::routes();
     Route::get('/dashboard', function () {
         return view('dashboard');
     });
