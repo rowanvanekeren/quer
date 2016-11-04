@@ -195,7 +195,7 @@
 
     </div>
     <footer>
-        &copy; {{ date("Y") }} Que'r
+        <div>&copy; {{ date("Y") }} Que'r</div>
     </footer>
 </section>
 
