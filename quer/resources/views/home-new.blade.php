@@ -33,6 +33,7 @@
     </div>
     <div class="register_form_content"> @include('auth.register')</div>
 </div>
+
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -160,11 +161,12 @@
             </form>
         </div>
     </div>
-    <section class="content-wrapper">
+    <div class="content-wrapper">
         <div class='content-center'>
-            <h1>Evenementen</h1>
 
+            <h1 class="homepage-titles">Evenementen</h1>
             <div class="homepage-events">
+
                 @foreach ($events as $event)
                     <div class="homepage-events-repeated" style="background:url(./images/events/{{  $event->image }})">
 
@@ -182,7 +184,7 @@
                     </div>
                 @endforeach
             </div>
-            <h1>Advertenties</h1>
+            <h1 class="homepage-titles">Advertenties</h1>
 
             <div class="homepage-adverts">
                 @foreach ($advertisements as $advert)
@@ -225,7 +227,7 @@
         <footer>
             <div>&copy; {{ date("Y") }} Que'r</div>
         </footer>
-    </section>
+    </div>
 
 </div>
 </body>
