@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Events;
+use App\Categories;
 use Auth;
 
 class EventController extends Controller
@@ -18,7 +19,8 @@ class EventController extends Controller
     public function add_event()
     {
         $events = Events::all();
-        return view('add_event',['events' => $events]);
+        $categories = Categories::all();
+        return view('add_event',['events' => $events, 'categories' => $categories]);
     }
     
     

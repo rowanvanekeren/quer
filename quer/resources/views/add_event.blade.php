@@ -64,7 +64,11 @@
 
                 <div>
                     <label for="category">Categorie:</label>
-                    <input id="category" name="category" type="text">
+                    <select>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{ $category->categorie }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="add_button">

@@ -26,7 +26,8 @@ body {
 
 form label,
 form input,
-form textarea {
+form textarea,
+form select {
     float: left;
     font-family: inherit;
     font-size: inherit;
@@ -42,7 +43,8 @@ form label {
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
     /*border: 1px solid #3432d5;
     border-radius: 5px;*/
     border: none;
@@ -57,6 +59,10 @@ form textarea {
     max-height: 350px;
 }
 
+form select {
+    margin-left: 10px;
+    width: 372px;
+}
 
 
 /* ************    QUE'RS OVERVIEW     ************ */
@@ -147,6 +153,22 @@ form textarea {
 
 .dashboard ul li a:hover {
     text-decoration: underline;
+}
+
+
+/* ************    ADD EVENT     ************ */
+
+.new_event_collapse_anim,
+.existing_event_collapse {
+    margin-bottom: 50px;
+}
+
+.new_event_collapse_anim button {
+    cursor: pointer;
+}
+
+.add_event_right tr:hover {
+    cursor: pointer;
 }
 
 
