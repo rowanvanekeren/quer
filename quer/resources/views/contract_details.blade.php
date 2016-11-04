@@ -56,15 +56,12 @@
                <h3>Contractinfo</h3>
                <div class="details">
                    <div class="static">
-                       <div>
-                           <label>Evenement:</label><span>{{ $event->name }}</span>
-                       </div>
                        
                        <div>
                            <label>Fase van contract:</label><span>{{ $contract->phases->phase_description }}</span>
                        </div>
                        <div>
-                           <label>Prijs van advertentie (&euro;):</label><span class="price">{{ number_format((float)$contract->advertisements->price, 2, '.', '') }}</span>
+                           <label>Prijs van tickets (&euro;):</label><span class="price">{{ number_format((float)$contract->advertisements->price, 2, '.', '') }}</span>
                        </div>
                        <div>
                            <label>Prijs van Que'r (&euro;):</label><span class="price">{{ number_format((float)$contract->price, 2, '.', '') }}</span>
@@ -72,6 +69,12 @@
                        <div>
                            <label>Totale prijs (&euro;):</label><span class="price">{{ number_format((float)($contract->advertisements->price + $contract->price), 2, '.', '') }}</span>
                        </div>
+                       
+                       <div class="ad_info">
+                           <h4>{{ $event->name }}</h4>
+                           <div>{{ $contract->advertisements->private_description }}</div>
+                       </div>
+                       
                    </div>
                    
                    <div class="variable">

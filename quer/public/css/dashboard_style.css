@@ -262,6 +262,17 @@ form textarea {
     text-align: right;
 }
 
+.ad_info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: #CDCCF5 solid 1px;
+}
+
+.ad_info h4 {
+    text-align-last: center;
+    padding-bottom: 10px;
+}
+
 #upload_ticket {
     margin-top: 15px;
 }
