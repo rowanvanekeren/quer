@@ -1,8 +1,5 @@
-
-
-
 <div>
-    <form id="add_review" action="{{ url('add_review') }}" method="POST" >
+    <form id="add_review" action="{{ url('add_review') }}" method="POST">
         {{ csrf_field() }}
         <input type="hidden" name="quer_id" id="add_rev_querid" value="2">
         <input type="hidden" name="advertisement_id" id="add_rev_advertid" value="4">
@@ -16,6 +13,6 @@
         <label for="add_rev_succeeded">Succesfull transaction</label>
         <input id="add_rev_succeeded" name="succeeded" type="checkbox">
 
-        <input type="submit" value="submit" >
+        <input type="submit" value="submit">
     </form>
 </div>
