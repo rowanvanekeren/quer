@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::post('/homepage_search', 'BaseController@search_quer');
 
-
+Auth::routes();
 //testing routes
 /*
 if (Auth::check()) {
@@ -33,7 +33,7 @@ if (Auth::check()) {
 
 
 Route::group(['middleware' => 'web'], function () {
-    Auth::routes();
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     });
