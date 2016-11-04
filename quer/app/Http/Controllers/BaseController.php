@@ -19,6 +19,31 @@ class BaseController extends Controller
 {
     //
 
+    
+    public function get_all_users() {
+        //
+        $users = User::where('active', 1)->orderBy('last_name', 'asc')->get();
+        
+        if(Auth::user()->is_admin) {
+            return view('users_overview', ['users' => $users]);
+        }
+        else {
+            abort(404);
+        }
+    }
+    
+    public function delete_user($id) {
+        //
+        //dd($id);
+        $user = User::find($id);
+        $user->active = 0;
+        $user->save();
+        
+        return view('/user_overview');
+        
+    }
+    
+    
 
     public function store_user_advert($user_id, $advert_id)
     {
