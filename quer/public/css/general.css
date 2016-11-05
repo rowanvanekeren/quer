@@ -25,6 +25,12 @@ position: absolute;
     animation-duration: 2s;
 }
 
+.login_failed {
+    text-align: center;
+    padding-top: 20px;
+    color: #d55;
+}
+
 
 .login_form_keep{
     z-index: 2;
@@ -104,7 +110,7 @@ width: 100%;
     padding: 12px 20px 12px 20px;
 }
 
-.login_form_content button{
+.login_form_content button {
     padding: 12px 20px 12px 20px;
     box-sizing: border-box;
     font-size: 16px;
@@ -114,6 +120,10 @@ width: 100%;
     width: 50%;
     overflow: hidden;
     border-radius: 4px;
+    cursor: pointer;
+}
+.login_form_content button:hover {
+    background-color: #161657;
 }
 .login_elements{
     width: 100%;

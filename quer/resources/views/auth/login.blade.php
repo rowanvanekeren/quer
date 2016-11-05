@@ -9,7 +9,7 @@
                          {{--   <label for="email">E-Mail Address</label>--}}
 
 
-                                <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus placeholder="email">
 
                                 @if ($errors->has('email'))
                                     <script type="text/javascript">
@@ -26,7 +26,7 @@
                          {{--   <label for="password" >Password</label>--}}
 
 
-                                <input id="password" type="password"  name="password" required>
+                                <input id="password" type="password"  name="password" required placeholder="paswoord">
 
                                 @if ($errors->has('password'))
                                 <script type="text/javascript">

@@ -24,6 +24,11 @@
     <div class="login_header">
         <h2>Login</h2>
     </div>
+    @if($login_failed == 1)
+    <div class="login_failed">
+        Sorry, je e-mail en/of paswoord was incorrect.
+    </div>
+    @endif
     <div class="login_form_content"> @include('auth.login')</div>
 </div>
 
@@ -166,7 +171,8 @@
 
             <h1 class="homepage-titles">Evenementen</h1>
             <div class="homepage-events">
-
+                
+               
                 @foreach ($events as $event)
                     <div class="homepage-events-repeated" style="background:url(./images/events/{{  $event->image }})">
 
@@ -235,5 +241,11 @@
     </div>
 
 </div>
+@if($login_failed == 1)
+<script type="text/javascript">
+               
+    open_login();
+    </script>
+@endif
 </body>
 </html>

@@ -15,7 +15,7 @@
     return view('home');
 });*/
 Route::get('/', 'BaseController@get_homepage');
-
+Route::get('/get_homepage_with_login', 'BaseController@get_homepage_with_login');
 
 
 Route::get('/home', 'HomeController@index');

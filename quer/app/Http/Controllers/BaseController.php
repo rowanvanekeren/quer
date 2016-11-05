@@ -113,8 +113,16 @@ class BaseController extends Controller
         $events = $this->get_all_events(6);
         $advertisements = Advertisements::where('active', 1)->with('user')->with('event')->get();
         $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
-        return view('home-new', ['advertisements' => $advertisements, 'events' => $events]);
+        return view('home-new', ['advertisements' => $advertisements, 'events' => $events, 'login_failed' => 0]);
     }
+    
+    public function get_homepage_with_login() {
+        $events = $this->get_all_events(6);
+        $advertisements = Advertisements::where('active', 1)->with('user')->with('event')->get();
+        $page_content = (object)['advertisement' => $advertisements, 'event' => $events];
+        return view('home-new', ['advertisements' => $advertisements, 'events' => $events, 'login_failed' => 1]);
+    }
+    
 
     public function get_advert_overview($id)
     {

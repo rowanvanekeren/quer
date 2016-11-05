@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Lang;
+use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -36,4 +39,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+    
+    
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->to('/get_homepage_with_login')
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([
+                $this->username() => Lang::get('auth.failed'),
+            ])->with('msg', "Je ticket werd succesvol toegevoegd!");
+    }
+    
 }
