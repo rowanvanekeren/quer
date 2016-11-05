@@ -151,6 +151,11 @@ form select {
     border-spacing: 0 15px;
 }
 
+.my_advert_right tr th:nth-child(4),
+.my_advert_right tr td:nth-child(4) {
+    display: none;
+}
+
 .my_advert_quers_left tr {
     width: 120px;
     height: 120px;
@@ -247,6 +252,10 @@ form select {
     border-radius: 4px;
 }
 
+.new_advert_btn a:hover {
+    background-color: #161657;
+}
+
 
 /* ************    QUE'RS OVERVIEW     ************ */
 /* Sarah */
@@ -316,7 +325,7 @@ form select {
     border: 3px dashed black;
  }
 
-.add_new_advert h2, .add_new_advert a {
+.add_new_advert a {
     text-decoration: none;
     padding: 12px 20px 12px 20px;
     box-sizing: border-box;
@@ -324,10 +333,16 @@ form select {
     border: 0 solid #ccc;
     background-color: #3432d5;
     color: white;
-    width: 50%;
+    width: 120%;
     overflow: hidden;
     border-radius: 4px;
     text-align: center;
+    display: block;
+    margin-left: 5%;
+}
+
+.add_new_advert a:hover {
+    background-color: #161657;
 }
 
 .add_new_advert h2 {
@@ -420,6 +435,10 @@ form select {
     width: 100%;
     overflow: hidden;
     border-radius: 4px;
+}
+
+#add_advert_submit:hover {
+    background-color: #161657;
 }
 
 .add_advert_title {
@@ -906,6 +925,10 @@ margin-right: 2%;
     border-radius: 4px;
 }
 
+.variable .ticket a:hover {
+    background-color: #161657;
+}
+
 #accept_ticket {
     margin-top: 15px;
 }
@@ -937,6 +960,12 @@ margin-right: 2%;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#upload_ticket input[type="submit"]:hover,
+#accept_ticket input[type="submit"]:hover,
+.review input[type="submit"]:hover {
+    background-color: #161657;
 }
 
 .review {
@@ -1187,6 +1216,9 @@ margin-right: 2%;
     margin-top: 20px;
 }
 
+.form button[type="submit"]:hover {
+    background-color: #161657;
+}
 
 
 /* ************    SEARCH RESULTS     ************ */
@@ -1412,6 +1444,29 @@ form div::after {
         width: 100%;
     }
     
+    .my_advert_right tr th:nth-child(2),
+    .my_advert_right tr th:nth-child(3),
+    .my_advert_right tr td:nth-child(2),
+    .my_advert_right tr td:nth-child(3) {
+        display: none;
+    }
+    
+    .my_advert_right tr th:nth-child(4),
+    .my_advert_right tr td:nth-child(4) {
+        display: table-cell;
+    }
+    
+    .my_advert_right tr td:nth-child(4) {
+        text-align: center;
+    }
+    
+    .my_advert_right tr td:nth-child(4) a {
+        background-color: #3432d5;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 4px;
+    }
+    
     .add_event_quers_left {
         display:none;
     }
@@ -1495,7 +1550,7 @@ form div::after {
     
     /* edit account */
     /* Rowan */
-    edit_account form {
+    .edit_account form {
         width: 100%;
         margin: 0 auto;
     }
@@ -1512,6 +1567,22 @@ form div::after {
 
 @media screen and (max-width: 400px){
 
+    /* add event */
+    /* Sarah */
+    .add_event_right tr th:nth-child(2),
+    .add_event_right tr th:nth-child(3),
+    .add_event_right tr th:nth-child(4),
+    .add_event_right tr td:nth-child(2),
+    .add_event_right tr td:nth-child(3),
+    .add_event_right tr td:nth-child(4) {
+        display: none;
+    }
+    
+    .add_event_right tr {
+        text-align: center;
+    }
+    
+    /* contract overview */
     /* Sarah */
     .contracts_quer div a .left,
     .contracts_applicant div a .left {
