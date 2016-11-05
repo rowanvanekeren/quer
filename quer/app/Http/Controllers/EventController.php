@@ -18,7 +18,7 @@ class EventController extends Controller
     
     public function add_event()
     {
-        $events = Events::all();
+        $events = Events::where('active', 1)->get();
         $categories = Categories::all();
         return view('add_event',['events' => $events, 'categories' => $categories]);
     }
