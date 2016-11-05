@@ -37,7 +37,7 @@
 
         @if($applicant_contracts)
         <div class="contracts_applicant">
-            <h2>Als Applicant</h2>
+            <h2>Als Apply'r</h2>
 
             <div>
                 @foreach($applicant_contracts as $a_contract)
