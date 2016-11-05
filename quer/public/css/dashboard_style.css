@@ -18,6 +18,19 @@ body {
     color: rgba(255, 255, 255, 0);
 }
 
+.not_found {
+    text-align: center;
+}
+
+.not_found h2 {
+    font-size: 3em;
+    color: #3432d5;
+    margin: 25px;
+}
+.not_found div {
+    font-size: 1.2em;
+}
+
 /* general form styling */
 /* Sarah */
 form label,
