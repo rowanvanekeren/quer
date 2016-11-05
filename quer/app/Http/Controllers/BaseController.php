@@ -23,9 +23,10 @@ class BaseController extends Controller
     public function get_all_users() {
         //
         $users = User::where('active', 1)->orderBy('last_name', 'asc')->get();
+        $events = Events::where('active', 1)->orderBy('date_start_sell', 'asc')->get();
         
         if(Auth::user()->is_admin) {
-            return view('users_overview', ['users' => $users]);
+            return view('users_overview', ['users' => $users, 'events' => $events]);
         }
         else {
             abort(404);
@@ -35,11 +36,24 @@ class BaseController extends Controller
     public function delete_user($id) {
         //
         //dd($id);
-        $user = User::find($id);
-        $user->active = 0;
-        $user->save();
+        if(Auth::user()->is_admin) {
+            $user = User::find($id);
+            $user->active = 0;
+            $user->save();
+            //also set all of his advertisements and contracts inactive
+            $advertisements = Advertisements::where('user_id', $id)->get();
+            foreach($advertisements as $advertisement) {
+                $advertisement->active = 0;
+                $advertisement->save();
+            }
+            $contracts = Contracts::where('quer_id', $id)->orWhere('applicant_id', $id)->get();
+            foreach($contracts as $contract) {
+                $contract->active = 0;
+                $contract->save();
+            }
+        }
         
-        return view('/user_overview');
+        return redirect('/users_overview');
         
     }
     

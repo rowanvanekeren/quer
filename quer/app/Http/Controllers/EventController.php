@@ -80,6 +80,16 @@ class EventController extends Controller
         }
 
     }
+    
+    public function delete_event($id) {
+        
+        if(Auth::user()->is_admin) {
+            $event = Events::find($id);
+            $event->active = 0;
+            $event->save();
+        }
+        return redirect('/users_overview');
+    }
 
 
     

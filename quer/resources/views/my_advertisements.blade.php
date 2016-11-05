@@ -12,8 +12,6 @@
         <div class="my_adv_page_title">
             <h1>Mijn advertenties</h1>
 
-            <p>Hier heb je een overzicht van je bestaande advertenties.</p>
-
         </div>
         {{--
         @foreach ($advertisements as $advertisement)

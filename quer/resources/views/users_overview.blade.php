@@ -32,6 +32,32 @@
            
        </div>
        
+       <h1>Evenementenoverzicht</h1>
+       
+       <div class="user_overview">
+           
+           <table>
+               <tr>
+                   <th>Eventnaam</th>
+                   <th>Datum verkoop</th>
+                   <th>Admin event</th>
+                   <th>Verwijder</th>
+               </tr>
+               
+               @foreach($events as $event)
+               <tr>
+                   <td>{{ $event->name }}</td>
+                   <td>{{ $event->date_start_sell }}</td>
+                   <td>{{ $event->code }}</td>
+                   <td><a href="{{ url('/delete_event/'. $event->id) }}">Verwijder</a></td>
+               </tr>
+               @endforeach
+               
+           </table>
+           
+       </div>
+       
+       
     </div>
 
 @endsection
