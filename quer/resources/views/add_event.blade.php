@@ -54,7 +54,7 @@
 
                 <div>
                     <label for="image">Afbeelding:</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" required>
                 </div>
 
                 <div>
@@ -64,9 +64,9 @@
 
                 <div>
                     <label for="category">Categorie:</label>
-                    <select>
+                    <select name="category">
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{ $category->categorie }}</option>
+                        <option value="{{$category->id}}" @if($category->id == 1)selected="selected"@endif>{{ $category->categorie }}</option>
                         @endforeach
                     </select>
                 </div>

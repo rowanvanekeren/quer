@@ -71,7 +71,7 @@ class BaseController extends Controller
 
     public function get_all_events($limit)
     {
-        $events = Events::limit($limit)->get();
+        $events = Events::limit($limit)->where('active', 1)->get();
         return $events;
     }
 
