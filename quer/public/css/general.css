@@ -255,7 +255,7 @@ width: 100%;
     }
 }
 
-@media screen and (min-width: 0px) and ( max-width: 1000px) {
+@media screen and (min-width: 0px) and ( max-width: 1300px) {
     .register_form_content{
         overflow-x: hidden;
     }

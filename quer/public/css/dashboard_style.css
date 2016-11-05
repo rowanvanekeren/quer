@@ -504,6 +504,30 @@ form select {
     width: 45%;
     margin: 0 auto;
 }
+@media screen and (max-width: 600px){
+    .edit_account form {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .edit_account {
+        /*background-color: #faf4f6;*/
+        width: 100%;
+        margin: 0 auto;
+    }
+    .edit_account form input {
+        /*background-color: #faf4f6;*/
+        width:95%;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (min-width: 600px) and (max-width: 900px){
+    .edit_account form input {
+        /*background-color: #faf4f6;*/
+        width:95%;
+        margin: 0 auto;
+    }
+}
 
 .edit_account form button[type="submit"] {
     border: none;
@@ -514,7 +538,7 @@ form select {
     font-size: 16px;
     background-color: #3432d5;
     color: #fff;
-    width: 100%;
+
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
