@@ -2,7 +2,6 @@ body {
     font-family: "Calibri", sans-serif;
 }
 
-
 .msg_error {
     background-color: #e0acac;
 }
@@ -12,18 +11,14 @@ body {
     padding: 5px;
 }
 
-
-
 .variable_content h1 {
     text-align: center;
     margin: 10px 0;
     color: #3432d5;
 }
 
-
-
-/* forms */
-
+/* general form styling */
+/* Sarah */
 form label,
 form input,
 form textarea,
@@ -45,8 +40,6 @@ form label {
 form input,
 form textarea,
 form select {
-    /*border: 1px solid #3432d5;
-    border-radius: 5px;*/
     border: none;
     background-color: #CDCCF5;
     padding: 5px 10px;
@@ -60,13 +53,203 @@ form textarea {
 }
 
 form select {
-    margin-left: 10px;
-    width: 372px;
+    margin-left: 15px;
+    width: 53%;
+}
+
+
+/* ************    USERS OVERVIEW     ************ */
+/* Sarah */
+.user_overview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user_overview table th,
+.user_overview table td {
+    border: 0;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.user_overview table td {
+    border-bottom: 1px solid #CDCCF5;
+}
+
+.user_overview table tr:first-child {
+    background-color: #ece7e9;
+}
+
+.user_overview table tr:hover {
+    background-color: #faf4f6;
+}
+
+
+/* ************    DASHBOARD     ************ */
+/* Sarah */
+.dashboard h3,
+.dashboard h3 {
+    border-bottom: #CDCCF5 solid 1px;
+    padding: 5px;
+}
+
+.dashboard ul {
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard ul li {
+    padding: 10px 0;
+}
+
+.dashboard ul li:before{
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-size: contain;
+    background-image: url(../images/querlogo/mini_logo.png);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.dashboard ul li a {
+    font-weight: bold;
+    color: #3432d5;
+    text-decoration: none;
+}
+
+.dashboard ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* ************    MY ADVERTISEMENTS     ************ */
+/* Rowan */
+.my_advert_wrapper{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 120px;
+    padding: 0;
+}
+
+.my_advert_quers_left  {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+    border-collapse: separate;
+    border-spacing:0 15px;
+}
+
+.my_advert_right {
+    width:  calc(100% - 135px);
+    float:right;
+    height: 120px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.my_advert_quers_left tr {
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+}
+
+.my_advert_right tr  {
+    margin-top: 15px;
+    width:  calc(100% - 135px);
+    height: 120px;
+}
+
+.my_advert_right tr, .my_advert_right td {
+    height: 120px;
+    max-height: 120px;
+    padding: .5em;
+    overflow:hidden;
+    background-color: #faf4f6;
+    border: 0;
+    text-align: left;
+    border-bottom: 1px solid #CDCCF5;
+}
+
+.my_advert_quers_left tr, .my_advert_quers_left td {
+    height: 120px;
+    width: 120px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: #3432d5;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.my_advert_quers_left th {
+    text-align: center;
+}
+
+.my_advert_quers_left td a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.my_advert_quers_left td p{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.my_advert_right  tr:first-child {
+    height: 60px;
+}
+
+.my_advert_right th {
+    padding: .5em;
+    background-color: #ece7e9;
+}
+
+.my_advert_quers_left  tr:first-child {
+    height: 60px;
+    background-color:white;
+}
+
+.my_adv_page_title {
+    width: 100%;
+}
+
+.my_adv_page_title h1, .my_adv_page_title p {
+    text-align: center;
+}
+
+.my_advert_right_max_height{
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.new_advert_btn {
+    text-align: right;
+}
+
+.new_advert_btn a {
+    font-family: "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 100%;
+    border-radius: 4px;
 }
 
 
 /* ************    QUE'RS OVERVIEW     ************ */
-
+/* Sarah */
 .quers_overview {
     border-collapse: collapse;
     width: 100%;
@@ -116,83 +299,394 @@ form select {
 }
 
 
-/* ************    USERS OVERVIEW     ************ */
-
-.user_overview table {
+/* ************    ADD ADVERTISEMENT     ************ */
+/* Rowan */
+.add_advert_section {
+    position: relative;
     width: 100%;
-    border-collapse: collapse;
+    height: 250px;
+    float:left;
 }
 
-.user_overview table th,
-.user_overview table td {
-    border: 0;
-    text-align: left;
-    padding: 5px 10px;
-}
+.add_new_advert {
+    position: relative ;
+    height: 250px;
+    width: 45%;
+    float:right;
+    border: 3px dashed black;
+ }
 
-.user_overview table td {
-    border-bottom: 1px solid #CDCCF5;
-}
-
-.user_overview table tr:first-child {
-    background-color: #ece7e9;
-}
-
-.user_overview table tr:hover {
-    background-color: #faf4f6;
-}
-
-
-
-/* ************    DASHBOARD     ************ */
-
-.dashboard h3,
-.dashboard h3 {
-    border-bottom: #CDCCF5 solid 1px;
-    padding: 5px;
-}
-
-.dashboard ul {
-    padding: 0;
-    list-style: none;
-}
-
-.dashboard ul li {
-    padding: 10px 0;
-}
-
-.dashboard ul li:before{
-    content: '';
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    background-size: contain;
-    background-image: url(../images/querlogo/mini_logo.png);
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-
-.dashboard ul li a {
-    font-weight: bold;
-    color: #3432d5;
+.add_new_advert h2, .add_new_advert a {
     text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0 solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.dashboard ul li a:hover {
-    text-decoration: underline;
+.add_new_advert h2 {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left:-25%;
+}
+
+.add_advert_from_section {
+    height: 250px;
+    width: 45%;
+    float: left;
+}
+
+.selected_advert {
+    position: relative ;
+    height: 250px;
+    width: 45%;
+    float:right;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.selected_advert h2 {
+     width: 80%;
+     position: absolute;
+     text-align: center;
+     left: 50%;
+     margin-left: -40%;
+     top: 45%;
+     color: #fff;
+ }
+
+.selected_advert p {
+      width: 80%;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      margin-left: -40%;
+      top: 60%;
+      color: #fff;
+}
+
+.selected_advert h1 {
+    width: 80%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    margin-left: -40%;
+    top: 25%;
+    color: white;
+}
+
+.add_advert_gradient {
+    margin:0;
+    padding: 0;
+    width:100%;
+    height: 250px;
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 80%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 80%);
+}
+
+#add_advertisement_form, #add_advertisement_form div {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+}
+
+#add_advertisement_form input, #add_advertisement_form textarea {
+    float:right;
+    width: 50%;
+}
+#add_advertisement_form label {
+    display:inline-block;
+    width: 40%;
+    float:left;
+    text-align: right;
+}
+#add_advert_submit {
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.add_advert_title {
+    width: 100%;
 }
 
 
 /* ************    ADD EVENT     ************ */
+/* Rowan */
+.existing_event_collapse{
+    display:none;
+    opacity: 0;
+}
 
+.existing_event_collapse_anim{
+    display:block;
+    opacity: 1;
+    animation-name: exist;
+    animation-duration: 1s;
+}
+@keyframes exist {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.new_event_collapse{
+    display:none;
+}
+
+.new_event_collapse_anim{
+    display:block;
+    animation-name: new;
+    animation-duration: 1s;
+}
+@keyframes new {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#add_event_form{
+    width: 70%;
+    overflow: hidden;
+    margin: 0;
+    margin-top: 60px!important;
+    padding: 0;
+}
+
+#add_event_form input,
+#description {
+    margin:0;
+    width: 50%;
+    float:right;
+ }
+
+#add_event_form select {
+    margin-left: 2.3%;
+    width: 52.5%;
+}
+
+#add_event_form label{
+    padding:0;
+    padding-right: 5px;
+    margin: 0;
+    width: 44%;
+    text-align: right;
+    display:inline-block;
+    float:left;
+}
+
+.add_event_events{
+    width: 120px;
+    height: 120px;
+    color:white;
+    padding: 0;
+    margin: 0;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.add_events_table{
+     margin:0;
+     width: 100%;
+ }
+
+.add_events_table, 
+.add_events_table tr, 
+.add_events_table td, 
+.add_events_table th{
+    margin:0;
+    padding:0
+}
+
+.all_events{
+    width: 48%;
+    float: right;
+    height: 800px;
+    overflow-y: scroll;
+}
+
+.max_height_events_table{
+    max-height: 120px;
+}
+
+.add_button button {
+    float: right;
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 54%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add_button button:hover {
+    background-color: #161657;
+}
+
+.add_event_wrapper{
+    position: relative;
+    width: 100%;
+    float:right;
+    margin: 0 auto;
+    height: 120px;
+    padding: 0;
+}
+
+.add_event_quers_left  {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+    margin: 0;
+    padding: 0;
+    border-collapse: separate;
+    border-spacing:0 15px;
+}
+
+.add_event_right {
+    width:  calc(100% - 135px);
+    float:right;
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.add_event_quers_left tr{
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+}
+
+.add_event_right tr  {
+    width:  calc(100% - 135px);
+    height: 120px;
+    margin: 0;
+    padding: 0;
+}
+
+.add_event_right tr,
+.add_event_right td  {
+    height: 120px;
+    max-height: 120px;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: #faf4f6;
+    border: 0;
+    text-align: left;
+    border-bottom: 1px solid #CDCCF5;
+}
+
+.add_event_quers_left tr,
+.add_event_quers_left td {
+    height: 120px;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.add_event_quers_left th {
+    text-align: center;
+}
+
+.add_event_quers_left td a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.add_event_quers_left td p {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.add_event_right  tr:first-child {
+    height: 60px;
+}
+
+.add_event_right th {
+    background-color: #ece7e9;
+    padding: 5px;
+}
+.add_event_right tr td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.add_event_right tr:hover td {
+    background-color: #bfc4ff;
+}
+
+.add_event_quers_left  tr:first-child {
+    height: 60px;
+}
+
+.add_event_right_max_height{
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.add_event_button_wrapper{
+    width:100%;
+}
+
+.add_event_button_wrapper button{
+    padding: 12px 20px 12px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #3432d5;
+    color: white;
+    width: 49%;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+.add_event_button_wrapper button:hover {
+    background-color: #161657;
+}
+
+.add_event_button_wrapper button:first-child {
+margin-right: 2%;
+}
+
+.add_event_active {
+    background-color: #161657 !important;
+}
+
+/*Sarah*/
 .new_event_collapse_anim,
 .existing_event_collapse {
     margin-bottom: 50px;
-}
-
-.new_event_collapse_anim button {
-    cursor: pointer;
 }
 
 .add_event_right tr:hover {
@@ -201,7 +695,7 @@ form select {
 
 
 /* ************    CONTRACT OVERVIEW     ************ */
-
+/* Sarah */
 .contracts_quer,
 .contracts_applicant {
     background-color: #faf4f6;
@@ -215,13 +709,6 @@ form select {
     text-align: center;
     background-color: #ece7e9;
 }
-
-/*.contracts_quer div div,
-.contracts_applicant div div {
-    padding: 10px;
-    border-bottom: #CDCCF5 solid 1px;
-}*/
-
 
 .contracts_quer div a,
 .contracts_applicant div a {
@@ -256,13 +743,12 @@ form select {
 
 
 /* ************    CONTRACT DETAILS     ************ */
+/* Sarah */
 .contract_users .quer,
 .contract_users .applicant {
     width: 48.32%;
     margin-right: 2%;
     float: left;
-    /*border: #6564d9 solid 1px;
-    border-radius: 5px;*/
 }
 
 .contract_users .applicant {
@@ -310,8 +796,6 @@ form select {
 
 .contract_info {
     width: 100%;
-    /*border: #6564d9 solid 1px;
-    border-radius: 5px;*/
     margin-top: 25px;
     margin-bottom: 100px;
 }
@@ -484,17 +968,70 @@ form select {
     margin-right: 5px;
     margin-top: 4px;
 }
+
 #add_review .rate div label {
     width: 20px;
 }
-
 
 #add_review .succeeded input {
     width: 20px;
 }
 
 
+/* ************    REVIEWS / USER INFO     ************ */
+/* Rowan */
+.usr_det_img {
+    width: 250px;
+    height: 250px;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+.usr_det_inf {
+    width: 100%;
+}
+
+.usr_det_inf h2,.usr_det_inf p {
+    text-align: center;
+}
+
+.usr_det_rev_wrapper {
+    width: 100%;
+}
+
+.usr_rev_img {
+    width: 50px;
+    height: 50px;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+.usr_det_review {
+    float:left;
+    width:calc(50% - 30px);
+    height: 200px;
+    overflow:hidden;
+    margin:0;
+    padding: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.usr_rev_content {
+    text-align: center;
+}
+
+
 /* ************    EDIT ACCOUNT     ************ */
+/* Sarah */
 .edit_account {
     /*background-color: #faf4f6;*/
     margin: 50px 0;
@@ -503,30 +1040,6 @@ form select {
 .edit_account form {
     width: 45%;
     margin: 0 auto;
-}
-@media screen and (max-width: 600px){
-    .edit_account form {
-        width: 100%;
-        margin: 0 auto;
-    }
-    .edit_account {
-        /*background-color: #faf4f6;*/
-        width: 100%;
-        margin: 0 auto;
-    }
-    .edit_account form input {
-        /*background-color: #faf4f6;*/
-        width:95%;
-        margin: 0 auto;
-    }
-
-}
-@media screen and (min-width: 600px) and (max-width: 900px){
-    .edit_account form input {
-        /*background-color: #faf4f6;*/
-        width:95%;
-        margin: 0 auto;
-    }
 }
 
 .edit_account form button[type="submit"] {
@@ -538,41 +1051,11 @@ form select {
     font-size: 16px;
     background-color: #3432d5;
     color: #fff;
-
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
 }
-
-/* tables */
-
-/*
-table {
-    margin-left: 0;
-    border-collapse: collapse;
-}
-
-table td,
-table th {
-    border: 0;
-    text-align: left;
-    padding: 5px 10px;
-}
-
-table td {
-    border-bottom: 1px solid #CDCCF5;
-}
-
-table tr:hover {
-    background-color: #EEEEFC;
-}
-
-table tr:first-child {
-    background-color: #CDCCF5;
-}
-*/
-
 
 .quers_overview img {
     width: 45px;
@@ -581,10 +1064,8 @@ table tr:first-child {
 }
 
 
-
-
 /* ************    ADVERT OVERVIEW     ************ */
-
+/* Sarah */
 .advert_overview {
     margin-bottom: 50px;
 }
@@ -709,7 +1190,7 @@ table tr:first-child {
 
 
 /* ************    SEARCH RESULTS     ************ */
-
+/* Sarah */
 
 .search_results .homepage-adverts > div {
     width: 33%;
@@ -784,11 +1265,6 @@ table tr:first-child {
 
 
 
-
-
-
-
-
 /*   CLEARFIX   */
 .contracts_quer div a::before, .contracts_quer div a::after,
 .contracts_applicant div a::before, .contracts_applicant div a::after,
@@ -834,19 +1310,153 @@ form div::after {
 
 
 
+/* ******    MEDIAQUERIES     ******* */
+
 
 @media screen and (max-width: 1200px){
     .variable_content {
         width: 100%;
         margin: 0 auto;
-
     }
-
 }
 
 
+@media screen and (min-width: 0px) and ( max-width: 1000px) {
+    /* Rowan */
+    .selected_advert {
+        width: 100%;
+    }
+    .add_new_advert {
+        width: 100%;
+        margin: 0 auto;
+        float: none;
+    }
+    #add_advertisement_form textarea,#add_advertisement_form {
+        float:none;
+        width: 100%;
+        padding:0;
+        max-width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #add_advertisement_form input {
+        float:none;
+        width: 60%;
+        margin-left:20%;
+        height: 50px;
+        max-width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #add_advertisement_form label {
+        width: 100%;
+        float:none;
+        text-align: center;
+    }
+    #add_advertisement_form, #add_advertisement_form div {
+        padding: 0;
+    }
+
+    #private_description {
+        width: 100%;
+    }
+    .add_advert_from_section {
+        padding:0;
+        height: 250px;
+        width: 100%;
+        float: none;
+    }
+    .add_button {
+       margin:0 ;
+        padding:0;
+
+    }
+    .add_new_advert h2,
+    .add_new_advert a {
+        position: relative;
+        width: 80%;
+        float: none;
+    }
+    .add_new_advert h2{
+        margin-left:-40%;
+    }
+    
+    /* reviews */
+    .usr_det_review{
+        float:left;
+        width:calc(100% - 30px);
+        height: 200px;
+        overflow:hidden;
+        margin:0;
+        padding: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+    /* Rowan */
+    .edit_account form input {
+        width:95%;
+        margin: 0 auto;
+    }
+}
+
 @media screen and (max-width: 600px){
 
+    /* Rowan */
+    .my_advert_quers_left {
+        display:none;
+    }
+    .my_advert_right {
+        width: 100%;
+    }
+    
+    .add_event_quers_left {
+        display:none;
+    }
+    .add_event_right {
+        width: 100%;
+    }
+    #add_event_form {
+        width: 100%;
+    }
+    #add_event_form input,
+    #description {
+        margin:0;
+        padding: 4%;
+        width: 100%;
+        float:none;
+    }
+
+    #add_event_form label{
+        padding:0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        display:inline-block;
+        float:left;
+    }
+    
+    #add_event_form select {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .add_button button{
+        float: right;
+        padding: 12px 20px 12px 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border: 0px solid #ccc;
+        background-color: #3432d5;
+        color: white;
+        width: 100%;
+        border-radius: 4px;
+    }
+    
+    /* contract details */
+    /* Sarah */
     .contract_users .quer,
     .contract_users .applicant,
     .contract_info {
@@ -882,11 +1492,27 @@ form div::after {
         width: 80%;
         margin: 20px auto !important;
     }
+    
+    /* edit account */
+    /* Rowan */
+    edit_account form {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .edit_account {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .edit_account form input {
+        width:95%;
+        margin: 0 auto;
+    }
 
 }
 
 @media screen and (max-width: 400px){
 
+    /* Sarah */
     .contracts_quer div a .left,
     .contracts_applicant div a .left {
         width: 100%;
@@ -898,7 +1524,5 @@ form div::after {
         display: none;
     }
 }
-
-
 
 
