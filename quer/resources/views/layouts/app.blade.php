@@ -12,8 +12,7 @@
 
     <!-- Styles -->
 
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar-sub.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navigation.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/my_ads.css') }}" rel="stylesheet">
     <link href="{{ asset('css/add_event.css') }}" rel="stylesheet">
@@ -21,7 +20,6 @@
     <link href="{{ asset('css/user_details.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{ asset('css/general.css') }}" rel="stylesheet">
-   {{-- <link href="{{ asset('css/dashboard_navbar.css') }}" rel="stylesheet">--}}
 
     {{--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">--}}
 
