@@ -149,12 +149,8 @@ float: left;
     border-radius: 4px;
 }
 
-
-
 form{
-   /* display:table;*/
     margin:auto;
-
 }
 
 .searchdiv{
@@ -211,93 +207,7 @@ footer{
     text-align: center;
 }
 
-/*
-////////////////////////////////////////////*/
-
-
-
-
-/*
-.homepage-events-repeated{
-    width: 33%;
-    float: left;
-    height: 220px;
-    overflow: hidden;
-    min-width: 280px;
-    margin: 0 auto;
-
-    background-repeat:no-repeat !important;
-    background-size: cover !important;;
-    background-position:center !important;;
-
-}
-
-
-.homepage-events-gradient{
-     width: 100% !important;
-     height: 100%;
-     background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
-     background: linear-gradient(to top,  rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 65%);
-    clear: both;
- }
-
-.homepage_first-event{
-    width: 66%;
-    height: 440px;
-    min-width: 560px;
-}
-
-.homepage-events {
-
-     margin-bottom: 50px;
-     width: 100%;
-     height: auto;
- }
-
-.homepage-events div:not(:first-child) h2{
-    top: 40%;
-    width: 100%;
-    position: relative;
-    color:white;
-    text-align: center;
-    font-size: 2em;
-}
-.homepage_first-event h2{
-    top: 55%;
-    width: 100%;
-    position: relative;
-    color:white;
-    text-align: center;
-    font-size: 3em;
-}
-.homepage-events div:not(:first-child) .event-date{
-    color: #ececec;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    top: 15%;
-}
-
-.homepage-events div:not(:first-child) .event-location{
-    color: #ececec;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-
-    top: 42%;
-    font-size: 0.8em;
-}
-
-.homepage-events div:not(:first-child) .event-city{
-    color: #ececec;
-    font-weight: bold;
-    font-size: 0.8em;
-    text-align: right;
-    position: relative;
-    right: 2%;
-    top: 29%;
-}
-*/
+/*///////////////////////////*/
 .event-location:first-child{
    position: absolute;
     color:white;
@@ -329,65 +239,9 @@ footer{
     margin-bottom: 50px;
     overflow: hidden;
 }
-/*
-.homepage-adverts img{
-    min-width: 100%;
-    min-height: 100%;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    /* onderstaant moet nog aangepast worden *//*
-    -webkit-transform: translateY(-50%) translateX(-50%);
 
 
-}*//*
-.homepage-adverts div h2 {
-     position: relative;
-     top: 50%;
-
-     text-align: center;
-
-
- }
-
-.homepage-adverts div h2 a{
-    position: relative;
-    top: 50%;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    color: white;
-
-}
-.homepage-adverts div ul  {
-  position: relative;
-    top: 50%;
-
-
-}
-.homepage-adverts div ul li {
-    display: inline-block;
-    color: white;
-
-    font-weight: bold;
-}
-
-.homepage-adverts div ul li:last-child {
-    position: absolute;
-    right: 20px;
-    bottom: 0;
-}
-.homepage-adverts div ul img{
-    position: relative;
-  width: 40px;
-    top: 40px;
-    left: 8px;
-    -webkit-clip-path: circle(40% at 50% 50%);
-    clip-path: circle(40% at 50% 50%);
-}*/
-
-
-/* ********************* SARAH's TRIAL ************************** */
+/* ********************* SARAH's FIX ************************** */
 
 /* events */
 
@@ -423,6 +277,11 @@ footer{
     width: 100%;
     text-align: center;
     font-size: 2em;
+}
+
+.homepage-events-gradient h2 a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .homepage-events-repeated:not(:first-child) .homepage-events-gradient .event-date {
@@ -546,29 +405,23 @@ position: absolute;
     position: absolute;
     bottom: 20px;
     left:60px;
-
-
 }
 #home-adv-price{
     width: 60%;
-
     position: absolute;
     bottom: 20px;
     right:15px;
     color:white
 }
 #home-adv-price p{
- text-align: right;
+     text-align: right;
 }
 #home-adv-usrname a{
-text-decoration: none;
+    text-decoration: none;
     color:white ;
-
 }
 #home-adv-usrname a:hover{
     text-decoration: underline;
-
-
 }
 
 .homepage-adverts div ul li:last-child {
@@ -585,7 +438,7 @@ text-decoration: none;
     clip-path: circle(40% at 50% 50%);
 }
 
-
+/* Rowan */
 .admin-event{
     position: absolute;
     left: 0;
@@ -618,9 +471,8 @@ text-decoration: none;
 .login_error h2{
     position: absolute;
     top: 30%;
- color: white;
+    color: white;
     text-align: center;
-
 }
 
 /* *************************************************************** */
@@ -637,7 +489,6 @@ text-decoration: none;
         width: 50%;
         overflow: hidden;
         min-width: 50%;
-
     }
     .homepage_first-event h2{
         top: 26%;
@@ -646,7 +497,6 @@ text-decoration: none;
         position: absolute;
         color:white;
         text-align: center;
-
     }
 
     .homepage_first-event .event-location{
@@ -685,7 +535,6 @@ text-decoration: none;
         position: absolute;
         color:white;
         text-align: center;
-
     }
 
     .homepage_first-event .event-location{
@@ -738,11 +587,8 @@ text-decoration: none;
 
     .home-center-content{
         width: 95%;
-
-
     }
 }
-
 
 
 @media screen and (min-width: 0px) and ( max-width: 700px) {
@@ -760,22 +606,16 @@ text-decoration: none;
         margin:0 auto;
         padding:0;
         width: 100%;
-
     }
     .homepage-events-repeated{
         width: 100%;
-
         height: 220px;
-
         min-width: 90%;
-
-
     }
     .home-nav-right{
         visibility: hidden;
     }
     .home-nav-right-burger{
-
         list-style: none;
         display:block;
         position: absolute;
@@ -784,19 +624,14 @@ text-decoration: none;
     }
     .burger{
         visibility: visible;
-
     }
 }
 
 @media screen and (min-width: 700px) and ( max-width: 1000px) {
     .homepage-events-repeated{
         width: 50%;
-
         height: 220px;
-
         min-width: 50%;
-
-
     }
     .home-nav-right{
         visibility: hidden;
@@ -810,7 +645,6 @@ text-decoration: none;
     }
     .burger{
         visibility: visible;
-
     }
     .content-center {
         width: 80%;
@@ -833,7 +667,6 @@ text-decoration: none;
         position: absolute;
         right:15px;
         top: 15px;
-
     }
 }
 @media screen and (min-width: 1000px) and ( max-width: 1400px) {
@@ -861,12 +694,8 @@ text-decoration: none;
     }
     .homepage-events-repeated{
         width: 50%;
-
         height: 220px;
-
         min-width: 50%;
-
-
     }
     .home-nav-right{
         visibility: hidden;
@@ -880,6 +709,5 @@ text-decoration: none;
     }
     .burger{
         visibility: visible;
-
     }
 }

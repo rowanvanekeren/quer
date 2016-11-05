@@ -174,7 +174,12 @@
                             @if($event->code ==1)
                                 <div class="admin-event"></div>
                             @endif
-                            <h2> {{$event->name}}</h2>
+                            <h2>
+                            @if(Auth::guest())
+                                <a onclick="display_login_error()">{{$event->name}}</a>
+                            @else
+                                <a href="{{ url('/add_advertisement/'. $event->id) }}">{{$event->name}}</a>
+                            @endif</h2>
 
                             <p class="event-location">Locatie: {{$event->location}} , {{$event->city}}</p>
 
